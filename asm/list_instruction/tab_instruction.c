@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Tue Feb  2 11:26:01 2016 Guillaume SAGOT
-** Last update Tue Feb  2 11:53:23 2016 Guillaume SAGOT
+** Last update Mon Feb 22 16:41:05 2016 Guillaume SAGOT
 */
 
 #include "corewar.h"
