@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Sun Feb 28 03:03:27 2016 Guillaume SAGOT
-** Last update Mon Feb 29 21:10:13 2016 Guillaume SAGOT
+** Last update Mon Feb 29 21:40:44 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
@@ -77,8 +77,15 @@ void		xor_checkError(t_system *sys, int *values)
 void		jump_if_zero_checkError(t_system *sys, int *values)
 {
   if (values[0] == 1)
-    aff_error(sys, "[ERROR] => \"XOR\" instruction -> [REGISTER] necessary\n");
+    aff_error(sys, "[ERROR] => \"ZJMP\" instruction -> [:( BAD parameters)]\n");)
   else if (values[1] != 0)
-    aff_error"[ERROR] => \"XOR\" instruction -> DRAM necessary\n");
-    }
+    aff_error"[ERROR] => \"ZJMP\" instruction -> DRAM necessary\n");
+}
+
+void 		ldi_checkError(t_system *sys, int *values)
+{
+  if (values[0] != 2 && values[0] != 3)
+    printError(sys, "[ERROR] => \"LDI\" instruction -> [REGISTER] necessary\n");
+  else if (values[1] != 2 && values[0] != 3)
+    printError(sys, "[ERROR] => \"LDI\" instruction -> [REGISTER] necessary\n");
 }
