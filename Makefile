@@ -5,7 +5,7 @@
 ## Login   <sagot_g@epitech.eu>
 ##
 ## Started on  Mon Feb 22 17:23:09 2016 Guillaume SAGOT
-## Last update Mon Feb 29 15:13:11 2016 Guillaume SAGOT
+## Last update Mon Feb 29 22:05:25 2016 victor sousa
 ##
 
 COMP		=	gcc
@@ -14,7 +14,7 @@ CFLAGS		+=	-Werror -Wextra -Wall -W
 CFLAGS		+=	-ansi -pedantic
 CFLAGS		+=	-Iinclude
 
-SRCPRNTF	=       sources/print/main.c                            \
+SRCPRNTF	=       sources/print/main.c				\
 			sources/print/my_printf.c                       \
 			sources/print/library_display.c                 \
 			sources/print/library_display_two.c             \
@@ -39,11 +39,56 @@ all		:	$(NAMEASM)
 $(NAMEASM)	:	$(OBJASM)
 			$(COMP) $(SRCASM) -o $(NAMEASM) $(CFLAGS)
 
-clean		:
-			rm -f $(OBJASM)
+clean   :
+		@$(RM) $(OBJ)
+		@tput setaf 3
+		@tput bold
+		@printf "Removing \t "
+		@tput setaf 4
+		@printf " File [.o]...\n"
+		@tput sgr0
+		@tput cuf 68
+		@tput cuu1
+		@printf "[ "
+		@tput setaf 2
+		@tput bold
+		@printf "ok"
+		@tput sgr0
+		@printf " ]\n"
 
-fclean		:	clean
-			rm -f $(NAMEASM)
+fclean  :	clean
+		@$(RM) $(NAME)
+		@tput setaf 3
+		@tput bold
+		@printf "Removing \t "
+		@tput setaf 4
+		@printf " File %s...\n", $(NAME)
+		@tput sgr0
+		@tput cuf 67
+		@tput cuu1
+		@printf "[ "
+		@tput setaf 2
+		@tput bold
+		@printf "ok"
+		@tput sgr0
+		@printf " ]\n"
+
+c.o     :
+		@tput setaf 3
+		@tput bold
+		@printf "Compiling @ -W -Wextra -Werror "
+		@tput setaf 4
+		@printf "%s\n" $(patsubst $(RACINE)/%,%,$^)
+		@$(CC) $(CFLAGS) -D$(LIB) -c -o $@ $^
+		@tput sgr0
+		@tput cuf 68
+		@tput cuu1
+		@printf "[ "
+		@tput setf 2
+		@tput bold
+		@printf "ok"
+		@tput sgr0
+		@printf " ]\n"
 
 re		:	fclean all
 
