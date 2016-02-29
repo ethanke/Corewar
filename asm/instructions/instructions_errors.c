@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Sun Feb 28 03:03:27 2016 Guillaume SAGOT
-** Last update Mon Feb 29 21:40:44 2016 Guillaume SAGOT
+** Last update Mon Feb 29 23:52:02 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
@@ -13,7 +13,7 @@
 void		live_checkError(t_system *sys, int *values)
 {
   if (values[1] != 0 || values[0] == 0)
-    printError(sys, "[ERROR] => \"LIVE\" instruction -> [:( BAD parameters)]\n");
+    printError(sys, "[ERROR] => \"LIVE\" instruction -> [:(BAD parameters)]\n");
   else if (values[1] > 1)
     printError(sys, "[ERROR] => \"LIVE\" instruction -> [INDEX] necessary\n")
 }
@@ -77,7 +77,7 @@ void		xor_checkError(t_system *sys, int *values)
 void		jump_if_zero_checkError(t_system *sys, int *values)
 {
   if (values[0] == 1)
-    aff_error(sys, "[ERROR] => \"ZJMP\" instruction -> [:( BAD parameters)]\n");)
+    aff_error(sys, "[ERROR] => \"ZJMP\" instruction -> [:( BAD parameters)]\n");
   else if (values[1] != 0)
     aff_error"[ERROR] => \"ZJMP\" instruction -> DRAM necessary\n");
 }
@@ -88,4 +88,49 @@ void 		ldi_checkError(t_system *sys, int *values)
     printError(sys, "[ERROR] => \"LDI\" instruction -> [REGISTER] necessary\n");
   else if (values[1] != 2 && values[0] != 3)
     printError(sys, "[ERROR] => \"LDI\" instruction -> [REGISTER] necessary\n");
+}
+
+void		 sti_checkError(t_system *sys, int *values)
+{
+  if (values[2] == 0 && values[3] == 0)
+  printError(sys, "[ERROR] => \"STI\" instruction -> [:( BAD parameters)]\n");
+}
+
+void		fork_checkError(t_system *sys, int *values)
+{
+  if (values[1] == 0)
+    printError(sys, "[ERROR] => \"FORK\" instruction -> [: BAD parameters)]\n");
+  else if  (values[0] == 1)
+}
+
+void		lld_checkError(t_system *sys, int *values)
+{
+  if (values[0] == 0 && values[1] == 0 && values[2] != 0)
+    printError(sys, "[ERROR] => \"LLD\" instruction -> [:( BAD parameters)]\n");
+  else if (values[0] > 1)
+    printError(sys, "[ERROR] => \"LLD\" instruction -> [REGISTER] necessary\n")
+}
+
+void		lldi_checkError(t_system *sys, int *values)
+{
+  if (values[0] == 0 && values[1] == 0 && values[2] != 0)
+    printError(sys, "[ERROR] => \"LLDI\" instruction -> [:(BAD parameters)]\n");
+  else if (values[0] > 1)
+    printError(sys, "[ERROR] => \"LLDI\" instruction ->[REGISTER] necessary\n");
+}
+
+void		lfork_checkError(t_system *sys, int *values)
+{
+  if (values[1] == 0)
+    printError(sys, "[ERROR] => \"LFORK\" instruction -> [ BAD parameters)]\n");
+  else if (values[0] == 1)
+    printError(sys, "[ERROR] => \"LFORK\" instruction -> [INDEX] parameters\n");
+}
+
+void		aff_checkError(t_system *sys, int * values)
+{
+  if (values[1] != 0)
+    printError(sys, "[ERROR] => \"AFF\" instruction -> [:( BAD parameters)]\n");
+  else if (values[0] != 1)
+    printError(sys, "[ERROR] => \"AFF\" instruction -> [REGISTER] necessary\n");
 }
