@@ -1,46 +1,35 @@
 /*
-** tab_instruction.c for  in /home/sagot/Downloads/corewar/asm/list_instruction/
+** tab_instruction.c for  in /home/sagot/Downloads/assembly/asm/list_instruction/
 **
 ** Made by Guillaume SAGOT
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Tue Feb  2 11:26:01 2016 Guillaume SAGOT
-** Last update Mon Feb 22 16:41:05 2016 Guillaume SAGOT
+** Last update Mon Feb 29 16:27:00 2016 Guillaume SAGOT
 */
 
-#include "corewar.h"
+#include "assembly.h"
 
-void 		wich_tabulation(int tab_instruction(t_system*))
+t_system		*initInstructions()
 {
-    void	*wich_tabulation[16] = {
-      wich_tabulation[0] = &live_instruction;
-      wich_tabulation[1] = &load_instruction;
-      wich_tabulation[2] = &store_instruction;
-      wich_tabulation[3] = &addition_instruction;
-      wich_tabulation[4] = &substraction_instruction;
-      wich_tabulation[5] = &and_instruction;
-      wich_tabulation[6] = &or_instruction;
-      wich_tabulation[7] = &xor_instruction;
-      wich_tabulation[8] = &jump_if_zero_instruction;
-      wich_tabulation[9] = &load_index_instruction;
-      wich_tabulation[10] = &store_index_instruction;
-      wich_tabulation[11] = &fork_instruction;
-      wich_tabulation[12] = &long_load_instruction;
-      wich_tabulation[13] = &long_load_index_instruction;
-      wich_tabulation[14] = &long_fork_instruction;
-      wich_tabulation[15] = &aff_instruction;
-      wich_tabulation[16] = NULL;
-    }
-}
+  char			**tab;
 
-int		tab_parse(char *str)
-{
-  char		**tab;
-  int		i;
-
-  i = 0;
-  tab = xmalloc(sizeof(t_system*));
-
-  i = 0;
-  while ()
+  tab = xmalloc(17 * sizeof(char*));
+  tab[0] = "live";
+  tab[1] = "ld";
+  tab[2] = "st";
+  tab[3] = "add";
+  tab[4] = "sub";
+  tab[5] = "and";
+  tab[6] = "or";
+  tab[7] = "xor";
+  tab[8] = "zmp";
+  tab[9] = "ldi";
+  tab[10] = "sti";
+  tab[11] = "fork";
+  tab[12] = "lldi";
+  tab[13] = "lldi";
+  tab[14] = "lfork";
+  tab[15] = "aff";
+  tab[16] = NULL;
 }

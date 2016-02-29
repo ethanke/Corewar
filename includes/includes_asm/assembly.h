@@ -5,11 +5,11 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Thu Jan 28 14:42:02 2016 Guillaume SAGOT
+** Last update Mon Feb 29 21:10:49 2016 Guillaume SAGOT
 */
 
-#ifndef _COREWARE_H_
-# define _COREWARE_H_
+#ifndef _ASSEMBLY_H_
+# define _ASSEMBLY_H_
 
 /* Header declaration 	*/
 # include <errno.h>
@@ -20,10 +20,8 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 
-/* include us '.h'	*/
 #include "printf.h"
 
-/* Declaration structur	*/
 typedef struct          s_label
 {
   int                   i;
