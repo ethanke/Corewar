@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.net>
 **
 ** Started on  Mon Nov  2 16:20:27 2015 guillaume sagot
-** Last update Wed Nov 25 15:10:22 2015 Guillaume SAGOT
+** Last update Tue Mar  1 00:44:46 2016 Guillaume SAGOT
 */
 
 #include "printf.h"
@@ -60,4 +60,30 @@ void		read_flags(const char *format, t_count *count, flag *flag_ptr,
     my_putchar('%');
     my_putchar(format[count->i]);
   }
+}
+
+int		my_printf(const char *format, ...)
+{
+  t_count	count;
+  va_list	ap;
+  flag		*flag_ptr;
+
+  init_flags(&count, &flag_ptr);
+  va_start(ap, format);
+  while (format[count.i] != '\0')
+  {
+    if (format[count.i] == '%')
+    {
+      count.i++;
+      read_flags(format, &count, flag_ptr, ap);
+    }
+    else
+    {
+      my_putchar(format[count.i]);
+      count.nb_char++;
+    }
+    count.i++;
+  }
+  va_end(ap);
+  return (count.nb_char);
 }

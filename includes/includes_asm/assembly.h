@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Mon Feb 29 21:10:49 2016 Guillaume SAGOT
+** Last update Tue Mar  1 00:50:14 2016 Guillaume SAGOT
 */
 
 #ifndef _ASSEMBLY_H_
@@ -28,6 +28,8 @@ typedef struct          s_label
   int                   fd;
   int                   line;
   char                  *name;
+  char			*pos;
+  struct s_label	next;
 }                       t_label;
 
 typedef struct          s_instruction
