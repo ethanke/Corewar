@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Sun Feb 28 03:03:27 2016 Guillaume SAGOT
-** Last update Mon Feb 29 23:52:02 2016 Guillaume SAGOT
+** Last update Tue Mar  1 02:17:06 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
@@ -90,7 +90,7 @@ void 		ldi_checkError(t_system *sys, int *values)
     printError(sys, "[ERROR] => \"LDI\" instruction -> [REGISTER] necessary\n");
 }
 
-void		 sti_checkError(t_system *sys, int *values)
+void		sti_checkError(t_system *sys, int *values)
 {
   if (values[2] == 0 && values[3] == 0)
   printError(sys, "[ERROR] => \"STI\" instruction -> [:( BAD parameters)]\n");

@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Tue Mar  1 00:51:52 2016 Guillaume SAGOT
-** Last update Tue Mar  1 00:56:47 2016 Guillaume SAGOT
+** Last update Tue Mar  1 02:04:03 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
@@ -22,5 +22,5 @@ void		putError(char *str)
 void		printError(t_system *sys, char *str)
 {
   my_printf(msg);
-  my_printf("%s", sys)
+  my_printf("%s", sys->file_name)
 }

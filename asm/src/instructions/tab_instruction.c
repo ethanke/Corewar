@@ -5,10 +5,30 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Tue Feb  2 11:26:01 2016 Guillaume SAGOT
-** Last update Mon Feb 29 16:27:00 2016 Guillaume SAGOT
+** Last update Tue Mar  1 02:10:40 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
+
+void			initError(void*(checkError[16]))
+{
+  checkError[0] = &live_checkError;
+  checkError[1] = &load_checkError;
+  checkError[2] = &store_checkError;
+  checkError[3] = &addition_checkError;
+  checkError[4] = &substraction_checkError;
+  checkError[5] = &and_checkError;
+  checkError[6] = &or_checkError;
+  checkError[7] = &xor_checkError;
+  checkError[8] = &jump_if_zero_checkError;
+  checkError[9] = &ldi_checkError;
+  checkError[10] = &sti_checkError;
+  checkError[11] = &fork_checkError;
+  checkError[12] = &lld_checkError;
+  checkError[13] = &lldi_checkError;
+  checkError[14] = &lfork_checkError;
+  checkError[15] = &aff_checkError;
+}
 
 t_system		*initInstructions()
 {
