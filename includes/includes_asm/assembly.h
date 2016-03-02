@@ -5,22 +5,31 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Tue Mar  1 02:21:49 2016 Guillaume SAGOT
+** Last update Wed Mar  2 11:58:03 2016 Guillaume SAGOT
 */
 
 #ifndef _ASSEMBLY_H_
 # define _ASSEMBLY_H_
 
 /* Header declaration 	*/
-# include <errno.h>
-# include <fcntl.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
+# include               <sys/types.h>
+# include               <sys/stat.h>
+# include               <dirent.h>
+# include               <stdlib.h>
+# include               <unistd.h>
+# include               <fcntl.h>
+# include               <stdio.h>
+# include               <time.h>
+# include               <pwd.h>
+# include               <grp.h>
 
 #include "printf.h"
+
+typedef struct		s_header
+{
+  int			size;
+
+}
 
 typedef struct          s_label
 {
@@ -46,6 +55,7 @@ typedef struct          s_instruction
 
 typedef struct		s_system
 {
+  char			**tab;
   char			*name;
   char			*file_name;
   char			*ret;
