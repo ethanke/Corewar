@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar  7 00:19:34 2016 victor sousa
+## Last update Mon Mar  7 00:35:16 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -37,6 +37,8 @@ all:			$(NAME)
 
 $(NAME):		$(OBJ)
 			$(CC) -o $(NAME) $(OBJ) $(CFLAGS)
+## A RM ##
+			@$(RM) $(OBJ)
 
 clean:
 			$(RM) $(OBJ)
