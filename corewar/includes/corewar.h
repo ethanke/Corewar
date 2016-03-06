@@ -5,15 +5,17 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:25:56 2016 victor sousa
-** Last update Sun Mar  6 23:36:08 2016 victor sousa
+** Last update Sun Mar  6 23:42:30 2016 Victor Sousa
 */
 
 #ifndef			COREWAR_H_
 # define		COREWAR_H_
 
 # include		<unistd.h>
+# include		<stdio.h>
 
 # include		"op.h"
+# include		"utils.h"
 # include		"champ.h"
 
 #endif		      /*COREWAR_H*/

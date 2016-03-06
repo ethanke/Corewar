@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Sun Mar  6 23:38:00 2016 victor sousa
+## Last update Sun Mar  6 23:43:17 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -22,7 +22,8 @@ RM		=	rm -f
 
 SRC		=	$(SRCDIR)/main.c
 
-SRC		+=	$(UTILSDIR)/endian.c
+SRC		+=	$(UTILSDIR)/endian.c		\
+			$(UTILSDIR)/verif_arg.c
 
 OBJ		=	$(SRC:.c=.o)
 
