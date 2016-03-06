@@ -5,10 +5,28 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Tue Mar  1 00:46:08 2016 Guillaume SAGOT
-** Last update Wed Mar  2 15:30:00 2016 Guillaume SAGOT
+** Last update Wed Mar  2 22:53:19 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
+
+void		write_cor_file(t_system *sys, int fd)
+{
+  int		i;
+  int		j;
+  int 		count;
+
+  i = 0;
+  j = 0;
+  coubnt = 0;
+  while (sys->tab[++i] != NULL)
+    {
+      c = getnbr_hexa(sys->tab[i], sys->name, 0, -1);
+      xwrite(fd, &c, 1);
+      j = 0;
+      count++;
+    }
+}
 
 int		load_addressLabel(t_label *label, char *str, int i)
 {

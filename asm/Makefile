@@ -1,11 +1,11 @@
 ##
 ## Makefile for corewar in /home/vicostudio/rendu/cpe/CorewarGIT/corewar
-## 
+##
 ## Made by victor sousa
 ## Login   <sousa_v@epitech.net>
-## 
+##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Feb 29 23:26:34 2016 victor sousa
+## Last update Sun Mar  6 15:58:10 2016 Guillaume SAGOT
 ##
 
 NAME		=	asm
@@ -27,18 +27,22 @@ SRC		=	$(SRCDIR)/main.c			\
 SRC		+=	$(INSTRUDIR)/instructions_errors.c	\
 			$(INSTRUDIR)/instructions_first.c	\
 			$(INSTRUDIR)/tab_instruction.c		\
+			$(INSTRUDIR)/register_check.c		\
+			$(INSTRUDIR)/file_validation.c		\
 
 SRC		+=	$(PRINTFDIR)/flags_one.c		\
-			$(PRINTFDIR)/flags_second.c		\
-			$(PRINTFDIR)/flags_third.c		\
-			$(PRINTFDIR)/library_display.c		\
-			$(PRINTFDIR)/library_display_two.c	\
-			$(PRINTFDIR)/library_multiusage.c	\
 			$(PRINTFDIR)/my_printf.c		\
+			$(PRINTFDIR)/flags_third.c		\
+			$(PRINTFDIR)/flags_second.c		\
+			$(PRINTFDIR)/library_display.c		\
+			$(PRINTFDIR)/library_multiusage.c	\
+			$(PRINTFDIR)/library_display_two.c	\
 
-SRC		+=	$(OPERATORDIR)/op.c		\
+SRC		+=	$(OPERATORDIR)/op.c			\
 
-SRC		+=	$(UTILSDIR)/xfunction.c			\
+SRC		+=	$(UTILSDIR)/library.c			\
+			$(UTILSDIR)/afferrno.c			\
+			$(UTILSDIR)/xfunction.c			\
 
 OBJ		=	$(SRC:.c=.o)
 
