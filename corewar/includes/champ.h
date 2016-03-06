@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Sun Mar  6 23:34:15 2016 Victor Sousa
+** Last update Sun Mar  6 23:46:28 2016 Gaëtan Léandre
 */
 
 #ifndef			CHAMP_H
@@ -23,6 +23,7 @@ typedef struct		s_proces
 typedef struct		s_champ
 {
   char			nbr_champ;
+  int			*id_champ;
   header_t		*header;
   char			**instru;
   t_proces		**proces;
