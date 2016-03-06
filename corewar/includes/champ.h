@@ -5,13 +5,13 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Sun Mar  6 22:33:07 2016 Gaëtan Léandre
+** Last update Sun Mar  6 23:28:29 2016 Victor Sousa
 */
 
-#ifndef _CHAMP_
-# define _CHAMP_
+#ifndef			CHAMP_H
+# define 		CHAMP_H
 
-# include "op.h"
+# include		"op.h"
 
 typedef struct		s_proces
 {
@@ -27,4 +27,4 @@ typedef struct		s_champ
   t_proces		**proces;
 }			t_champ;
 
-#endif
+#endif		      /*CHAMP_H*/
