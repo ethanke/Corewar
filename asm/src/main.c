@@ -5,13 +5,14 @@
 ** Login   <sagot_g@epitech.net>
 **
 ** Started on  Mon Nov  2 09:58:39 2015 guillaume sagot
-** Last update Tue Mar  1 00:45:39 2016 Guillaume SAGOT
+** Last update Sat Mar  5 19:47:06 2016 victor sousa
 */
 
 #include "printf.h"
 
 int		main(int ac, char *av[])
 {
-
+  (void)av;
+  (void)ac;
   return (0);
 }
