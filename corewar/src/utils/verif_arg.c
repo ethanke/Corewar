@@ -5,14 +5,15 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:39:21 2016 Victor Sousa
-** Last update Sun Mar  6 23:43:36 2016 Victor Sousa
+** Last update Sun Mar  6 23:58:28 2016 Victor Sousa
 */
 
 #include		"corewar.h"
 
 int			verif_arg(int ac, char **av)
 {
-  (void)ac;
+  if (ac < 3)
+    return (0);
   (void)av;
   return (1);
 }

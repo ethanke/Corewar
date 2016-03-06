@@ -5,13 +5,14 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Sun Mar  6 23:43:17 2016 victor sousa
+## Last update Mon Mar  7 00:13:06 2016 victor sousa
 ##
 
 NAME		=	corewar
 
 SRCDIR		=	src
-UTILSDIR		=	$(SRCDIR)/utils
+OUTPUTDIR	=	$(SRCDIR)/output
+UTILSDIR	=	$(SRCDIR)/utils
 
 CFLAGS		=	-I../includes
 CFLAGS		+=	-Iincludes
@@ -21,6 +22,9 @@ CC		=	gcc
 RM		=	rm -f
 
 SRC		=	$(SRCDIR)/main.c
+
+SRC		+=	$(OUTPUTDIR)/my_putchar.c	\
+			$(OUTPUTDIR)/my_putstr.c
 
 SRC		+=	$(UTILSDIR)/endian.c		\
 			$(UTILSDIR)/verif_arg.c
