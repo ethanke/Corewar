@@ -5,13 +5,14 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar  7 00:35:16 2016 victor sousa
+## Last update Mon Mar  7 01:27:33 2016 victor sousa
 ##
 
 NAME		=	corewar
 
 SRCDIR		=	src
 OUTPUTDIR	=	$(SRCDIR)/output
+LOADINGDIR	=	$(SRCDIR)/loading
 UTILSDIR	=	$(SRCDIR)/utils
 
 CFLAGS		=	-I../includes
@@ -28,8 +29,11 @@ SRC		+=	$(OUTPUTDIR)/my_putchar.c	\
 			$(OUTPUTDIR)/my_putchar_error.c	\
 			$(OUTPUTDIR)/my_putstr_error.c
 
+SRC		+=	$(LOADINGDIR)/load_champion.c
+
 SRC		+=	$(UTILSDIR)/endian.c		\
-			$(UTILSDIR)/verif_arg.c
+			$(UTILSDIR)/verif_arg.c		\
+			$(UTILSDIR)/my_strlen.c
 
 OBJ		=	$(SRC:.c=.o)
 

@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Mon Mar  7 00:10:07 2016 Gaëtan Léandre
+** Last update Mon Mar  7 00:50:43 2016 Victor Sousa
 */
 
 #ifndef			CHAMP_H
