@@ -5,15 +5,14 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:39:21 2016 Victor Sousa
-** Last update Sun Mar  6 23:58:28 2016 Victor Sousa
+** Last update Mon Mar  7 01:58:30 2016 Victor Sousa
 */
 
 #include		"corewar.h"
 
-int			verif_arg(int ac, char **av)
+void			verif_arg(int ac, char **av)
 {
-  if (ac < 3)
-    return (0);
+  if (ac < 2)
+    my_putstr_error("not enought parameter\n", 1);
   (void)av;
-  return (1);
 }

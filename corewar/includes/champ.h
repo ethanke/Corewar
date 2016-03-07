@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Mon Mar  7 02:14:13 2016 Gaëtan Léandre
+** Last update Mon Mar  7 02:17:12 2016 Victor Sousa
 */
 
 #ifndef			CHAMP_H
@@ -15,11 +15,12 @@
 
 typedef struct		s_process
 {
-  int			live;
+  char			live;
+  char			living;
   int			pos;
   int			carry;
-  struct s_proces	*next;
-  struct s_proces	*child;
+  struct s_process	*next;
+  struct s_process	*child;
 }			t_process;
 
 typedef struct		s_champ
@@ -29,7 +30,7 @@ typedef struct		s_champ
   int			*pc_pos;
   header_t		*header;
   char			**instru;
-  t_proces		**process;
+  t_process		**process;
 }			t_champ;
 
 #endif		      /*CHAMP_H*/

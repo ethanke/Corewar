@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar  7 01:37:33 2016 victor sousa
+## Last update Mon Mar  7 02:13:07 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -29,9 +29,11 @@ SRC		+=	$(OUTPUTDIR)/my_putchar.c	\
 			$(OUTPUTDIR)/my_putchar_error.c	\
 			$(OUTPUTDIR)/my_putstr_error.c
 
-SRC		+=	$(LOADINGDIR)/load_champion.c
+SRC		+=	$(LOADINGDIR)/init_champion.c	\
+			$(LOADINGDIR)/load_process.c
 
 SRC		+=	$(UTILSDIR)/endian.c		\
+			$(UTILSDIR)/params.c		\
 			$(UTILSDIR)/verif_arg.c		\
 			$(UTILSDIR)/my_strlen.c		\
 			$(UTILSDIR)/xmalloc.c
