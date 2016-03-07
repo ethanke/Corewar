@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:12:18 2016 Gaëtan Léandre
-** Last update Mon Mar  7 02:56:32 2016 Gaëtan Léandre
+** Last update Mon Mar  7 03:21:38 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -34,6 +34,7 @@ t_process	*add_child(t_process *father)
   t_process	*child;
 
   child = create_list();
+  init_child(father, child);
   if (father->child == NULL)
     father->child = child;
   else
