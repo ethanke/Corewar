@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:12:18 2016 Gaëtan Léandre
-** Last update Mon Mar  7 02:46:47 2016 Gaëtan Léandre
+** Last update Mon Mar  7 02:56:32 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -48,5 +48,14 @@ t_process	*add_child(t_process *father)
 
 void		free_process(t_process *process)
 {
-  while
+  t_process	*tmp;
+
+  while (process != NULL)
+    {
+      if (process->child != NULL)
+	free_process(process->child);
+      tmp = process;
+      process = process->next;
+      free(tmp);
+    }
 }
