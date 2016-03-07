@@ -5,22 +5,22 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Mon Mar  7 00:50:43 2016 Victor Sousa
+** Last update Mon Mar  7 02:14:13 2016 Gaëtan Léandre
 */
 
 #ifndef			CHAMP_H
 # define 		CHAMP_H
 
-# include		"op.h"
+# include		"corewar.h"
 
-typedef struct		s_proces
+typedef struct		s_process
 {
   int			live;
   int			pos;
   int			carry;
   struct s_proces	*next;
   struct s_proces	*child;
-}			t_proces;
+}			t_process;
 
 typedef struct		s_champ
 {
@@ -29,7 +29,7 @@ typedef struct		s_champ
   int			*pc_pos;
   header_t		*header;
   char			**instru;
-  t_proces		**proces;
+  t_proces		**process;
 }			t_champ;
 
 #endif		      /*CHAMP_H*/

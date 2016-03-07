@@ -5,11 +5,13 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:12:21 2016 Gaëtan Léandre
-** Last update Mon Mar  7 00:24:31 2016 Gaëtan Léandre
+** Last update Mon Mar  7 02:14:09 2016 Gaëtan Léandre
 */
 
 #ifndef			_ARENA_
 # define		_ARENA_
+
+# include "corewar.h"
 
 typedef struct		s_arena
 {
