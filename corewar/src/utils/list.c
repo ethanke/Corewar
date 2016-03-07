@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:12:18 2016 Gaëtan Léandre
-** Last update Mon Mar  7 02:41:00 2016 Gaëtan Léandre
+** Last update Mon Mar  7 02:46:47 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -44,4 +44,9 @@ t_process	*add_child(t_process *father)
       tmp->next = child;
     }
   return (child);
+}
+
+void		free_process(t_process *process)
+{
+  while
 }
