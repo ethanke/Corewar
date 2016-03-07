@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Mon Mar  7 00:45:40 2016 Guillaume SAGOT
+** Last update Sun Mar  6 20:23:02 2016 Kerdelhue Ethan
 */
 
 #ifndef _ASSEMBLY_H_
@@ -66,9 +66,9 @@ typedef struct          s_instruction
   char                  *str;
 }                       t_instruction;
 
-/*****************************************************************\
+/*****************************************************************
 **	Main	structure	for 	assembly		**
-/*****************************************************************/
+*****************************************************************/
 
 /*	appellée dans la structure t_label et t_instruction
 	dans t_system sert à facilité  la récupération ds labels,
