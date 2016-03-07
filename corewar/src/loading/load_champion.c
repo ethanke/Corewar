@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:11:01 2016 Victor Sousa
-** Last update Mon Mar  7 01:30:39 2016 Victor Sousa
+** Last update Mon Mar  7 01:52:32 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -29,11 +29,16 @@ int			count_champ(int ac, char **av)
   return (out);
 }
 
-t_champ			load_champion(int ac, char **av)
+t_champ			init_champion(int ac, char **av)
 {
   t_champ		champ;
 
   if ((champ.nbr_champ = count_champ(ac, av)) < 1)
     my_putstr_error("Not enought champion\n", 1);
+  champ.id_champ = xmalloc(sizeof(int) * (champ.nbr_champ + 1));
+  champ.pc_pos = xmalloc(sizeof(int) * (champ.nbr_champ + 1));
+  champ.header = xmalloc(sizeof(header_t) * (champ.nbr_champ + 1));
+  champ.instru = xmalloc(sizeof(char *) * (champ.nbr_champ + 1));
+  champ.proces = xmalloc(sizeof(t_proces *) * (champ.nbr_champ + 1));
   return (champ);
 }
