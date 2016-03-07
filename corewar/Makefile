@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar  7 04:12:56 2016 victor sousa
+## Last update Mon Mar  7 04:16:06 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -23,7 +23,8 @@ CFLAGS		+= 	-Wall -Wextra -Werror -pedantic -g -g3
 CC		=	gcc
 RM		=	rm -f
 
-SRC		=	$(SRCDIR)/main.c
+SRC		=	$(SRCDIR)/main.c			\
+			$(SRCDIR)/op.c
 
 SRC		+=	$(OUTPUTDIR)/my_putchar_error.c		\
 			$(OUTPUTDIR)/my_putstr_error.c
