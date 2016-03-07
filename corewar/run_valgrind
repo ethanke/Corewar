@@ -1,2 +1,2 @@
 #!/bin/bash
-valgrind ./corewar ../champion/fenix.cor ../champion/fenix.cor
+valgrind ./corewar -n 3 ../champion/fenix.cor ../champion/fenix.cor -n 1 ../champion/fenix.cor ../champion/fenix.cor

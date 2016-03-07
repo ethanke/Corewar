@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar  7 03:29:55 2016 victor sousa
+## Last update Mon Mar  7 04:12:56 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -18,7 +18,7 @@ UTILSDIR	=	$(SRCDIR)/utils
 
 CFLAGS		=	-I../includes
 CFLAGS		+=	-Iincludes
-CFLAGS		+= 	-Wall -Wextra -Werror -pedantic
+CFLAGS		+= 	-Wall -Wextra -Werror -pedantic -g -g3
 
 CC		=	gcc
 RM		=	rm -f
@@ -42,7 +42,8 @@ SRC		+=	$(PRINTFDIR)/my_printf.c 		\
 			$(PRINTFDIR)/my_putnbr_base_add.c
 
 SRC		+=	$(LOADINGDIR)/init_champion.c	\
-			$(LOADINGDIR)/load_process.c
+			$(LOADINGDIR)/load_process.c	\
+			$(LOADINGDIR)/id_stuff.c
 
 SRC		+=	$(UTILSDIR)/endian.c		\
 			$(UTILSDIR)/params.c		\

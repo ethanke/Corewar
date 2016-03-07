@@ -5,63 +5,30 @@
 ** Login   <leandr_g@epitech.net>
 **
 ** Started on  Wed Sep 30 12:45:43 2015 Gaëtan Léandre
-** Last update Mon Mar  7 03:25:27 2016 Victor Sousa
+** Last update Mon Mar  7 04:07:54 2016 Victor Sousa
 */
 
-#include "corewar.h"
+#include	"corewar.h"
 
-int	positif(int nbr, int test)
+void		my_put_nbr(int nbr)
 {
+  int		mod;
+
+  if (nbr < 0)
+    {
+      my_putchar('-');
+      nbr = nbr * (-1);
+    }
   if (nbr >= 0)
     {
-      return (1);
-    }
-  else if (nbr == -2147483648)
-    {
-      my_putchar('-');
-      my_putchar('2');
-      return (2);
-    }
-  else if (test == 1)
-    {
-      my_putchar('-');
-      return (-1);
-    }
-  return (-1);
-}
-
-void	display_numbers(int nbr)
-{
-  int	i;
-  int	number;
-  int	first;
-
-  first = 0;
-  i = 1000000000;
-  if (nbr == 0)
-    my_putchar('0');
-  while (i > 0)
-    {
-      number = nbr / i;
-      if (number != 0 || first != 0)
+      if (nbr >= 10)
 	{
-	  my_putchar(number + 48);
-	  nbr = nbr % i;
-	  first = 1;
-	}
-      i = i / 10;
+	  mod = (nbr % 10);
+          nbr = (nbr - mod) / 10;
+	  my_put_nbr(nbr);
+	  my_putchar(48 + mod);
+        }
+      else
+        my_putchar(48 + nbr % 10);
     }
-}
-
-void	my_put_nbr(int nbr)
-{
-  if (positif(nbr, 0) != 2)
-    {
-      nbr = positif(nbr, 1) * nbr;
-    }
-  else
-    {
-      nbr = 147483648;
-    }
-  display_numbers(nbr);
 }
