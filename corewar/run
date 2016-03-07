@@ -1,2 +1,2 @@
 #!/bin/bash
-./corewar ../champion/fenix.cor ../champion/fenix.cor
+./corewar -n 3 ../champion/fenix.cor ../champion/fenix.cor

@@ -1,14 +1,14 @@
 /*
 ** my_put_nbr.c for my_put_nbr in /home/leandr_g/rendu/j03codes/ex7
-** 
+**
 ** Made by Gaëtan Léandre
 ** Login   <leandr_g@epitech.net>
-** 
+**
 ** Started on  Wed Sep 30 12:45:43 2015 Gaëtan Léandre
-** Last update Thu Nov 12 14:50:51 2015 Gaëtan Léandre
+** Last update Mon Mar  7 03:25:48 2016 Victor Sousa
 */
 
-#include "my_printf.h"
+#include "corewar.h"
 
 void	my_put_unbr(unsigned int nbr)
 {

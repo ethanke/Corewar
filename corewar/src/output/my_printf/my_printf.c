@@ -1,14 +1,14 @@
 /*
 ** my_printf.c for my_printf in /home/leandr_g/rendu/Novembre_2015/PSU_2015_my_printf
-** 
+**
 ** Made by Gaëtan Léandre
 ** Login   <leandr_g@epitech.net>
-** 
+**
 ** Started on  Thu Nov 12 12:27:44 2015 Gaëtan Léandre
-** Last update Fri Nov 13 22:33:01 2015 Gaëtan Léandre
+** Last update Mon Mar  7 03:24:38 2016 Victor Sousa
 */
 
-#include "my_printf.h"
+#include "corewar.h"
 
 t_fonct	*init_struct(t_fonct *tab)
 {
@@ -89,6 +89,7 @@ int	my_printf(char *str, ...)
   t_fonct	*tab;
   int		i;
 
+  tab = NULL;
   tab = init_struct(tab);
   i = 0;
   if (str == NULL || tab == NULL)

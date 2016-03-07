@@ -1,14 +1,14 @@
 /*
 ** my_putnbr_base.c for my_putnbr_base in /home/leandr_g/rendu/Piscine_C_J06/ex_16
-** 
+**
 ** Made by Gaëtan Léandre
 ** Login   <leandr_g@epitech.net>
-** 
+**
 ** Started on  Mon Oct  5 13:31:52 2015 Gaëtan Léandre
-** Last update Fri Nov 13 11:18:19 2015 Gaëtan Léandre
+** Last update Mon Mar  7 03:26:05 2016 Victor Sousa
 */
 
-#include "my_printf.h"
+#include "corewar.h"
 
 int	my_strlen(char *base)
 {
