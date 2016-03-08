@@ -5,10 +5,10 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:24:21 2016 Guillaume SAGOT
-** Last update Thu Jan 28 18:52:55 2016 Guillaume SAGOT
+** Last update Tue Mar  8 19:17:39 2016 Guillaume SAGOT
 */
 
-#include "corewar.h"
+#include "assembly.h"
 
 void		live_instruction(t_system *sys)
 {
