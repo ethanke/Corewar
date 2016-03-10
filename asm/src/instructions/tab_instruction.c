@@ -5,12 +5,12 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Tue Feb  2 11:26:01 2016 Guillaume SAGOT
-** Last update Tue Mar  8 19:15:58 2016 Guillaume SAGOT
+** Last update Thu Mar 10 22:45:46 2016 Guillaume SAGOT
 */
 
 #include "assembly.h"
 
-void			initError(void*(checkError[16]))
+void			initError((void*)(checkError[16]))
 {
   checkError[0] = &live_checkError;
   checkError[1] = &load_checkError;

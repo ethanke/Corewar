@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Tue Mar  8 19:04:55 2016 Guillaume SAGOT
+## Last update Wed Mar  9 16:34:33 2016 Guillaume SAGOT
 ##
 
 NAME  		= 	asm
@@ -23,7 +23,7 @@ UTILSDIR 	= 	$(SRCDIR)/utils
 CFLAGS  	= 	-I../includes/includes_asm/
 CFLAGS  	+=  	-Wall -Wextra -Werror -pedantic
 
-CC  		= 	gcc
+CC  		= 	clang
 RM  		= 	rm -f
 
  SRC  		= 	$(SRCDIR)/main.c   					\
