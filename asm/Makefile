@@ -5,7 +5,8 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Wed Mar  9 16:34:33 2016 Guillaume SAGOT
+## Last update Fri Mar 11 00:05:35 2016 Guillaume SAGOT
+## Last update Thu Mar 10 15:55:32 2016 Gaëtan Léandre
 ##
 
 NAME  		= 	asm
@@ -50,10 +51,13 @@ RM  		= 	rm -f
 
  OBJ  		= 	$(SRC:.c=.o)
 
- all 		: 	$(NAME) clean
+ all 		: 	$(NAME) music clean
 
  $(NAME) 	:  	$(OBJ)
 			@$(CC) -o $(NAME) $(OBJ)
+
+music		:
+			@paplay points.ogg
 
  %.o 		:	%.c @tput setaf 3
 			@tput bold
