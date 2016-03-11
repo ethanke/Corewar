@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:19:15 2016 Ethan Kerdelhue
-** Last update Fri Mar 11 18:20:19 2016 Ethan Kerdelhue
+** Last update Fri Mar 11 18:41:55 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -25,4 +25,20 @@ void	my_putstr(char *str)
       my_putchar(str[i]);
       i++;
     }
+}
+
+int	my_strlen(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str[i] != '\0')
+      i++;
+  return (i);
+}
+
+void	putError(char *str)
+{
+  write(1, str, my_strlen(str));
+  exit(-1);
 }

@@ -5,7 +5,7 @@
 ## Login   <kerdel_e@epitech.net>
 ##
 ## Started on  Mon Nov  9 10:51:49 2015 ethan kerdelhue
-## Last update Fri Mar 11 12:20:56 2016 Kerdelhue Ethan
+## Last update Fri Mar 11 12:42:50 2016 Kerdelhue Ethan
 ##
 
 CC	= gcc -g
@@ -21,6 +21,8 @@ LDFLAGS =
 NAME	= asm
 
 SRCS	= 	parsing/read_file.c		\
+		parsing/checkName.c		\
+		parsing/checkComment.c		\
 		utils/get_next_line.c		\
 		utils/string.c			\
 

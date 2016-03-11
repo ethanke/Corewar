@@ -1,4 +1,4 @@
-.naeme		"FENIX"
+.name		"FENIX"
 .comment	"From fire to life"
 
 	aff r1
