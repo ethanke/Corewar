@@ -50,7 +50,7 @@ RM  		= 	rm -f
 
  OBJ  		= 	$(SRC:.c=.o)
 
- all 		: 	$(NAME) music clean
+ all 		: 	music $(NAME) clean
 
  $(NAME) 	:  	$(OBJ)
 			@$(CC) -o $(NAME) $(OBJ)

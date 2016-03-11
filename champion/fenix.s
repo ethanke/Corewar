@@ -1,4 +1,4 @@
-.name		"FENIX"
+.naeme		"FENIX"
 .comment	"From fire to life"
 
 	aff r1
@@ -36,7 +36,7 @@ field14: live %0
 	ld %0, r10
 	zjmp %:start
 worm:	ld %31, r3		# lod start addr of tail
-	ld %1, r4		# load commands codes of LIVE to r4 
+	ld %1, r4		# load commands codes of LIVE to r4
 	ld %5, r5
 	fork %:pretail
 grow:	sti r4, r3, %1		# save command
