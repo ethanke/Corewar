@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 03:31:21 2016 Gaëtan Léandre
-** Last update Mon Mar  7 03:34:47 2016 Gaëtan Léandre
+** Last update Fri Mar 11 02:30:23 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -16,4 +16,11 @@ int		mod(int nbr, int modulo)
   if (nbr < 0)
     nbr = modulo + nbr;
   return (nbr);
+}
+
+int		circle(int pos, int incr)
+{
+  pos = pos + incr;
+  pos = mod(pos, MEM_SIZE);
+  return (pos);
 }

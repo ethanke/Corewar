@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Tue Mar  8 19:19:28 2016 Guillaume SAGOT
+** Last update Thu Mar 10 22:55:58 2016 Guillaume SAGOT
 */
 
 #ifndef _ASSEMBLY_H_
@@ -42,31 +42,42 @@ typedef struct          s_instruction
   int                   i;
   int			fd;
   int                   cmptr;
-  int                   *ins;
+  char                  *ins;
   char			c;
+  int			base;
   char                  control;
-  char                  *instruction_check;
   char                  *str;
+  int			*instruction;
+  char			*instruction_check;
 }                       t_instruction;
 
 typedef struct		s_system
 {
+  int			i;
+  struct s_system       *sys;
   char			**tab;
   char			*name;
   char			*file_name;
   char			*ret;
   char			*str;
   int			col;
-  int			i;
   t_label		label[128];
-  t_instruction		*instruction;
+  t_instruction         instruction;
+  t_instruction		*instruction_check;
 }			t_system;
+
+/* function pointer for errors */
+void		*(t_system*)(int*);
 
 /* utils functions */
 void		putError(char *str);
 void		printError(t_system *sys, char *str);
 int     	mstrcmp(char *s1, char *s2);
 char		*mstrrchr(const char *s, int c);
+
+/* x_ functions		*/
+void            *xmalloc(int size);
+ssize_t         xwrite(int fd, const void *buf, size_t count);
 
 /* functions for instructions */
 void		live_instruction(t_system *sys);

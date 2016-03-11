@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar  7 04:16:06 2016 victor sousa
+## Last update Fri Mar 11 06:21:09 2016 Gaëtan Léandre
 ##
 
 NAME		=	corewar
@@ -51,7 +51,8 @@ SRC		+=	$(UTILSDIR)/endian.c		\
 			$(UTILSDIR)/verif_arg.c		\
 			$(UTILSDIR)/my_getnbr.c		\
 			$(UTILSDIR)/list.c		\
-			$(UTILSDIR)/xmalloc.c
+			$(UTILSDIR)/xmalloc.c		\
+			$(UTILSDIR)/calculs.c
 
 OBJ		=	$(SRC:.c=.o)
 
