@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:42:55 2016 Ethan Kerdelhue
-** Last update Fri Mar 11 18:50:50 2016 Ethan Kerdelhue
+** Last update Fri Mar 11 19:29:24 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -41,7 +41,6 @@ void	checkAdvC(int pos_1, int pos_2, char *str)
          my_putstr("[HEADER] Error line 2 : Unknown characters ");
          my_putstr("--> ");
          my_putchar(str[i]);
-         putError(", Compile failed\0");
        }
      i++;
    }

@@ -5,14 +5,14 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Fri Mar 11 00:03:39 2016 Ethan Kerdelhue
+** Last update Fri Mar 11 19:53:44 2016 Ethan Kerdelhue
 */
 
 #ifndef _ASSEMBLY_H_
 # define _ASSEMBLY_H_
 # define _GNU_SOURCE
 
-/* Header declaration 						*/
+
 # include               <sys/types.h>
 # include               <sys/stat.h>
 # include               <dirent.h>
