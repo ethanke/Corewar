@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Fri Mar 11 05:28:14 2016 Gaëtan Léandre
+** Last update Fri Mar 11 05:37:19 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -41,9 +41,7 @@ unsigned char	*put_param(unsigned char *arena, int pos, int bit, int nbr)
 }
 
 int		*take_ind(unsigned char *arena, int pos, int modu)
-{    nbr = take_param(arena->arena,
-		     circle(mod(take_param(arena->arena, process->pos + 1,
-					   IND_SIZE), IDX_MOD), 0), DIR_SIZE);
+{
   int		nbr;
 
   if (modu == 1)
