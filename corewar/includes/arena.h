@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:12:21 2016 Gaëtan Léandre
-** Last update Sun Mar 13 13:41:04 2016 Gaëtan Léandre
+** Last update Sun Mar 13 14:06:01 2016 Gaëtan Léandre
 */
 
 #ifndef			_ARENA_
@@ -15,9 +15,8 @@
 
 typedef struct		s_arena
 {
+  t_champ		*champ;
   unsigned char		*arena;
-  int			*live;
-  int			*id_champ;
   float			cycle_to_die;
   int			total_cycle;
   int			total_live;
