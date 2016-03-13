@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:10:33 2016 Victor Sousa
-** Last update Sun Mar 13 14:06:23 2016 Victor Sousa
+** Last update Sun Mar 13 14:46:03 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -17,9 +17,10 @@ void			print_champ(t_champ *champ)
   i = -1;
 
   while (++i < champ->nbr_champ)
-    my_printf("champ %d\n\tid:%d\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d\n\tinstruction:%s\n\n",
+    my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d\n\tinstruction:%s\n\n",
 	      i + 1,
               champ->id_champ[i],
+	      champ->header[i].magic,
 	      champ->header[i].prog_name,
 	      champ->header[i].comment,
 	      champ->header[i].prog_size,
@@ -46,7 +47,7 @@ void			load_process(t_champ *champ, int ac, char **av)
 	  champ->id_champ[j] = get_id(&read_id_needed, i, av);
 	  champ->header[j] = get_header(fd);
 	  champ->pc_pos[j] = MEM_SIZE / champ->nbr_champ * (j + 1);
-	  /*champ->instru[j] = get_instruct(fd, champ->header[j].prog_size);*/
+	  champ->instru[j] = get_instruct(fd, champ->header[j].prog_size);
 	  j++;
 	}
     }
