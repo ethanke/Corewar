@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Fri Mar 11 05:35:28 2016 Gaëtan Léandre
-** Last update Sun Mar 13 12:37:42 2016 Gaëtan Léandre
+** Last update Sun Mar 13 12:52:51 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -27,7 +27,7 @@ int		my_ldi(t_arena *arena, t_process *process, int id, int pc_pos)
   s += take_what(arena->arena, process->pos + reg + 1, 1, pc_pos);
   regB = octet_to_read(arena->arena[process->pos + reg + 1]);
   ind = take_param(arena->arena, process->pos + reg + regB + 3, REG_SIZE);
-  s = take_param(arena->arena, circle(mod(s, IDX_MOD), 0), DIR_SIZE);
+  s = take_param(arena->arena, circle(pc_pos, mod(s, IDX_MOD)), DIR_SIZE);
   arena->arena = put_param(arena->arena, pc_pos + 1 + (ind - 1) * REG_SIZE, REG_SIZE, s);
   process->pos = circle(process->pos, 3 + reg + regB + REG_SIZE);
   return (0);
@@ -50,7 +50,7 @@ int		my_lldi(t_arena *arena, t_process *process, int id, int pc_pos)
   s += take_what(arena->arena, process->pos + reg + 1, 0, pc_pos);
   regB = octet_to_read(arena->arena[process->pos + reg + 1]);
   ind = take_param(arena, process->pos + reg + regB + 3, REG_SIZE);
-  s = take_param(arena->arena, circle(s, 0), DIR_SIZE);
+  s = take_param(arena->arena, circle(pc_pos, s), DIR_SIZE);
   arena->arena = put_param(arena->arena, pc_pos + 1 + (ind - 1) * REG_SIZE, REG_SIZE, s);
   process->pos = circle(process->pos, 3 + reg + regB + REG_SIZE);
   return (0);

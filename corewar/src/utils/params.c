@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Sun Mar 13 11:50:04 2016 Gaëtan Léandre
+** Last update Sun Mar 13 13:08:21 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -40,14 +40,14 @@ unsigned char	*put_param(unsigned char *arena, int pos, int bit, int nbr)
   return (arena);
 }
 
-int		take_ind(unsigned char *arena, int pos, int modu)
+int		take_ind(unsigned char *arena, int pos, int modu, int pc)
 {
   int		nbr;
 
   if (modu == 1)
-    nbr = take_param(arena, circle(mod(take_param(arena, pos, IND_SIZE), IDX_MOD), 0), DIR_SIZE);
+    nbr = take_param(arena, circle(pc, mod(take_param(arena, pos, IND_SIZE), IDX_MOD)), DIR_SIZE);
   else
-    nbr = take_param(arena, circle(take_param(arena, pos, IND_SIZE), 0), DIR_SIZE);
+    nbr = take_param(arena, circle(pc, take_param(arena, pos, IND_SIZE)), DIR_SIZE);
   return (nbr);
 }
 
@@ -70,6 +70,6 @@ int		take_what(unsigned char *arena, int pos, int modu, int pc)
   else if (arena[pos] == T_DIR)
     return (take_param(arena, pos + 1, DIR_SIZE));
   else if (arena[pos] == T_IND)
-    return (take_ind(arena, pos + 1, modu));
+    return (take_ind(arena, pos + 1, modu, pc));
   return (0);
 }
