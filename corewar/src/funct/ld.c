@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Fri Mar 11 00:34:17 2016 Gaëtan Léandre
-** Last update Sun Mar 13 10:46:09 2016 Gaëtan Léandre
+** Last update Sun Mar 13 12:14:34 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -27,7 +27,7 @@ int		my_ld(t_arena *arena, t_process *process, int id, int pc_pos)
   if ((size = check_reg(take_param(arena->arena, process->pos + reg + 2,
 				   REG_SIZE))) == -1)
     return (0);
-  put_param(arena->arena, pc_pos + 1 + (size - 1) * REG_SIZE, REG_SIZE, nbr);
+  arena->arena = put_param(arena->arena, pc_pos + 1 + (size - 1) * REG_SIZE, REG_SIZE, nbr);
   process->pos = circle(process->pos, 2 + reg + REG_SIZE);
   return (0);
 }
@@ -49,7 +49,7 @@ int		my_lld(t_arena *arena, t_process *process, int id, int pc_pos)
   if ((size = check_reg(take_param(arena->arena, process->pos + reg + 2,
 				   REG_SIZE))) == -1)
     return (0);
-  put_param(arena->arena, pc_pos + 1 + (size - 1) * REG_SIZE, REG_SIZE, nbr);
+  arena->arena = put_param(arena->arena, pc_pos + 1 + (size - 1) * REG_SIZE, REG_SIZE, nbr);
   process->pos = circle(process->pos, 2 + reg + REG_SIZE);
   return (0);
 }
