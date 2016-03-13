@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 03:07:53 2016 Gaëtan Léandre
-** Last update Fri Mar 11 00:30:41 2016 Gaëtan Léandre
+** Last update Sun Mar 13 09:49:59 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -16,7 +16,7 @@ int		my_fork(t_arena *arena, t_process *process, int id, int pc_pos)
   t_process	*tmp;
 
   process->pos = circle(process->pos, 1);
-  if (check_arg(11, 0, arena->arena[process->pos]) == -1)
+  if (check_mult_args(arena->arena, 11, process->pos, 1) == -1)
     return (0);
   process->cycle += op_tab[11].nbr_cycles;
   tmp = add_child(process);
@@ -31,7 +31,7 @@ int		my_lfork(t_arena *arena, t_process *process, int id, int pc_pos)
   t_process	*tmp;
 
   process->pos = circle(process->pos, 1);
-  if (check_arg(14, 0, arena->arena[process->pos]) == -1)
+  if (check_mult_args(arena->arena, 14, process->pos, 1) == -1)
     return (0);
   process->carry = (process->carry == 1) ? 0 : 1;
   process->cycle += op_tab[14].nbr_cycles;

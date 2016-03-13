@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Fri Mar 11 00:11:32 2016 Gaëtan Léandre
-** Last update Fri Mar 11 02:30:25 2016 Gaëtan Léandre
+** Last update Sun Mar 13 11:55:33 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -32,11 +32,31 @@ int		octet_to_read(char arg)
     return (4);
   else if (arg == T_IND)
     return (2);
+  return (-1);
 }
 
 int		check_reg(int reg)
 {
   if (reg < 1 || reg > REG_NUMBER)
-    return (-1).
+    return (-1);
   return (reg);
+}
+
+int		check_mult_args(unsigned char *arena, int fun, int pos, int siz)
+{
+  if (siz > 0 && (check_arg(fun, 0, arena[pos]) == -1
+		  || (arena[pos] == T_REG &&
+		      check_reg(take_param(arena, pos + 1, REG_SIZE)) == -1)))
+    return (-1);
+  pos = circle(pos, octet_to_read(arena[pos]) + 1);
+  if (siz > 1 && (check_arg(fun, 1, arena[pos]) == -1
+		  || (arena[pos] == T_REG &&
+		      check_reg(take_param(arena, pos + 1, REG_SIZE)) == -1)))
+    return (-1);
+  pos = circle(pos, octet_to_read(arena[pos]) + 1);
+  if (siz > 2 && (check_arg(fun, 2, arena[pos]) == -1
+		  || (arena[pos] == T_REG &&
+		      check_reg(take_param(arena, pos + 1, REG_SIZE)) == -1)))
+    return (-1);
+  return (0);
 }

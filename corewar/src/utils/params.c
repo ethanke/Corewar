@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Fri Mar 11 05:45:07 2016 Gaëtan Léandre
+** Last update Sun Mar 13 11:50:04 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -45,10 +45,31 @@ int		take_ind(unsigned char *arena, int pos, int modu)
   int		nbr;
 
   if (modu == 1)
-    nbr = take_param(arena, circle(mod(take_param(arena, pos, IND_SIZE),
-				       IDX_MOD), 0), DIR_SIZE);
+    nbr = take_param(arena, circle(mod(take_param(arena, pos, IND_SIZE), IDX_MOD), 0), DIR_SIZE);
   else
-    nbr = take_param(arena, circle(take_param(arena, pos, IND_SIZE), 0),
-		     DIR_SIZE);
-   return (nbr);
+    nbr = take_param(arena, circle(take_param(arena, pos, IND_SIZE), 0), DIR_SIZE);
+  return (nbr);
+}
+
+int		take_reg(unsigned char *arena, int pos, int pc)
+{
+  int		nbr;
+  int		tmp;
+
+  tmp = take_param(arena, pos, REG_SIZE);
+  if (check_reg(tmp) == -1)
+    return (-1);
+  nbr = take_param(arena, pc + 1 + (tmp - 1) * REG_SIZE, REG_SIZE);
+  return (nbr);
+}
+
+int		take_what(unsigned char *arena, int pos, int modu, int pc)
+{
+  if (arena[pos] == T_REG)
+    return (take_reg(arena, pos + 1, pc));
+  else if (arena[pos] == T_DIR)
+    return (take_param(arena, pos + 1, DIR_SIZE));
+  else if (arena[pos] == T_IND)
+    return (take_ind(arena, pos + 1, modu));
+  return (0);
 }

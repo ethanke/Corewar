@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:25:56 2016 victor sousa
-** Last update Mon Mar  7 03:26:29 2016 Victor Sousa
+** Last update Sun Mar 13 11:48:19 2016 Gaëtan Léandre
 */
 
 #ifndef			COREWAR_H_
@@ -21,5 +21,6 @@
 # include		"output.h"
 # include		"my_printf.h"
 # include		"loading.h"
+# include		"funct.h"
 
 #endif		      /*COREWAR_H*/

@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Fri Mar 11 06:21:09 2016 Gaëtan Léandre
+## Last update Sun Mar 13 11:52:27 2016 Gaëtan Léandre
 ##
 
 NAME		=	corewar
@@ -15,6 +15,7 @@ OUTPUTDIR	=	$(SRCDIR)/output
 PRINTFDIR	=	$(OUTPUTDIR)/my_printf
 LOADINGDIR	=	$(SRCDIR)/loading
 UTILSDIR	=	$(SRCDIR)/utils
+FUNCTDIR	=	$(SRCDIR)/funct
 
 CFLAGS		=	-I../includes
 CFLAGS		+=	-Iincludes
@@ -53,6 +54,8 @@ SRC		+=	$(UTILSDIR)/endian.c		\
 			$(UTILSDIR)/list.c		\
 			$(UTILSDIR)/xmalloc.c		\
 			$(UTILSDIR)/calculs.c
+
+SRC		+=	$(FUNCTDIR)/check.c
 
 OBJ		=	$(SRC:.c=.o)
 
