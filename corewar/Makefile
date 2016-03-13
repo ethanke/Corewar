@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Sun Mar 13 11:52:27 2016 Gaëtan Léandre
+## Last update Sun Mar 13 13:06:08 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -45,7 +45,9 @@ SRC		+=	$(PRINTFDIR)/my_printf.c 		\
 
 SRC		+=	$(LOADINGDIR)/init_champion.c	\
 			$(LOADINGDIR)/load_process.c	\
-			$(LOADINGDIR)/id_stuff.c
+			$(LOADINGDIR)/id_stuff.c	\
+			$(LOADINGDIR)/get_header.c	\
+			$(LOADINGDIR)/get_instruct.c
 
 SRC		+=	$(UTILSDIR)/endian.c		\
 			$(UTILSDIR)/params.c		\

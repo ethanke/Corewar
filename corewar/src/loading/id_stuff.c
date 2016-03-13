@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 04:11:03 2016 Victor Sousa
-** Last update Mon Mar  7 04:11:29 2016 Victor Sousa
+** Last update Sun Mar 13 12:10:48 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -58,6 +58,5 @@ void			check_id(t_champ *champ)
 	  while (is_id_taken(champ->id_champ, ++id));
 	  champ->id_champ[i] = id;
 	}
-      my_printf("id : %d\n", champ->id_champ[i]);
     }
 }

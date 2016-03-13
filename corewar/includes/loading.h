@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:18:37 2016 Victor Sousa
-** Last update Mon Mar  7 04:12:27 2016 Victor Sousa
+** Last update Sun Mar 13 13:40:01 2016 Victor Sousa
 */
 
 #ifndef			LOADING_H_
@@ -14,6 +14,10 @@
 t_champ			init_champion(int ac, char **av);
 int			is_a_champ_path(char *str);
 void			load_process(t_champ *champ, int ac, char **av);
+
+/* READ STUFF */
+header_t		get_header(int fd);
+char			*get_instruct(int fd, int size);
 
 /* ID STUFF */
 int			is_a_id_request(char *str);
