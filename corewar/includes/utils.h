@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Sun Mar 13 11:54:45 2016 Gaëtan Léandre
+** Last update Sun Mar 13 14:01:31 2016 Gaëtan Léandre
 */
 
 #ifndef			UTILS_H_
@@ -19,7 +19,8 @@ int			mod(int nbr, int modulo);
 int			take_param(unsigned char *arena, int pos, int bit);
 unsigned char		*put_param(unsigned char *arena, int pos,
 				   int bit, int nbr);
-int			take_ind(unsigned char *arena, int pos, int modu);
+int			take_ind(unsigned char *arena, int pos,
+				 int modu, int pc);
 int			take_reg(unsigned char *arena, int pos, int pc);
 int			take_what(unsigned char *arena, int pos,
 				  int modu, int pc);
