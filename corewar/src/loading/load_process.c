@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:10:33 2016 Victor Sousa
-** Last update Sun Mar 13 14:46:03 2016 Victor Sousa
+** Last update Sun Mar 13 15:38:44 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -46,6 +46,8 @@ void			load_process(t_champ *champ, int ac, char **av)
 	    my_putstr_error("couldn't open one of the requested champion\n", 1);
 	  champ->id_champ[j] = get_id(&read_id_needed, i, av);
 	  champ->header[j] = get_header(fd);
+	  if (champ->header[j].prog_size > MEM_SIZE / 4)
+	    my_putstr_error("Error, size of the program is too big\n", 1);
 	  champ->pc_pos[j] = MEM_SIZE / champ->nbr_champ * (j + 1);
 	  champ->instru[j] = get_instruct(fd, champ->header[j].prog_size);
 	  j++;
