@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:10:33 2016 Victor Sousa
-** Last update Mon Mar 14 16:16:55 2016 Victor Sousa
+** Last update Mon Mar 14 17:19:30 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -18,7 +18,7 @@ void			print_champ(t_champ *champ)
 
   while (++i < champ->nbr_champ)
     {
-      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d\n\tinstruction: ",
+      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d",
 		i + 1,
 		champ->id_champ[i],
 		champ->header[i].magic,
@@ -51,7 +51,7 @@ void			load_process(t_champ *champ, int ac, char **av)
 	  champ->header[j] = get_header(fd);
 	  if (champ->header[j].prog_size > MEM_SIZE / 4)
 	    my_putstr_error("Error, size of the program is too big\n", 1);
-	  champ->pc_pos[j] = MEM_SIZE / champ->nbr_champ * (j + 1);
+	  champ->pc_pos[j] = MEM_SIZE / champ->nbr_champ * j;
 	  champ->instru[j] = get_instruct(fd, champ->header[j].prog_size);
 	  j++;
 	}

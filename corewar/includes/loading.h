@@ -5,13 +5,14 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:18:37 2016 Victor Sousa
-** Last update Mon Mar 14 15:27:10 2016 Victor Sousa
+** Last update Mon Mar 14 17:00:21 2016 Victor Sousa
 */
 
 #ifndef			LOADING_H_
 # define		LOADING_H_
 
 t_champ			init_champion(int ac, char **av);
+t_arena			init_arena(t_champ *champ);
 int			is_a_champ_path(char *str);
 void			load_process(t_champ *champ, int ac, char **av);
 

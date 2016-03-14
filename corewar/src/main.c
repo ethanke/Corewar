@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:21:44 2016 victor sousa
-** Last update Sun Mar 13 15:40:14 2016 Victor Sousa
+** Last update Mon Mar 14 17:10:31 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -20,10 +20,10 @@ int		main(int ac, char **av, char **env)
   verif_arg(ac, av);
 
   champion = init_champion(ac, av);
-
-  arena.champ = &champion;
+  arena = init_arena(&champion);
   my_putstr("program running\n");
-  
-  (void)arena;
+
+  my_printf("map looks like :\n");
+  print_arena_proprio(&arena);
   return (0);
 }

@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar 14 14:42:29 2016 victor sousa
+## Last update Mon Mar 14 17:24:26 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -28,7 +28,8 @@ SRC		=	$(SRCDIR)/main.c			\
 			$(SRCDIR)/op.c
 
 SRC		+=	$(OUTPUTDIR)/my_putchar_error.c		\
-			$(OUTPUTDIR)/my_putstr_error.c
+			$(OUTPUTDIR)/my_putstr_error.c		\
+			$(OUTPUTDIR)/print_arena.c
 
 SRC		+=	$(PRINTFDIR)/my_printf.c 		\
 			$(PRINTFDIR)/my_printf1.c 		\
@@ -44,6 +45,7 @@ SRC		+=	$(PRINTFDIR)/my_printf.c 		\
 			$(PRINTFDIR)/my_putnbr_base_add.c
 
 SRC		+=	$(LOADINGDIR)/init_champion.c	\
+			$(LOADINGDIR)/init_arena.c	\
 			$(LOADINGDIR)/load_process.c	\
 			$(LOADINGDIR)/id_stuff.c	\
 			$(LOADINGDIR)/get_header.c	\
@@ -55,7 +57,8 @@ SRC		+=	$(UTILSDIR)/endian.c		\
 			$(UTILSDIR)/my_getnbr.c		\
 			$(UTILSDIR)/list.c		\
 			$(UTILSDIR)/xmalloc.c		\
-			$(UTILSDIR)/calculs.c
+			$(UTILSDIR)/calculs.c		\
+			$(UTILSDIR)/my_memset.c
 
 SRC		+=	$(FUNCTDIR)/check.c
 

@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar 13 13:03:48 2016 Victor Sousa
-** Last update Mon Mar 14 15:59:51 2016 Victor Sousa
+** Last update Mon Mar 14 16:20:48 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -16,7 +16,7 @@ void			print_instruct(unsigned char *instru, int size)
 
   i = -1;
   while (++i < size)
-    my_printf("%d ", instru[i]);
+    my_printf("0x%x, 0x%b\n", instru[i], instru[i]);
 }
 
 unsigned char			*get_instruct(int fd, int size)

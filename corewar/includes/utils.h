@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Sun Mar 13 14:01:31 2016 Gaëtan Léandre
+** Last update Mon Mar 14 17:25:54 2016 Victor Sousa
 */
 
 #ifndef			UTILS_H_
@@ -25,5 +25,6 @@ int			take_reg(unsigned char *arena, int pos, int pc);
 int			take_what(unsigned char *arena, int pos,
 				  int modu, int pc);
 int			circle(int pos, int incr);
+void			my_memset(void *ptr, int size, char c);
 
 #endif		      /*UTILS_H*/
