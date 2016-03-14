@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar 14 18:36:54 2016 victor sousa
+## Last update Mon Mar 14 19:17:11 2016 Gaëtan Léandre
 ##
 
 NAME		=	corewar
@@ -58,7 +58,8 @@ SRC		+=	$(UTILSDIR)/params.c		\
 			$(UTILSDIR)/list.c		\
 			$(UTILSDIR)/xmalloc.c		\
 			$(UTILSDIR)/calculs.c		\
-			$(UTILSDIR)/my_memset.c
+			$(UTILSDIR)/my_memset.c		\
+			$(UTILSDIR)/oct_verif.c
 
 SRC		+=	$(FUNCTDIR)/check.c
 

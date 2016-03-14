@@ -5,21 +5,21 @@
 ## Login   <sagot_g@epitech.eu>
 ##
 ## Started on  Mon Feb 22 17:23:09 2016 Guillaume SAGOT
-## Last update Mon Mar 14 14:25:16 2016 victor sousa
+## Last update Mon Mar 14 16:50:46 2016 
 ##
 
 all:
-		make -C asm/
-		make -C corewar/
+		make -s -C asm/
+		make -s -C corewar/
 
 clean:
-		make clean -C asm/
-		make clean -C corewar/
+		make clean -s -C asm/
+		make clean -s -C corewar/
 
 
 fclean:
-		make fclean -C asm/
-		make fclean -C corewar/
+		make fclean -s -C asm/
+		make fclean -s -C corewar/
 
 re:		fclean	all
 
