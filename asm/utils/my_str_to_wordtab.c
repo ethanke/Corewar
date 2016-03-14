@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Tue Mar  8 12:44:52 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 07:19:16 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 07:28:49 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -48,12 +48,13 @@ int	my_count_word(char *s)
   while (s[i])
     {
       if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')
-	  || (s[i] >= '0' && s[i] <= '9'))
+	  || (s[i] >= '0' && s[i] <= '9') || (s[i] == LABEL_CHAR))
 	{
 	  cpt = cpt + 1;
 	  while (s[i] && ((s[i] >= 'a' && s[i] <= 'z')
 			  || (s[i] >= 'A' && s[i] <= 'Z')
-			  || (s[i] >= '0' && s[i] <= '9')))
+			  || (s[i] >= '0' && s[i] <= '9')
+			  || (s[i] == LABEL_CHAR)))
 	    i = i + 1;
 	}
       i = i + 1;
@@ -68,7 +69,8 @@ int	my_count_char(char *s, int *i)
   cpt = 0;
   while (s[*i] && ((s[*i] >= 'a' && s[*i] <= 'z')
 		  || (s[*i] >= 'A' && s[*i] <= 'Z')
-		  || (s[*i] >= '0' && s[*i] <= '9')))
+		  || (s[*i] >= '0' && s[*i] <= '9')
+		  || (s[*i] == LABEL_CHAR)))
     {
       cpt = cpt + 1;
       *i = *i + 1;
@@ -90,7 +92,7 @@ char	**my_str_to_wordtab(char *str)
   while (str[i] && word > 0)
     {
       if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')
-	  || (str[i] >= '0' && str[i] <= '9'))
+	  || (str[i] >= '0' && str[i] <= '9') || (str[i] == LABEL_CHAR))
 	{
 	  tab[n] = my_strdup(str + i);
 	  tab[n][my_count_char(str, &i)] = '\0';
