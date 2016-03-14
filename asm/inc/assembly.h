@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Sat Mar 12 13:00:43 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 16:06:42 2016 Guillaume SAGOT
 */
 
 #ifndef _ASSEMBLY_H_
@@ -65,8 +65,9 @@ typedef struct		s_system
   t_instruction		*instruction;
 }			t_system;
 
-int     	mstrcmp(char *s1, char *s2);
-char		*mstrrchr(const char *s, int c);
+int     	my_strcmp(char *s1, char *s2);
+int     	my_strncmp(char *s1, char *s2, int n);
+void		msgError(char *str);
 
 /* functions for instructions */
 void		live_instruction(t_system *sys);

@@ -5,7 +5,7 @@
 ** Login   <sagot_g@epitech.eu>
 **
 ** Started on  Thu Jan 28 14:25:39 2016 Guillaume SAGOT
-** Last update Thu Mar 10 22:55:58 2016 Guillaume SAGOT
+** Last update Mon Mar 14 16:04:21 2016 Guillaume SAGOT
 */
 
 #ifndef _ASSEMBLY_H_
@@ -67,10 +67,11 @@ typedef struct		s_system
 }			t_system;
 
 /* function pointer for errors */
-void		*(t_system*)(int*);
 
 /* utils functions */
-void		putError(char *str);
+int		my_strcmp(char *s1, char *s2);
+int     	my_strncmp(char *s1, char *s2, int n);
+void		msgError(char *str);
 void		printError(t_system *sys, char *str);
 int     	mstrcmp(char *s1, char *s2);
 char		*mstrrchr(const char *s, int c);
