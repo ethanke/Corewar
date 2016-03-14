@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar 14 18:28:58 2016 victor sousa
+## Last update Mon Mar 14 18:36:54 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -25,6 +25,7 @@ CC		=	gcc
 RM		=	rm -f
 
 SRC		=	$(SRCDIR)/main.c			\
+			$(SRCDIR)/end.c				\
 			$(SRCDIR)/op.c
 
 SRC		+=	$(OUTPUTDIR)/my_putchar_error.c		\

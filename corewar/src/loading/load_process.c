@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:10:33 2016 Victor Sousa
-** Last update Mon Mar 14 17:19:30 2016 Victor Sousa
+** Last update Mon Mar 14 18:44:24 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -53,6 +53,7 @@ void			load_process(t_champ *champ, int ac, char **av)
 	    my_putstr_error("Error, size of the program is too big\n", 1);
 	  champ->pc_pos[j] = MEM_SIZE / champ->nbr_champ * j;
 	  champ->instru[j] = get_instruct(fd, champ->header[j].prog_size);
+	  close(fd);
 	  j++;
 	}
     }
