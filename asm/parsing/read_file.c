@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:56:39 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 05:25:13 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 06:04:42 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -54,12 +54,9 @@ int	read_file(char	*file)
   while ((tab[++i] = (char *) get_next_line(fd)) != NULL);
   corfile = malloc(sizeof(t_cor));
   corfile->name = getCorName(file);
+  corfile->tab = tab;
   parse_header(tab, corfile);
-  i = -1;
-  while (tab[++i])
-    free(tab[i]);
-  free(tab);
-  close(fd);
+  parse_instr(corfile);
   return (0);
 }
 

@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.net>
 **
 ** Started on  Sun Mar  6 20:19:55 2016 Kerdelhue Ethan
-** Last update Mon Mar 14 05:24:41 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 07:08:49 2016 Ethan Kerdelhue
 */
 
 #ifndef ASM_H_
@@ -24,6 +24,9 @@
 #define NAME_CMD_STRING         ".name"
 #define COMMENT_CMD_STRING      ".comment"
 #define REG_NUMBER      	16
+/*
+**	COREWAR ARG'S
+*/
 #define T_REG         		 1
 #define T_DIR           	2
 #define T_IND           	4
@@ -42,10 +45,29 @@ typedef char    args_type_t;
 typedef struct op_s     op_t;
 typedef struct header_s t_header;
 
+typedef struct s_corarg
+{
+  int			value;
+  int			type;
+}			t_corarg;
+
+typedef struct s_corline
+{
+  char			*label;
+  char			*instruction;
+  char			**args;
+  int			nbr;
+  int			mempos;
+  t_corarg		*tab_args;
+  struct s_corline	*next;
+}			t_corline;
+
 typedef struct s_cor
 {
   int			fd;
   char			*name;
+  char			**tab;
+  t_corline		*first_line;
 }			t_cor;
 
 typedef struct          header_s
@@ -85,11 +107,16 @@ typedef union           u_intchar
 }                       t_intchar;
 
 /* PARSING */
-
+int 	parse_instr(t_cor *corfile);
+int	start_parse_instr(t_corline *corline, char *str);
 char	*checkComment(char *str, t_header *header);
 char	*checkName(char *str, t_header *header);
+char	*checkLabel(char *name);
 int 	parse_header(char **tab, t_cor *corfile);
 
+/* LINK LIST FUNC */
+t_corline	*corline_init();
+void		create_line(t_corline *corline, t_corline line);
 
 /* OPEN FUNC */
 void	open_corfile(t_cor *corfile);
@@ -102,6 +129,7 @@ void	write_header(t_header *header, t_cor *corfile);
 int	read_file(char	*file);
 
 /* UTILS */
+char	**my_str_to_wordtab(char *str);
 int	int_tobyte(int data);
 char	*my_strncpy(char *dest, char *src, int n);
 void	my_putchar(char c);
