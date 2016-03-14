@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:56:39 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 06:04:42 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 16:06:49 2016 Guillaume SAGOT
 */
 
 #include "asm.h"
@@ -18,7 +18,6 @@ void	print_tab(char **tab)
   while (tab[i])
     {
       printf("%s\n", tab[i]);
-
       i++;
     }
 }

@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:19:15 2016 Ethan Kerdelhue
-** Last update Sat Mar 12 23:47:06 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 16:15:21 2016 Guillaume SAGOT
 */
 
 #include "asm.h"
@@ -41,4 +41,13 @@ void	putError(char *str)
 {
   write(1, str, my_strlen(str));
   exit(-1);
+}
+
+void	msgError(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str[i])
+    write(2, &str[i++], 1);
 }
