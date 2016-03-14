@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:36:36 2016 Ethan Kerdelhue
-** Last update Sun Mar 13 17:07:19 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 04:40:14 2016 Ethan Kerdelhue
 */
 
  #include "asm.h"
@@ -73,9 +73,8 @@ void	checkQuote(char *str)
     checkAdv(pos_1, pos_2, str);
 }
 
-char	*getName(char *str)
+char	*getName(char *str, t_header *header)
 {
-  char	*new;
   int	i;
   int	j;
   char	store;
@@ -83,25 +82,24 @@ char	*getName(char *str)
   i = 0;
   j = 0;
   store = 2;
-  new = malloc(PROG_NAME_LENGTH + 1);
-  my_memset(new, PROG_NAME_LENGTH, 0);
+  my_memset(header->prog_name, PROG_NAME_LENGTH + 1, '\0');
   while (str[i] != '\0')
     {
       if (store == 1 && str[i] != 34)
 	{
-	  new[j] = str[i];
+	  header->prog_name[j] = str[i];
 	  j++;
 	}
       if (str[i] == 34)
 	store -= 1;
       i++;
     }
-  return (new);
+  return (header->prog_name);
 }
 
-char	*checkName(char *str)
+char	*checkName(char *str, t_header *header)
 {
   checkInstru(str);
   checkQuote(str);
-  return (getName(str));
+  return (getName(str, header));
 }

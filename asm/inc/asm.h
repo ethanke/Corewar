@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.net>
 **
 ** Started on  Sun Mar  6 20:19:55 2016 Kerdelhue Ethan
-** Last update Sun Mar 13 17:06:16 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 05:24:41 2016 Ethan Kerdelhue
 */
 
 #ifndef ASM_H_
@@ -48,13 +48,13 @@ typedef struct s_cor
   char			*name;
 }			t_cor;
 
-struct header_s
+typedef struct          header_s
 {
-   int  		magic;
-   char 		*prog_name;
-   int  		prog_size;
-   char 		*comment;
-};
+  int                   magic;
+  char                  prog_name[PROG_NAME_LENGTH+1];
+  int                   prog_size;
+  char                  comment[COMMENT_LENGTH+1];
+}                       header_t;
 
 struct  op_s
 {
@@ -86,16 +86,24 @@ typedef union           u_intchar
 
 /* PARSING */
 
-char	*checkComment(char *str);
-char	*checkName(char *str);
+char	*checkComment(char *str, t_header *header);
+char	*checkName(char *str, t_header *header);
 int 	parse_header(char **tab, t_cor *corfile);
 
 
-/* READ */
+/* OPEN FUNC */
+void	open_corfile(t_cor *corfile);
+char	*getCorName(char *str);
 
+/* Writing Func */
+void	write_header(t_header *header, t_cor *corfile);
+
+/* READ */
 int	read_file(char	*file);
 
 /* UTILS */
+int	int_tobyte(int data);
+char	*my_strncpy(char *dest, char *src, int n);
 void	my_putchar(char c);
 void    *my_memset(void *s, size_t n, int c);
 void	putError(char *str);

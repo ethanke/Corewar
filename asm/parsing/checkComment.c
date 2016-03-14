@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:42:55 2016 Ethan Kerdelhue
-** Last update Fri Mar 11 19:29:24 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 04:35:45 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -74,35 +74,33 @@ void	CheckQuoteC(char *str)
    checkAdvC(pos_1, pos_2, str);
 }
 
-char	*getComment(char *str)
+char	*getComment(char *str, t_header *header)
 {
- char	*new;
- int	i;
- int	j;
- char	store;
+  int	i;
+  int	j;
+  char	store;
 
- i = 0;
- j = 0;
- store = 2;
- new = malloc(my_strlen(str));
- while (str[i] != '\0')
-   {
-     if (store == 1 && str[i] != 34)
-       {
-         new[j] = str[i];
-         j++;
-       }
-     if (str[i] == 34)
-       store -= 1;
-     i++;
-   }
- new[j] = '\0';
- return (new);
+  i = 0;
+  j = 0;
+  store = 2;
+  my_memset(header->comment, COMMENT_LENGTH + 1, '\0');
+  while (str[i] != '\0')
+    {
+      if (store == 1 && str[i] != 34)
+	{
+	  header->comment[j] = str[i];
+	  j++;
+	}
+      if (str[i] == 34)
+	store -= 1;
+      i++;
+    }
+  return (header->comment);
 }
 
-char	*checkComment(char *str)
+char	*checkComment(char *str, t_header *header)
 {
  checkInstruC(str);
  CheckQuoteC(str);
- return (getComment(str));
+ return (getComment(str, header));
 }
