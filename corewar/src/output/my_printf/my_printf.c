@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.net>
 **
 ** Started on  Thu Nov 12 12:27:44 2015 Gaëtan Léandre
-** Last update Mon Mar  7 03:24:38 2016 Victor Sousa
+** Last update Mon Mar 14 15:03:27 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -107,5 +107,6 @@ int	my_printf(char *str, ...)
     }
   color(-1);
   va_end(ap);
+  free(tab);
   return (0);
 }

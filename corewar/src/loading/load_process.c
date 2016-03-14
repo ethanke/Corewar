@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:10:33 2016 Victor Sousa
-** Last update Sun Mar 13 15:38:44 2016 Victor Sousa
+** Last update Mon Mar 14 16:16:55 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -17,15 +17,18 @@ void			print_champ(t_champ *champ)
   i = -1;
 
   while (++i < champ->nbr_champ)
-    my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d\n\tinstruction:%s\n\n",
-	      i + 1,
-              champ->id_champ[i],
-	      champ->header[i].magic,
-	      champ->header[i].prog_name,
-	      champ->header[i].comment,
-	      champ->header[i].prog_size,
-	      champ->pc_pos[i],
-	      champ->process[i]);
+    {
+      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d\n\tinstruction: ",
+		i + 1,
+		champ->id_champ[i],
+		champ->header[i].magic,
+		champ->header[i].prog_name,
+		champ->header[i].comment,
+		champ->header[i].prog_size,
+		champ->pc_pos[i]);
+      /*print_instruct(champ->instru[i], champ->header[i].prog_size);*/
+      my_printf("\n\n");
+    }
 }
 
 void			load_process(t_champ *champ, int ac, char **av)
