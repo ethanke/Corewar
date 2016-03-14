@@ -1,18 +1,18 @@
 /*
 ** my_printf.h for my_printf in /home/leandr_g/rendu/Novembre_2015/PSU_2015_my_printf
-** 
+**
 ** Made by Gaëtan Léandre
 ** Login   <leandr_g@epitech.net>
-** 
+**
 ** Started on  Thu Nov 12 14:36:04 2015 Gaëtan Léandre
-** Last update Fri Nov 13 19:11:23 2015 Gaëtan Léandre
+** Last update Mon Mar 14 14:33:33 2016 Victor Sousa
 */
 
-#ifndef _MY_PRINTF_
-# define _MY_PRINTF_
+#ifndef		MY_PRINTF_H_
+# define 	MY_PRINTF_H_
 
-# include <stdlib.h>
-# include <stdarg.h>
+# include	<stdlib.h>
+# include	<stdarg.h>
 
 typedef struct	s_fonct
 {
@@ -63,4 +63,4 @@ void		my_putnbr_base_add(size_t nbr, char *base, int taille);
 int		big_pow_add(size_t nbr, int base_size);
 size_t		power_add(size_t nbr, int pow);
 
-#endif
+#endif	      /*MY_PRINTF_H_*/

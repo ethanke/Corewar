@@ -5,11 +5,11 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Sun Mar 13 15:36:36 2016 Victor Sousa
+** Last update Mon Mar 14 14:35:05 2016 Victor Sousa
 */
 
-#ifndef			CHAMP_H
-# define 		CHAMP_H
+#ifndef			CHAMP_H_
+# define 		CHAMP_H_
 
 # include		"corewar.h"
 
@@ -35,4 +35,4 @@ typedef struct		s_champ
   t_process		**process;
 }			t_champ;
 
-#endif		      /*CHAMP_H*/
+#endif		      /*CHAMP_H_*/
