@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Tue Mar 15 18:53:29 2016 victor sousa
+## Last update Tue Mar 15 19:28:30 2016 Gaëtan Léandre
 ##
 
 NAME		=	corewar
@@ -64,7 +64,8 @@ SRC		+=	$(UTILSDIR)/params.c		\
 			$(UTILSDIR)/registre.c		\
 			$(UTILSDIR)/oct_verif.c
 
-SRC		+=	$(FUNCTDIR)/check.c
+SRC		+=	$(FUNCTDIR)/check.c		\
+			$(FUNCTDIR)/fork.c
 
 OBJ		=	$(SRC:.c=.o)
 
