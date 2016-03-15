@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:25:56 2016 victor sousa
-** Last update Tue Mar 15 22:02:19 2016 Victor Sousa
+** Last update Tue Mar 15 22:08:14 2016 Victor Sousa
 */
 
 #ifndef			COREWAR_H_
