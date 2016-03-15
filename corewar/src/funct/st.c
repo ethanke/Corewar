@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sun Mar 13 11:45:09 2016 Gaëtan Léandre
-** Last update Wed Mar 16 00:00:54 2016 Gaëtan Léandre
+** Last update Wed Mar 16 00:04:18 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -46,9 +46,9 @@ int		my_sti(t_arena *arena, t_process *process, int id, int pc_pos)
   (void)id;
   process->pos = circle(process->pos, 1);
   arg = arena->arena[process->pos];
-  if (check_mult_args(arena->arena, 11, process->pos, 3) == -1)
+  if (check_mult_args(arena->arena, 10, process->pos, 3) == -1)
     return (0);
-  process->cycle += op_tab[11].nbr_cycles;
+  process->cycle += op_tab[10].nbr_cycles;
   a = process->reg[arena->arena[circle(process->pos, 1)] - 1];
   b = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 2),
 		process->reg);
