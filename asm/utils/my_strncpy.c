@@ -5,14 +5,14 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 03:08:54 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 03:09:08 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 18:31:58 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
 
 char			*my_strncpy(char *dest, char *src, int n)
 {
-  int i;
+  int 	i;
 
   i = 0;
   while (n > 0 && *(src + i))
@@ -24,4 +24,18 @@ char			*my_strncpy(char *dest, char *src, int n)
   if (n > 0)
     *(dest + i) = '\0';
   return (dest);
+ }
+
+ char			*my_strcpy(char *dest, char *src)
+ {
+   int 	i;
+
+   i = 0;
+   while(src[i])
+     {
+       dest[i] = src[i];
+       i = i + 1;
+     }
+   dest[i] = '\0';
+   return dest;
  }

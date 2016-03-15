@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 06:18:17 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 07:04:34 2016 Ethan Kerdelhue
+** Last update Mon Mar 14 16:51:32 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -15,13 +15,13 @@ char	checkLabelchar(char c, char *label_char)
   int	i;
 
   i = 0;
-  while (label_char[i] != '\0')
+  while (label_char[i] != LABEL_CHAR)
     {
-      if (label_char[i] == c)
+      if (label_char[i] != c)
 	return (1);
       i++;
     }
-  return (0);
+  return (1);
 }
 
 char	*checkLabel(char *name)
@@ -31,7 +31,7 @@ char	*checkLabel(char *name)
   i = 0;
   while (name[i] != '\0')
     {
-      if (!(checkLabelchar(name[i], LABEL_CHARS) == 1))
+      if (checkLabelchar(name[i], LABEL_CHARS) != 1)
 	{
 	  my_putstr("[FILE] Error : Label ");
 	  my_putstr(name);
@@ -42,4 +42,21 @@ char	*checkLabel(char *name)
       i++;
     }
   return (name);
+}
+
+int	line_is_label(char *args)
+{
+  char	flag;
+
+  flag = 0;
+  if (args[my_strlen(args) - 1] == LABEL_CHAR)
+    flag = 1;
+  else
+    return (0);
+  if (flag == 1)
+    {
+      checkLabel(args);
+      return (1);
+    }
+  return (0);
 }

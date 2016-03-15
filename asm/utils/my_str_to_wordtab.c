@@ -5,24 +5,10 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Tue Mar  8 12:44:52 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 07:28:49 2016 Ethan Kerdelhue
+** Last update Tue Mar 15 17:10:00 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
-
-char *my_strcpy(char *dest, char *src)
-{
-  int i;
-
-  i = 0;
-  while(src[i])
-    {
-      dest[i] = src[i];
-      i = i + 1;
-    }
-  dest[i] = '\0';
-  return dest;
-}
 
 char* 	my_strdup(char* str)
 {
@@ -45,16 +31,18 @@ int	my_count_word(char *s)
 
   i = 0;
   cpt = 0;
-  while (s[i])
+  while (s[i] != '\0')
     {
       if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')
-	  || (s[i] >= '0' && s[i] <= '9') || (s[i] == LABEL_CHAR))
+	  || (s[i] >= '0' && s[i] <= '9') ||
+	  (s[i] == (LABEL_CHAR) || (s[i] == DIRECT_CHAR)))
 	{
 	  cpt = cpt + 1;
 	  while (s[i] && ((s[i] >= 'a' && s[i] <= 'z')
 			  || (s[i] >= 'A' && s[i] <= 'Z')
 			  || (s[i] >= '0' && s[i] <= '9')
-			  || (s[i] == LABEL_CHAR)))
+			  || (s[i] == (LABEL_CHAR) || (s[i] == DIRECT_CHAR)
+			      || (s[i] == '-'))))
 	    i = i + 1;
 	}
       i = i + 1;
@@ -70,7 +58,8 @@ int	my_count_char(char *s, int *i)
   while (s[*i] && ((s[*i] >= 'a' && s[*i] <= 'z')
 		  || (s[*i] >= 'A' && s[*i] <= 'Z')
 		  || (s[*i] >= '0' && s[*i] <= '9')
-		  || (s[*i] == LABEL_CHAR)))
+		  || (s[*i] == (LABEL_CHAR)) || (s[*i] == DIRECT_CHAR) ||
+		   (s[*i] == '-')))
     {
       cpt = cpt + 1;
       *i = *i + 1;
@@ -92,7 +81,8 @@ char	**my_str_to_wordtab(char *str)
   while (str[i] && word > 0)
     {
       if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')
-	  || (str[i] >= '0' && str[i] <= '9') || (str[i] == LABEL_CHAR))
+	  || (str[i] >= '0' && str[i] <= '9') ||
+	  (str[i] == LABEL_CHAR) || (str[i] == DIRECT_CHAR) || (str[i] == '-'))
 	{
 	  tab[n] = my_strdup(str + i);
 	  tab[n][my_count_char(str, &i)] = '\0';

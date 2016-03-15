@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:56:39 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 16:06:49 2016 Guillaume SAGOT
+** Last update Mon Mar 14 18:44:52 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -56,6 +56,7 @@ int	read_file(char	*file)
   corfile->tab = tab;
   parse_header(tab, corfile);
   parse_instr(corfile);
+  close(corfile->fd);
   return (0);
 }
 
@@ -64,5 +65,6 @@ int	main(int ac, char **av)
   (void) ac;
   if (av[1])
     read_file(av[1]);
+
   return (0);
 }
