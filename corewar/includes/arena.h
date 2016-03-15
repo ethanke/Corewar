@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:12:21 2016 Gaëtan Léandre
-** Last update Mon Mar 14 16:45:33 2016 Victor Sousa
+** Last update Tue Mar 15 22:04:44 2016 Victor Sousa
 */
 
 #ifndef			ARENA_H_
@@ -21,6 +21,7 @@ typedef struct		s_arena
   float			cycle_to_die;
   int			total_cycle;
   int			total_live;
+  t_func		*func;
 }			t_arena;
 
 #endif		      /*ARENA_H_*/
