@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar 14 18:26:51 2016 Gaëtan Léandre
-** Last update Mon Mar 14 19:06:56 2016 Gaëtan Léandre
+** Last update Tue Mar 15 17:34:11 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -45,4 +45,19 @@ int		octet_to_r(char arg)
   else if (arg == T_IND - 1)
     return (2);
   return (-1);
+}
+
+int		place_to_jump(unsigned char arg, char place)
+{
+  int		tmp;
+  char		i;
+
+  i = 1;
+  tmp = 0;
+  while (i <= place)
+    {
+      tmp = tmp + octet_to_read(arg, i);
+      i++;
+    }
+  return (tmp);
 }

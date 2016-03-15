@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Sun Mar 13 13:08:21 2016 Gaëtan Léandre
+** Last update Tue Mar 15 18:08:04 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -51,25 +51,30 @@ int		take_ind(unsigned char *arena, int pos, int modu, int pc)
   return (nbr);
 }
 
-int		take_reg(unsigned char *arena, int pos, int pc)
+int		take_reg(unsigned char *arena, unsigned char reg, char pc)
 {
   int		nbr;
-  int		tmp;
 
-  tmp = take_param(arena, pos, REG_SIZE);
-  if (check_reg(tmp) == -1)
+  if (check_reg(reg) == -1)
     return (-1);
-  nbr = take_param(arena, pc + 1 + (tmp - 1) * REG_SIZE, REG_SIZE);
+  nbr = take_param(arena, circle(pc, 1 + (reg - 1)) * REG_SIZE, REG_SIZE);
   return (nbr);
 }
 
-int		take_what(unsigned char *arena, int pos, int modu, int pc)
+int		take_what(unsigned char *arena, int pos, t_choix choix)
 {
-  if (arena[pos] == T_REG)
-    return (take_reg(arena, pos + 1, pc));
-  else if (arena[pos] == T_DIR)
-    return (take_param(arena, pos + 1, DIR_SIZE));
-  else if (arena[pos] == T_IND)
-    return (take_ind(arena, pos + 1, modu, pc));
+  char		arg;
+  int		tmp;
+
+  tmp = pos + 1;
+  arg = who_are_u(arena[pos], choix.place);
+  if (choix.place > 1)
+    tmp = circle(tmp, place_to_jump(arena[pos], choix.place - 1));
+  if (arg == T_REG)
+    return (take_reg(arena, arena[tmp], choix.pc));
+  else if (arg == T_DIR)
+    return (take_param(arena, tmp, DIR_SIZE));
+  else if (arg == T_IND - 1)
+    return (take_ind(arena, tmp, choix.modu, choix.pc));
   return (0);
 }
