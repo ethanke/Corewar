@@ -5,11 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-<<<<<<< HEAD
-** Last update Tue Mar 15 18:09:50 2016 Victor Sousa
-=======
-** Last update Tue Mar 15 18:06:58 2016 Gaëtan Léandre
->>>>>>> 9cd296a3937a892a87447024d3ff8f8b9fd60487
+** Last update Tue Mar 15 18:49:08 2016 victor sousa
 */
 
 #ifndef			UTILS_H_
