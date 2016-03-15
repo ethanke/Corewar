@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 04:11:03 2016 Victor Sousa
-** Last update Sun Mar 13 12:10:48 2016 Victor Sousa
+** Last update Tue Mar 15 17:27:45 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -31,12 +31,12 @@ int		get_id(int *read_id_needed, int i, char **av)
   return (out);
 }
 
-int			is_id_taken(int *id_tab, int id)
+int			is_id_taken(int *id_tab, int id, int size)
 {
   int			i;
 
   i = -1;
-  while (id_tab[++i] != -2)
+  while (++i < size)
     {
       if (id_tab[i] == id)
 	return (1);
@@ -55,7 +55,7 @@ void			check_id(t_champ *champ)
     {
       if (champ->id_champ[i] == -1)
 	{
-	  while (is_id_taken(champ->id_champ, ++id));
+	  while (is_id_taken(champ->id_champ, ++id, champ->nbr_champ));
 	  champ->id_champ[i] = id;
 	}
     }

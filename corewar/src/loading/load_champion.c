@@ -1,11 +1,11 @@
 /*
-** load_process.c for corewar in /Users/sousa_v/Shared/rendu/cpe/Coreware_temp/corewar/src/loading/
+** load_champion.c for corewar in /Users/sousa_v/Shared/rendu/cpe/Coreware_temp/corewar/src/loading/
 **
 ** Made by Victor Sousa
 ** Login   <sousa_v@epitech.eu>
 **
-** Started on  Mon Mar  7 02:10:33 2016 Victor Sousa
-** Last update Mon Mar 14 18:44:24 2016 Victor Sousa
+** Started on  Tue Mar 15 17:23:54 2016 Victor Sousa
+** Last update Tue Mar 15 17:52:45 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -18,7 +18,8 @@ void			print_champ(t_champ *champ)
 
   while (++i < champ->nbr_champ)
     {
-      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d",
+      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s
+		\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d",
 		i + 1,
 		champ->id_champ[i],
 		champ->header[i].magic,
@@ -26,7 +27,7 @@ void			print_champ(t_champ *champ)
 		champ->header[i].comment,
 		champ->header[i].prog_size,
 		champ->pc_pos[i]);
-      /*print_instruct(champ->instru[i], champ->header[i].prog_size);*/
+      print_instruct(champ->instru[i], champ->header[i].prog_size);
       my_printf("\n\n");
     }
 }
@@ -38,8 +39,7 @@ void			load_process(t_champ *champ, int ac, char **av)
   int			read_id_needed;
   int			fd;
 
-  j = 0;
-  i = -1;
+  j = (i = -1) * 0;
   while (++i < ac)
     {
       i += (read_id_needed = is_a_id_request(av[i])) * 2;
@@ -53,11 +53,10 @@ void			load_process(t_champ *champ, int ac, char **av)
 	    my_putstr_error("Error, size of the program is too big\n", 1);
 	  champ->pc_pos[j] = MEM_SIZE / champ->nbr_champ * j;
 	  champ->instru[j] = get_instruct(fd, champ->header[j].prog_size);
+	  champ->process[j] = fill_process(champ->pc_pos[j]);
 	  close(fd);
 	  j++;
 	}
     }
   check_id(champ);
-
-  print_champ(champ);
 }

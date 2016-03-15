@@ -5,15 +5,14 @@
 ** Login   <leandr_g@epitech.net>
 **
 ** Started on  Thu Nov 12 12:27:44 2015 Gaëtan Léandre
-** Last update Mon Mar 14 15:03:27 2016 Victor Sousa
+** Last update Tue Mar 15 17:53:11 2016 Victor Sousa
 */
 
 #include "corewar.h"
 
 t_fonct	*init_struct(t_fonct *tab)
 {
-  if ((tab = malloc(11 * sizeof(t_fonct))) == NULL)
-    return (NULL);
+  tab = xmalloc(11 * sizeof(t_fonct));
   tab[0].flag = 'c';
   (tab[0].f) = va_my_putchar;
   tab[1].flag = 's';
