@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 05:21:01 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 05:22:20 2016 Ethan Kerdelhue
+** Last update Tue Mar 15 16:59:39 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -47,5 +47,6 @@ char	*getCorName(char *str)
   new[i + 1] = 'c';
   new[i + 2] = 'o';
   new[i + 3] = 'r';
+  new[i + 4] = '\0';
   return (new);
 }

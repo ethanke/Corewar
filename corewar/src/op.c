@@ -12,7 +12,7 @@
 ** Ne pas passer ce fichier dans la moulinette de Norme.
 */
 
-#include "corewar.h"
+#include "asm.h"
 
 op_t    op_tab[] =
   {
