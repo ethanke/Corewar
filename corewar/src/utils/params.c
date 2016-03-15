@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Tue Mar 15 18:08:04 2016 Gaëtan Léandre
+** Last update Tue Mar 15 18:55:31 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -51,17 +51,8 @@ int		take_ind(unsigned char *arena, int pos, int modu, int pc)
   return (nbr);
 }
 
-int		take_reg(unsigned char *arena, unsigned char reg, char pc)
-{
-  int		nbr;
-
-  if (check_reg(reg) == -1)
-    return (-1);
-  nbr = take_param(arena, circle(pc, 1 + (reg - 1)) * REG_SIZE, REG_SIZE);
-  return (nbr);
-}
-
-int		take_what(unsigned char *arena, int pos, t_choix choix)
+int		take_what(unsigned char *arena, int pos,
+			  t_choix choix, int *reg)
 {
   char		arg;
   int		tmp;
@@ -71,7 +62,7 @@ int		take_what(unsigned char *arena, int pos, t_choix choix)
   if (choix.place > 1)
     tmp = circle(tmp, place_to_jump(arena[pos], choix.place - 1));
   if (arg == T_REG)
-    return (take_reg(arena, arena[tmp], choix.pc));
+    return (reg[arena[pos] - 1]);
   else if (arg == T_DIR)
     return (take_param(arena, tmp, DIR_SIZE));
   else if (arg == T_IND - 1)

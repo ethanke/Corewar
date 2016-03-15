@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Tue Mar 15 19:11:17 2016 Victor Sousa
+** Last update Tue Mar 15 19:19:34 2016 Gaëtan Léandre
 */
 
 #ifndef			UTILS_H_
@@ -32,7 +32,7 @@ int			take_ind(unsigned char *arena, int pos,
 int			take_reg(unsigned char *arena,
 				 unsigned char reg, char pc);
 int			take_what(unsigned char *arena, int pos,
-				  struct s_choix choix);
+				  t_choix choix, int *reg);
 int			circle(int pos, int incr);
 void			my_memset(void *ptr, int size, char c);
 void			end_prog(t_arena *arena);
@@ -43,5 +43,6 @@ struct s_choix		make_choix(int pc, char modu, char place);
 int			place_to_jump(unsigned char arg, char place);
 void			free_process(t_process *process);
 void			create_registre(t_process *process, int id);
+void			cpy_registre(t_process *child, t_process *parent);
 
 #endif		      /*UTILS_H*/
