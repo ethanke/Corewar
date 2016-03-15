@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Tue Mar 15 17:23:54 2016 Victor Sousa
-** Last update Tue Mar 15 17:52:45 2016 Victor Sousa
+** Last update Tue Mar 15 17:58:00 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -18,12 +18,12 @@ void			print_champ(t_champ *champ)
 
   while (++i < champ->nbr_champ)
     {
-      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s
-		\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d",
+      my_printf("champ %d\n\tid:%d\n\tmagic:0x%x\n\tname:%s",
 		i + 1,
 		champ->id_champ[i],
 		champ->header[i].magic,
-		champ->header[i].prog_name,
+		champ->header[i].prog_name);
+      my_printf("\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d",
 		champ->header[i].comment,
 		champ->header[i].prog_size,
 		champ->pc_pos[i]);
