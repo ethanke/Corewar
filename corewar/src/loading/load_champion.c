@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Tue Mar 15 17:23:54 2016 Victor Sousa
-** Last update Tue Mar 15 17:58:00 2016 Victor Sousa
+** Last update Tue Mar 15 18:10:14 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -45,8 +45,7 @@ void			load_process(t_champ *champ, int ac, char **av)
       i += (read_id_needed = is_a_id_request(av[i])) * 2;
       if (is_a_champ_path(av[i]))
 	{
-	  if ((fd = open(av[i], O_RDONLY)) < 0)
-	    my_putstr_error("couldn't open one of the requested champion\n", 1);
+	  fd = xopen(av[i]);
 	  champ->id_champ[j] = get_id(&read_id_needed, i, av);
 	  champ->header[j] = get_header(fd);
 	  if (champ->header[j].prog_size > MEM_SIZE / 4)

@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:35:17 2016 Victor Sousa
-** Last update Sun Mar 13 13:24:09 2016 Victor Sousa
+** Last update Tue Mar 15 18:05:54 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -28,6 +28,6 @@ void		*xmalloc(int size)
   void		*ptr;
 
   if ((ptr = malloc(size)) == NULL)
-    my_putstr_error("Impossible to allocate Memory\n", 1);
+    my_putstr_error("Can’t perform malloc\n", 1);
   return (ptr);
 }
