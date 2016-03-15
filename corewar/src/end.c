@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 18:30:41 2016 Victor Sousa
-** Last update Tue Mar 15 17:49:53 2016 Victor Sousa
+** Last update Tue Mar 15 18:58:02 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -18,7 +18,7 @@ void			end_prog(t_arena *arena)
   while (++i < arena->champ->nbr_champ)
     {
       free(arena->champ->instru[i]);
-      free(arena->champ->process[i]);
+      free_process(arena->champ->process[i]);
     }
   free(arena->champ->live);
   free(arena->champ->pc_pos);

@@ -5,10 +5,10 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 04:11:03 2016 Victor Sousa
-** Last update Tue Mar 15 17:27:45 2016 Victor Sousa
+** Last update Tue Mar 15 19:10:36 2016 Victor Sousa
 */
 
-#include	"corewar.h"
+#include		"corewar.h"
 
 int			is_a_id_request(char *str)
 {
@@ -19,9 +19,9 @@ int			is_a_id_request(char *str)
   return (0);
 }
 
-int		get_id(int *read_id_needed, int i, char **av)
+int			get_id(int *read_id_needed, int i, char **av)
 {
-  int		out;
+  int			out;
 
   if (*read_id_needed)
     out = my_getnbr(av[i - 1]);
@@ -59,4 +59,7 @@ void			check_id(t_champ *champ)
 	  champ->id_champ[i] = id;
 	}
     }
+  i = -1;
+  while (++i < champ->nbr_champ)
+    champ->process[i] = fill_process(champ->pc_pos[i], champ->id_champ[i]);
 }

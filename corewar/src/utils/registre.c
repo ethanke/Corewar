@@ -5,30 +5,27 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Tue Mar 15 18:25:22 2016 Gaëtan Léandre
-** Last update Tue Mar 15 18:51:11 2016 Gaëtan Léandre
+** Last update Tue Mar 15 19:12:58 2016 Victor Sousa
 */
 
-void		create_registre(t_process *process)
+#include	"corewar.h"
+
+void		create_registre(t_process *process, int id)
 {
   int		pos;
 
   pos = 0;
   process->reg = xmalloc(sizeof(int) * REG_NUMBER);
-  while (pos < REG_NUMBER)
-    {
-      process->reg[pos] = 0;
-      pos++;
-    }
+  process->reg[0] = id;
+  while (++pos < REG_NUMBER)
+    process->reg[pos] = 0;
 }
 
 void		cpy_registre(int *reg_child, int *reg_parent)
 {
   int		pos;
 
-  pos = 0;
-  while (pos < REG_NUMBER)
-    {
-      reg_child[pos] = reg_parent[pos];
-      pos++;
-    }
+  pos = -1;
+  while (++pos < REG_NUMBER)
+    reg_child[pos] = reg_parent[pos];
 }

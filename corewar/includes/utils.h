@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Tue Mar 15 18:49:08 2016 victor sousa
+** Last update Tue Mar 15 19:11:17 2016 Victor Sousa
 */
 
 #ifndef			UTILS_H_
@@ -41,5 +41,7 @@ int			octet_to_read(unsigned char param, int to_read);
 int			octet_to_r(char arg);
 struct s_choix		make_choix(int pc, char modu, char place);
 int			place_to_jump(unsigned char arg, char place);
+void			free_process(t_process *process);
+void			create_registre(t_process *process, int id);
 
 #endif		      /*UTILS_H*/
