@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 05:47:59 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 07:08:41 2016 Ethan Kerdelhue
+** Last update Tue Mar 15 17:50:43 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -22,6 +22,7 @@ t_corline	*corline_init()
   corline->mempos = 0;
   corline->tab_args = NULL;
   corline->next = NULL;
+  corline->prev = NULL;
   return (corline);
 }
 
@@ -41,5 +42,6 @@ void	create_line(t_corline *corline, t_corline line)
   new->mempos = line.mempos;
   new->tab_args = line.tab_args;
   new->next = NULL;
+  new->prev = tmp;
   tmp->next = new;
 }

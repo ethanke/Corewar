@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.net>
 **
 ** Started on  Sun Mar  6 20:19:55 2016 Kerdelhue Ethan
-** Last update Tue Mar 15 17:27:13 2016 Ethan Kerdelhue
+** Last update Tue Mar 15 18:39:52 2016 Ethan Kerdelhue
 */
 
 #ifndef ASM_H_
@@ -60,6 +60,7 @@ typedef struct s_corline
   int			mempos;
   t_corarg		*tab_args;
   struct s_corline	*next;
+  struct s_corline	*prev;
 }			t_corline;
 
 typedef struct s_cor
