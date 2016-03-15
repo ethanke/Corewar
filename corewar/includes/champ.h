@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Tue Mar 15 17:48:18 2016 Victor Sousa
+** Last update Tue Mar 15 18:28:20 2016 Gaëtan Léandre
 */
 
 #ifndef			CHAMP_H_
@@ -20,6 +20,7 @@ typedef struct		s_process
   int			pos;
   int			cycle;
   int			carry;
+  int			*reg;
   struct s_process	*next;
   struct s_process	*child;
 }			t_process;
