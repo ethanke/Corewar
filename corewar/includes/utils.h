@@ -5,18 +5,11 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Tue Mar 15 19:32:00 2016 Gaëtan Léandre
+** Last update Tue Mar 15 22:00:47 2016 Victor Sousa
 */
 
 #ifndef			UTILS_H_
 # define		UTILS_H_
-
-typedef struct		s_choix
-{
-  int			pc;
-  char			modu;
-  char			place;
-}			t_choix;
 
 int			my_strlen(char *str);
 int			my_getnbr(const char *str);

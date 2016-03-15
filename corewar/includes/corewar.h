@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:25:56 2016 victor sousa
-** Last update Mon Mar 14 18:36:37 2016 Victor Sousa
+** Last update Tue Mar 15 22:02:19 2016 Victor Sousa
 */
 
 #ifndef			COREWAR_H_
@@ -20,10 +20,10 @@
 # include		"op.h"
 # include		"champ.h"
 # include		"arena.h"
+# include		"funct.h"
 # include		"utils.h"
 # include		"output.h"
 # include		"my_printf.h"
 # include		"loading.h"
-# include		"funct.h"
 
 #endif		      /*COREWAR_H*/
