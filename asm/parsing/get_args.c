@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Tue Mar 15 17:14:40 2016 Ethan Kerdelhue
-** Last update Tue Mar 15 17:14:46 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 05:55:12 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -36,5 +36,6 @@ t_corarg	*get_args(char **tab, int i)
 	    }
 	}
     }
+  tmp[i].type = -3;
   return (tmp);
 }
