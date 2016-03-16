@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Tue Mar 15 18:28:20 2016 Gaëtan Léandre
+** Last update Wed Mar 16 02:24:31 2016 Gaëtan Léandre
 */
 
 #ifndef			CHAMP_H_
@@ -29,6 +29,7 @@ typedef struct		s_champ
 {
   char			nbr_champ;
   int			*live;
+  int			last_live;
   int			*id_champ;
   int			*pc_pos;
   header_t		*header;
