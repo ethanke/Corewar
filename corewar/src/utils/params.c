@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Tue Mar 15 18:55:31 2016 Gaëtan Léandre
+** Last update Wed Mar 16 02:45:49 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -25,19 +25,21 @@ int		take_param(unsigned char *arena, int pos, int bit)
   return (result);
 }
 
-unsigned char	*put_param(unsigned char *arena, int pos, int bit, int nbr)
+void		put_param(t_arena *arena, int pos, int id, int nbr)
 {
   int		i;
+  int		bit;
 
+  bit = DIR_SIZE;
   i = 0;
   while (i < bit)
     {
-      arena[pos] = 0;
-      arena[pos] = arena[pos] | (nbr << ((i + 1) * 8));
+      arena->arena[pos] = 0;
+      arena->arena[pos] = arena->arena[pos] | (nbr << ((i + 1) * 8));
+      arena->proprio[pos] = id;
       i++;
       pos = circle(pos, 1);
     }
-  return (arena);
 }
 
 int		take_ind(unsigned char *arena, int pos, int modu, int pc)

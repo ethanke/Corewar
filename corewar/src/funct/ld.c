@@ -5,17 +5,18 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Fri Mar 11 00:34:17 2016 Gaëtan Léandre
-** Last update Wed Mar 16 02:31:25 2016 Gaëtan Léandre
+** Last update Wed Mar 16 02:38:16 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
 
-int		my_ld(t_arena *arena, t_process *process, int pc_pos)
+int		my_ld(t_arena *arena, t_process *process, int id, int pc_pos)
 {
   unsigned char	arg;
   int		nbr;
   int		reg;
 
+  (void)id;
   process->pos = circle(process->pos, 1);
   arg = arena->arena[process->pos];
   if (check_mult_args(arena->arena, 1, process->pos, 2) == -1)
@@ -30,12 +31,13 @@ int		my_ld(t_arena *arena, t_process *process, int pc_pos)
   return (0);
 }
 
-int		my_lld(t_arena *arena, t_process *process, int pc_pos)
+int		my_lld(t_arena *arena, t_process *process, int id, int pc_pos)
 {
   unsigned char	arg;
   int		nbr;
   int		reg;
 
+  (void)id;
   process->pos = circle(process->pos, 1);
   arg = arena->arena[process->pos];
   if (check_mult_args(arena->arena, 12, process->pos, 2) == -1)

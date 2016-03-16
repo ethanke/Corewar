@@ -5,17 +5,18 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Wed Mar 16 01:46:52 2016 Gaëtan Léandre
-** Last update Wed Mar 16 02:32:58 2016 Gaëtan Léandre
+** Last update Wed Mar 16 02:39:28 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
 
-int		my_aff(t_arena *arena, t_process *process, int pc_pos)
+int		my_aff(t_arena *arena, t_process *process, int id, int pc_pos)
 {
   int		reg;
   unsigned char	arg;
 
   (void)pc_pos;
+  (void)id;
   process->pos = circle(process->pos, 1);
   arg = arena->arena[process->pos];
   if (check_mult_args(arena->arena, 15, process->pos, 1) == -1)
@@ -28,8 +29,9 @@ int		my_aff(t_arena *arena, t_process *process, int pc_pos)
   return (0);
 }
 
-int		my_zjump(t_arena *arena, t_process *process, int pc_pos)
+int		my_zjump(t_arena *arena, t_process *process, int id, int pc_pos)
 {
+  (void)id;
   process->pos = circle(process->pos, 1);
   process->cycle += op_tab[8].nbr_cycles;
   if (process->carry == 1)
@@ -57,12 +59,13 @@ int		check_proprio(char *proprio, int pos, char size, int *id)
   return (-1);
 }
 
-int		my_live(t_arena *arena, t_process *process, int pc_pos)
+int		my_live(t_arena *arena, t_process *process, int id, int pc_pos)
 {
   t_champ	*champ;
   int		who_said;
   int		tmp;
 
+  (void)id;
   champ = arena->champ;
   process->pos = circle(process->pos, 1);
   process->cycle += op_tab[0].nbr_cycles;

@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Tue Mar 15 22:00:47 2016 Victor Sousa
+** Last update Wed Mar 16 02:46:26 2016 Gaëtan Léandre
 */
 
 #ifndef			UTILS_H_
@@ -18,8 +18,7 @@ void			*xmalloc(int size);
 int			xopen(char *path);
 int			mod(int nbr, int modulo);
 int			take_param(unsigned char *arena, int pos, int bit);
-unsigned char		*put_param(unsigned char *arena, int pos,
-				   int bit, int nbr);
+void			put_param(t_arena *arena, int pos, int id, int nbr);
 int			take_ind(unsigned char *arena, int pos,
 				 int modu, int pc);
 int			take_reg(unsigned char *arena,
