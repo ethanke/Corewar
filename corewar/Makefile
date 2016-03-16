@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Wed Mar 16 00:18:53 2016 Gaëtan Léandre
+## Last update Wed Mar 16 01:41:29 2016 Gaëtan Léandre
 ##
 
 NAME		=	corewar
@@ -68,7 +68,8 @@ SRC		+=	$(FUNCTDIR)/check.c		\
 			$(FUNCTDIR)/fork.c		\
 			$(FUNCTDIR)/ld.c		\
 			$(FUNCTDIR)/st.c		\
-			$(FUNCTDIR)/add.c
+			$(FUNCTDIR)/add.c		\
+			$(FUNCTDIR)/ldi.c
 
 OBJ		=	$(SRC:.c=.o)
 
