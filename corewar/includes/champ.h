@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sat Mar  5 21:25:43 2016 Gaëtan Léandre
-** Last update Wed Mar 16 02:24:31 2016 Gaëtan Léandre
+** Last update Wed Mar 16 18:59:36 2016 Gaëtan Léandre
 */
 
 #ifndef			CHAMP_H_
@@ -17,6 +17,7 @@ typedef struct		s_process
 {
   char			live;
   char			living;
+  int			pc_pos;
   int			pos;
   int			cycle;
   int			carry;
@@ -31,7 +32,6 @@ typedef struct		s_champ
   int			*live;
   int			last_live;
   int			*id_champ;
-  int			*pc_pos;
   header_t		*header;
   unsigned char		**instru;
   t_process		**process;
