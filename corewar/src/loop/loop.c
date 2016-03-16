@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Wed Mar 16 17:08:02 2016 Victor Sousa
+** Last update Wed Mar 16 17:12:24 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -23,6 +23,11 @@ void		pick_function(t_arena *arena, t_process *proc, int id)
     proc->cycle--;
 }
 
+void		refresh_champ(t_arena *arena)
+{
+  
+}
+
 void		launch_process(t_process *process, t_arena *arena, int id)
 {
   t_process	*tmp;
@@ -30,6 +35,8 @@ void		launch_process(t_process *process, t_arena *arena, int id)
   tmp = process;
   while (tmp != NULL)
     {
+      if (arena->nbr_live < NBR_LIVE)
+	refresh_champ(t_arena *arena);
       pick_function(arena, process, id);
       if (tmp->child != NULL && tmp->child->live == 1)
 	launch_process(tmp->child, arena, id);
