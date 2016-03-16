@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Tue Mar 15 17:23:54 2016 Victor Sousa
-** Last update Wed Mar 16 01:35:40 2016 Victor Sousa
+** Last update Wed Mar 16 18:40:38 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -57,6 +57,4 @@ void			load_process(t_champ *champ, int ac, char **av)
 	}
     }
   check_id(champ);
-
-  print_champ(champ);
 }

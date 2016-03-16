@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Wed Mar 16 17:47:56 2016 Victor Sousa
+** Last update Wed Mar 16 18:44:59 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -120,6 +120,9 @@ void			main_loop(t_arena *arena)
       while (++i < cycle_to_die)
 	{
 	  loop_champ(arena);
+          /*system("clear");
+          print_arena_proprio(arena);
+          sleep(1);*/
 	}
       refresh_process_loop(arena);
       if (how_much_alive(arena->champ) < 2)
