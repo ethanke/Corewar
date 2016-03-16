@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 16:47:03 2016 Victor Sousa
-** Last update Wed Mar 16 03:07:24 2016 Victor Sousa
+** Last update Wed Mar 16 06:44:05 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -53,6 +53,7 @@ t_arena			init_arena(t_champ *champ)
 
   arena.champ = champ;
   arena.arena = xmalloc(sizeof(unsigned char) * MEM_SIZE);
+  my_memset(arena.arena, MEM_SIZE, 0);
   arena.proprio = xmalloc(sizeof(char) * MEM_SIZE);
   my_memset(arena.proprio, MEM_SIZE, -1);
   fill_battle_field(&arena, champ);

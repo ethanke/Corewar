@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:12:18 2016 Gaëtan Léandre
-** Last update Tue Mar 15 19:14:15 2016 Victor Sousa
+** Last update Wed Mar 16 05:02:20 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -14,7 +14,7 @@ t_process	*create_list()
 {
   t_process	*process;
 
-  process = xmalloc(sizeof(process));
+  process = xmalloc(sizeof(t_process));
   process->child = NULL;
   process->next = NULL;
   return (process);

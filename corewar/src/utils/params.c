@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Wed Mar 16 02:45:49 2016 Gaëtan Léandre
+** Last update Wed Mar 16 06:00:01 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -64,7 +64,7 @@ int		take_what(unsigned char *arena, int pos,
   if (choix.place > 1)
     tmp = circle(tmp, place_to_jump(arena[pos], choix.place - 1));
   if (arg == T_REG)
-    return (reg[arena[pos] - 1]);
+    return (reg[arena[tmp] - 1]);
   else if (arg == T_DIR)
     return (take_param(arena, tmp, DIR_SIZE));
   else if (arg == T_IND - 1)

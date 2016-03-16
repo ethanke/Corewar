@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Wed Mar 16 02:26:30 2016 Gaëtan Léandre
+## Last update Wed Mar 16 04:19:58 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -16,6 +16,7 @@ PRINTFDIR	=	$(OUTPUTDIR)/my_printf
 LOADINGDIR	=	$(SRCDIR)/loading
 UTILSDIR	=	$(SRCDIR)/utils
 FUNCTDIR	=	$(SRCDIR)/funct
+LOOPDIR		=	$(SRCDIR)/loop
 
 CFLAGS		=	-I../includes
 CFLAGS		+=	-Iincludes
@@ -71,6 +72,8 @@ SRC		+=	$(FUNCTDIR)/check.c		\
 			$(FUNCTDIR)/add.c		\
 			$(FUNCTDIR)/ldi.c		\
 			$(FUNCTDIR)/disp_func.c
+
+SRC		+=	$(LOOPDIR)/loop.c
 
 OBJ		=	$(SRC:.c=.o)
 

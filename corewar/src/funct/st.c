@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sun Mar 13 11:45:09 2016 Gaëtan Léandre
-** Last update Wed Mar 16 02:56:06 2016 Gaëtan Léandre
+** Last update Wed Mar 16 05:18:45 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -23,13 +23,12 @@ int		my_st(t_arena *arena, t_process *process, int id, int pc_pos)
     return (0);
   process->cycle += op_tab[2].nbr_cycles;
   nbr = process->reg[arena->arena[circle(process->pos, 1)] - 1];
-  if (octet_to_read(arg, 1) == T_REG)
+  if (octet_to_read(arg, 2) == T_REG)
     process->reg[arena->arena[circle(process->pos, 2)] - 1] = nbr;
   else
     {
       ind = take_param(arena->arena, process->pos + 2, IND_SIZE);
-      put_param(arena, circle(pc_pos, mod(ind, IDX_MOD))
-		* REG_SIZE, arena->champ->id_champ[id], nbr);
+      put_param(arena, circle(pc_pos, mod(ind, IDX_MOD)), arena->champ->id_champ[id], nbr);
     }
   process->pos = circle(process->pos, place_to_jump(arg, 2) + 1);
   return (0);
