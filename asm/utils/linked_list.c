@@ -5,16 +5,42 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 05:47:59 2016 Ethan Kerdelhue
-** Last update Tue Mar 15 17:50:43 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 20:04:23 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
+
+t_corlabel	*corlabel_init()
+{
+  t_corlabel	*corlabel;
+
+  corlabel = malloc(sizeof(*corlabel));
+  corlabel->name = NULL;
+  corlabel->mempos = 0;
+  corlabel->next = NULL;
+  return (corlabel);
+}
+
+void		create_label(t_corlabel *corlabel, t_corlabel label)
+{
+  t_corlabel	*tmp;
+  t_corlabel	*new;
+
+  tmp = corlabel;
+  while (tmp->next != NULL)
+    tmp = tmp->next;
+  new = xmalloc(sizeof(t_corlabel));
+  new->name = label.name;
+  new->mempos = label.mempos;
+  tmp->next = new;
+  new->next = NULL;
+}
 
 t_corline	*corline_init()
 {
   t_corline	*corline;
 
-  corline = malloc(sizeof(t_corline));
+  corline = malloc(sizeof(*corline));
   corline->label = NULL;
   corline->instruction = NULL;
   corline->args = NULL;
@@ -34,7 +60,7 @@ void	create_line(t_corline *corline, t_corline line)
   tmp = corline;
   while(tmp->next != NULL)
     tmp = tmp->next;
-  new = malloc(sizeof(t_corline));
+  new = xmalloc(sizeof(t_corline));
   new->label = line.label;
   new->instruction = line.instruction;
   new->args = line.args;

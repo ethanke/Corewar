@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:36:36 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 04:40:14 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 16:54:01 2016 Ethan Kerdelhue
 */
 
  #include "asm.h"
@@ -18,8 +18,7 @@ char	checkInstru(char *str)
 
   while (str[i] != '\0')
     {
-      if (str[i] == '.' && str[i + 1] == 'n' && str[i + 2] == 'a' && str[i + 3]
-	== 'm' && str[i + 4] == 'e')
+      if (my_strncmp(&str[i], NAME_CMD_STRING, my_strlen(NAME_CMD_STRING) == 0))
 	return (0);
       i++;
     }
@@ -66,9 +65,9 @@ void	checkQuote(char *str)
 	}
     }
   if (pos_1 == 0)
-    putError("[HEADER] Error line 1 : '34' not found, syntax error");
+    putError("[HEADER] Error line 1 : \" not found, syntax error");
   else if (pos_2 == 0)
-    putError("[HEADER] Error line 1 : missing '34' for .name, syntax error");
+    putError("[HEADER] Error line 1 : missing \" for .name, syntax error");
   else
     checkAdv(pos_1, pos_2, str);
 }

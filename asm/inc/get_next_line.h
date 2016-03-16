@@ -5,11 +5,11 @@
 ** Login   <leandr_g@epitech.net>
 **
 ** Started on  Mon Jan  4 15:51:07 2016 Gaëtan Léandre
-** Last update Wed Mar 16 04:09:15 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 19:04:15 2016 Ethan Kerdelhue
 */
 
 #ifndef READ_SIZE
-# define READ_SIZE (1)
+# define READ_SIZE (14)
 #endif /* !READ_SIZE */
 
 #ifndef GET_NEXT_LINE
