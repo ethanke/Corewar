@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Wed Mar 16 01:46:52 2016 Gaëtan Léandre
-** Last update Wed Mar 16 17:43:42 2016 Victor Sousa
+** Last update Wed Mar 16 22:50:13 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -35,9 +35,10 @@ int		my_zjump(t_arena *arena, t_process *process, int id, int pc_pos)
   process->pos = circle(process->pos, 1);
   process->cycle += op_tab[8].nbr_cycles;
   if (process->carry == 1)
-    process->pos = circle(pc_pos, mod(take_param(arena->arena, process->pos,
-						 IND_SIZE), IDX_MOD));
-  process->pos = circle(process->pos, octet_to_r(3) + 1);
+    process->pc_pos = circle(pc_pos, mod(take_param(arena->arena, process->pos,
+						    IND_SIZE), IDX_MOD));
+  else
+    process->pos = circle(process->pos, octet_to_r(3) + 1);
   return (0);
 }
 
