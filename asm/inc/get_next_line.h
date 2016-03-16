@@ -5,11 +5,11 @@
 ** Login   <leandr_g@epitech.net>
 **
 ** Started on  Mon Jan  4 15:51:07 2016 Gaëtan Léandre
-** Last update Mon Mar  7 02:29:58 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 04:09:15 2016 Ethan Kerdelhue
 */
 
 #ifndef READ_SIZE
-# define READ_SIZE (10000)
+# define READ_SIZE (1)
 #endif /* !READ_SIZE */
 
 #ifndef GET_NEXT_LINE
@@ -17,6 +17,8 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+
+#include "asm.h"
 
 typedef struct		s_text
 {

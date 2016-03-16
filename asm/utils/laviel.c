@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:15:48 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 05:36:28 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 04:46:51 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -25,7 +25,7 @@ int		countchars(char *str, char *delim)
 {
   int		i;
 
-  i = 0;
+  i = -1;
   while (check(str[i], delim))
     i++;
   return (i + 1);
@@ -45,22 +45,20 @@ int		countwords(char *str, char *delim)
 	while (str[0] && !check(str[i], delim))
 	  i++;
       }
-return (count + 1);
+return (count);
 }
 
-char		**my_str_to_wordtab(char *str, char *delim)
+char		**strtowordtab(char *str, char *delim)
 {
   int		i;
   int		j;
   int		k;
   char		**tab;
 
-  i = 0;
+  i = -1;
   j = -1;
-  tab = xmalloc(countwords(str, delim) * sizeof(char *));
-  while (str[i] && !check(str[i], delim))
-    i++;
-  while (str[i])
+  tab = xmalloc(countwords(str, delim));
+  while (str[++i])
     {
       tab[++j] = xmalloc(countchars(&str[i], delim));
       k = -1;
