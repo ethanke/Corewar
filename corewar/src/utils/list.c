@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 02:12:18 2016 Gaëtan Léandre
-** Last update Mon Mar  7 03:21:38 2016 Gaëtan Léandre
+** Last update Tue Mar 15 19:14:15 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -53,6 +53,7 @@ void		free_process(t_process *process)
 
   while (process != NULL)
     {
+      free(process->reg);
       if (process->child != NULL)
 	free_process(process->child);
       tmp = process;

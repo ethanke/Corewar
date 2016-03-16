@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Sun Mar 13 13:08:21 2016 Gaëtan Léandre
+** Last update Wed Mar 16 02:45:49 2016 Gaëtan Léandre
 */
 
 #include "corewar.h"
@@ -25,19 +25,21 @@ int		take_param(unsigned char *arena, int pos, int bit)
   return (result);
 }
 
-unsigned char	*put_param(unsigned char *arena, int pos, int bit, int nbr)
+void		put_param(t_arena *arena, int pos, int id, int nbr)
 {
   int		i;
+  int		bit;
 
+  bit = DIR_SIZE;
   i = 0;
   while (i < bit)
     {
-      arena[pos] = 0;
-      arena[pos] = arena[pos] | (nbr << ((i + 1) * 8));
+      arena->arena[pos] = 0;
+      arena->arena[pos] = arena->arena[pos] | (nbr << ((i + 1) * 8));
+      arena->proprio[pos] = id;
       i++;
       pos = circle(pos, 1);
     }
-  return (arena);
 }
 
 int		take_ind(unsigned char *arena, int pos, int modu, int pc)
@@ -51,25 +53,21 @@ int		take_ind(unsigned char *arena, int pos, int modu, int pc)
   return (nbr);
 }
 
-int		take_reg(unsigned char *arena, int pos, int pc)
+int		take_what(unsigned char *arena, int pos,
+			  t_choix choix, int *reg)
 {
-  int		nbr;
+  char		arg;
   int		tmp;
 
-  tmp = take_param(arena, pos, REG_SIZE);
-  if (check_reg(tmp) == -1)
-    return (-1);
-  nbr = take_param(arena, pc + 1 + (tmp - 1) * REG_SIZE, REG_SIZE);
-  return (nbr);
-}
-
-int		take_what(unsigned char *arena, int pos, int modu, int pc)
-{
-  if (arena[pos] == T_REG)
-    return (take_reg(arena, pos + 1, pc));
-  else if (arena[pos] == T_DIR)
-    return (take_param(arena, pos + 1, DIR_SIZE));
-  else if (arena[pos] == T_IND)
-    return (take_ind(arena, pos + 1, modu, pc));
+  tmp = pos + 1;
+  arg = who_are_u(arena[pos], choix.place);
+  if (choix.place > 1)
+    tmp = circle(tmp, place_to_jump(arena[pos], choix.place - 1));
+  if (arg == T_REG)
+    return (reg[arena[pos] - 1]);
+  else if (arg == T_DIR)
+    return (take_param(arena, tmp, DIR_SIZE));
+  else if (arg == T_IND - 1)
+    return (take_ind(arena, tmp, choix.modu, choix.pc));
   return (0);
 }

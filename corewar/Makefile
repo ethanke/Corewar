@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Mon Mar 14 19:17:11 2016 Gaëtan Léandre
+## Last update Wed Mar 16 02:26:30 2016 Gaëtan Léandre
 ##
 
 NAME		=	corewar
@@ -47,7 +47,8 @@ SRC		+=	$(PRINTFDIR)/my_printf.c 		\
 
 SRC		+=	$(LOADINGDIR)/init_champion.c	\
 			$(LOADINGDIR)/init_arena.c	\
-			$(LOADINGDIR)/load_process.c	\
+			$(LOADINGDIR)/load_champion.c	\
+			$(LOADINGDIR)/fill_process.c	\
 			$(LOADINGDIR)/id_stuff.c	\
 			$(LOADINGDIR)/get_header.c	\
 			$(LOADINGDIR)/get_instruct.c
@@ -57,11 +58,19 @@ SRC		+=	$(UTILSDIR)/params.c		\
 			$(UTILSDIR)/my_getnbr.c		\
 			$(UTILSDIR)/list.c		\
 			$(UTILSDIR)/xmalloc.c		\
+			$(UTILSDIR)/xopen.c		\
 			$(UTILSDIR)/calculs.c		\
 			$(UTILSDIR)/my_memset.c		\
+			$(UTILSDIR)/registre.c		\
 			$(UTILSDIR)/oct_verif.c
 
-SRC		+=	$(FUNCTDIR)/check.c
+SRC		+=	$(FUNCTDIR)/check.c		\
+			$(FUNCTDIR)/fork.c		\
+			$(FUNCTDIR)/ld.c		\
+			$(FUNCTDIR)/st.c		\
+			$(FUNCTDIR)/add.c		\
+			$(FUNCTDIR)/ldi.c		\
+			$(FUNCTDIR)/disp_func.c
 
 OBJ		=	$(SRC:.c=.o)
 
