@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Wed Mar 16 17:12:24 2016 Victor Sousa
+** Last update Wed Mar 16 17:47:56 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -23,9 +23,56 @@ void		pick_function(t_arena *arena, t_process *proc, int id)
     proc->cycle--;
 }
 
-void		refresh_champ(t_arena *arena)
+void		refresh_process(t_process *proc)
 {
-  
+  t_process	*tmp;
+
+  tmp = proc;
+  while (tmp != NULL)
+    {
+      proc->live = proc->living;
+      proc->living = 0;
+      if (tmp->child != NULL)
+	refresh_process(tmp->child);
+      tmp = tmp->next;
+    }
+}
+
+void		refresh_process_loop(t_arena *arena)
+{
+  int		i;
+
+  i = -1;
+  while (++i < arena->champ->nbr_champ)
+    {
+      arena->champ->live[i] = 0;
+      refresh_process(arena->champ->process[i]);
+    }
+  arena->nbr_live = 0;
+}
+
+int		how_much_alive(t_champ *champ)
+{
+  int		i;
+  int		count;
+
+  count = 0;
+  i = -1;
+  while (++i < champ->nbr_champ)
+    {
+      if (champ->live[i] == 1)
+	count++;
+      champ->live[i] = 0;
+    }
+  return (count);
+}
+
+void		leave_loop(t_arena *arena)
+{
+  my_printf("le joueur %d(%s) a gagné\n", arena->champ->id_champ[arena->champ->last_live],
+	    arena->champ->header[arena->champ->last_live].prog_name);
+  end_prog(arena);
+  exit(0);
 }
 
 void		launch_process(t_process *process, t_arena *arena, int id)
@@ -35,8 +82,12 @@ void		launch_process(t_process *process, t_arena *arena, int id)
   tmp = process;
   while (tmp != NULL)
     {
-      if (arena->nbr_live < NBR_LIVE)
-	refresh_champ(t_arena *arena);
+      if (arena->nbr_live > NBR_LIVE)
+	{
+	  refresh_process_loop(arena);
+	  if (how_much_alive(arena->champ) < 2)
+	    leave_loop(arena);
+	}
       pick_function(arena, process, id);
       if (tmp->child != NULL && tmp->child->live == 1)
 	launch_process(tmp->child, arena, id);
@@ -70,6 +121,9 @@ void			main_loop(t_arena *arena)
 	{
 	  loop_champ(arena);
 	}
+      refresh_process_loop(arena);
+      if (how_much_alive(arena->champ) < 2)
+	leave_loop(arena);
       cycle_to_die -= CYCLE_DELTA;
     }
 }

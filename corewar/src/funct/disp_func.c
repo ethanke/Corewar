@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Wed Mar 16 01:46:52 2016 Gaëtan Léandre
-** Last update Wed Mar 16 02:39:28 2016 Gaëtan Léandre
+** Last update Wed Mar 16 17:43:42 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -80,6 +80,8 @@ int		my_live(t_arena *arena, t_process *process, int id, int pc_pos)
       champ->last_live = who_said;
       champ->live[who_said] = 1;
       process->living = 1;
+      arena->total_live++;
+      arena->nbr_live++;
     }
   return (0);
 }

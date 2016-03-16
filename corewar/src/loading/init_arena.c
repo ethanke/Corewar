@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 16:47:03 2016 Victor Sousa
-** Last update Wed Mar 16 06:44:05 2016 Victor Sousa
+** Last update Wed Mar 16 17:46:10 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -60,6 +60,7 @@ t_arena			init_arena(t_champ *champ)
   arena.cycle_to_die = CYCLE_TO_DIE;
   arena.total_cycle = 0;
   arena.total_live = 0;
+  arena.nbr_live = 0;
   init_func_tab(&arena);
   return (arena);
 }
