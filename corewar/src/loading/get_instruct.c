@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar 13 13:03:48 2016 Victor Sousa
-** Last update Mon Mar 14 16:20:48 2016 Victor Sousa
+** Last update Wed Mar 16 01:35:52 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -23,8 +23,8 @@ unsigned char			*get_instruct(int fd, int size)
 {
   unsigned char			*instruction;
 
-  instruction = xmalloc(size);
-  if ((read(fd, instruction, size)) < 0)
+  instruction = xmalloc(size + 10);
+  if ((read(fd, instruction, size + 10)) < 0)
     my_putstr_error("couldn't read one of the requested champion\n", 1);
   return (instruction);
 }
