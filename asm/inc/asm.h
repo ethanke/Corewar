@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.net>
 **
 ** Started on  Sun Mar  6 20:19:55 2016 Kerdelhue Ethan
-** Last update Wed Mar 16 04:50:29 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 20:03:35 2016 Ethan Kerdelhue
 */
 
 #ifndef ASM_H_
@@ -64,12 +64,20 @@ typedef struct 			s_corline
   struct s_corline		*prev;
 }				t_corline;
 
+typedef struct			s_corlabel
+{
+  int				mempos;
+  char				*name;
+  struct s_corlabel		*next;
+}				t_corlabel;
+
 typedef struct 			s_cor
 {
   int				fd;
   char				*name;
   char				**tab;
   t_corline			*first_line;
+  t_corlabel			*first_label;
 }				t_cor;
 
 typedef struct          	header_s
@@ -112,7 +120,7 @@ extern  	op_t    	op_tab[];
 
 	/* PARSING */
 int 				parse_instr(t_cor *corfile);
-int				start_parse_instr(t_corline *corline, char *str);
+int				start_parse_instr(t_corline *corline, t_corlabel *corlabel, char *str);
 char				*checkComment(char *str, t_header *header);
 char				*checkName(char *str, t_header *header);
 char				*checkLabel(char *name);
@@ -126,6 +134,8 @@ char    			*get_next_line(const int fd);
 	/* LINK LIST FUNC */
 t_corline			*corline_init();
 void				create_line(t_corline *corline, t_corline line);
+t_corlabel			*corlabel_init();
+void				create_label(t_corlabel *corlabel, t_corlabel label);
 
 	/* OPEN FUNC */
 void				open_corfile(t_cor *corfile);

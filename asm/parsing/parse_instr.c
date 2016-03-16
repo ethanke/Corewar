@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 06:02:03 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 05:53:43 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 20:03:15 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -71,16 +71,6 @@ int	get_size(t_corarg *tab_args)
   return (memsize + 1); /* + 1 pour l'octet representatif de l'instruction */
 }
 
-char	*get_last_label(t_corline *corline)
-{
-  t_corline	*tmp;
-
-  tmp = corline;
-  while (tmp->next != NULL)
-    tmp = tmp->next;
-  return (tmp->label);
-}
-
 int	calc_mem_pos(t_corline *tmp, t_corline *corline)
 {
   int		mempos;
@@ -106,32 +96,39 @@ void	create_corline_wl(t_corline tmp, t_corline *corline, op_t op)
   tmp.nbr = count_args(tmp.args);
   tmp.tab_args = get_args(tmp.args, 0);
   tmp.mempos = calc_mem_pos(&tmp, corline);
-  tmp.label = get_last_label(corline);
+  printf("mempos -> %d\n", tmp.mempos);
+  tmp.label = NULL;
   create_line(corline, tmp);
 }
 
-void	create_corline_l(t_corline tmp, t_corline *corline, op_t op)
+void	create_corline_l(t_corline tmp,
+			 t_corline *corline, t_corlabel *corlabel, op_t op)
 {
+  t_corlabel	label;
+
   op = checkOp(tmp.args[1]);
   tmp.instruction = op.mnemonique;
   tmp.nbr = count_args(tmp.args);
   tmp.tab_args = get_args(tmp.args, 0);
   tmp.mempos = calc_mem_pos(&tmp, corline);
+  printf("mempos -> %d\n", tmp.mempos);
   tmp.label = line_is_label(tmp.args[0]);
+  label.mempos = tmp.mempos;
+  label.name = tmp.label;
+  create_label(corlabel, label);
   create_line(corline, tmp);
 }
 
-int	start_parse_instr(t_corline *corline, char *str)
+int	start_parse_instr(t_corline *corline, t_corlabel *corlabel, char *str)
 {
   t_corline	tmp;
   op_t		op;
 
-  str[my_strlen(str) + 1] = 0;
   tmp.args = my_str_to_wordtab(str, STRTWTB);
   if (line_is_label(tmp.args[0]) == NULL)
     create_corline_wl(tmp, corline, op);
   else
-    create_corline_l(tmp, corline, op);
+    create_corline_l(tmp, corline, corlabel, op);
   return (0);
 }
 
@@ -139,12 +136,14 @@ int 	parse_instr(t_cor *corfile)
 {
   int		i;
   t_corline	*corline;
+  t_corlabel	*corlabel;
 
-  i = 3;
+  i = 2;
   corline = corline_init();
+  corlabel = corlabel_init();
   while (corfile->tab[i])
     {
-      start_parse_instr(corline, corfile->tab[i]);
+      start_parse_instr(corline, corlabel, corfile->tab[i]);
       i++;
     }
   return (0);
