@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 16:47:03 2016 Victor Sousa
-** Last update Wed Mar 16 17:46:10 2016 Victor Sousa
+** Last update Wed Mar 16 19:04:23 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -41,8 +41,8 @@ void			fill_battle_field(t_arena *arena, t_champ *champ)
       i = -1;
       while (++i < champ->header[nb_champ].prog_size)
 	{
-	  arena->arena[i + champ->pc_pos[nb_champ]] = champ->instru[nb_champ][i];
-	  arena->proprio[i + champ->pc_pos[nb_champ]] = champ->id_champ[nb_champ];
+	  arena->arena[i + champ->process[nb_champ]->pc_pos] = champ->instru[nb_champ][i];
+	  arena->proprio[i + champ->process[nb_champ]->pc_pos] = champ->id_champ[nb_champ];
 	}
     }
 }

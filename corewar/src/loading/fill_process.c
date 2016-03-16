@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Tue Mar 15 17:31:06 2016 Victor Sousa
-** Last update Tue Mar 15 19:00:03 2016 Victor Sousa
+** Last update Wed Mar 16 19:07:50 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -18,6 +18,7 @@ t_process		*fill_process(int pos, int id)
   proc->live = 1;
   proc->living = 0;
   proc->pos = pos;
+  proc->pc_pos = pos;
   proc->cycle = 0;
   proc->carry = 0;
   create_registre(proc, id);

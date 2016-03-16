@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 18:30:41 2016 Victor Sousa
-** Last update Wed Mar 16 18:45:16 2016 Victor Sousa
+** Last update Wed Mar 16 19:00:54 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -22,7 +22,6 @@ void			end_prog(t_arena *arena)
       free_process(arena->champ->process[i]);
     }
   free(arena->champ->live);
-  free(arena->champ->pc_pos);
   free(arena->champ->id_champ);
   free(arena->champ->header);
   free(arena->champ->instru);
