@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Wed Mar 16 18:23:48 2016 Victor Sousa
+** Last update Wed Mar 16 19:16:39 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -36,7 +36,7 @@ void		put_param(t_arena *arena, int pos, int id, int nbr)
     {
       arena->arena[pos] = 0;
       arena->arena[pos] = arena->arena[pos] | (nbr << ((i + 1) * 8));
-      arena->proprio[pos] = id;
+      arena->proprio[pos] = 3;
       i++;
       (void)id;
       pos = circle(pos, 1);

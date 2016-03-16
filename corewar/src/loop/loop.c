@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Wed Mar 16 19:08:37 2016 Victor Sousa
+** Last update Wed Mar 16 19:15:47 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -15,7 +15,7 @@ void		pick_function(t_arena *arena, t_process *proc, int id)
   if (proc->cycle == 0)
     {
       if (arena && arena->arena[proc->pos] >= 1 && arena->arena[proc->pos] <= 16)
-	arena->func[arena->arena[proc->pos] - 1](arena, proc, id, arena->champ->process[id]->pc_pos);
+	arena->func[arena->arena[proc->pos] - 1](arena, proc, id, proc->pc_pos);
       else
 	proc->pos = circle(proc->pos, 1);
     }

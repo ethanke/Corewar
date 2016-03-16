@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sun Mar 13 11:45:09 2016 Gaëtan Léandre
-** Last update Wed Mar 16 05:18:45 2016 Victor Sousa
+** Last update Wed Mar 16 19:20:51 2016 Victor Sousa
 */
 
 #include	"corewar.h"
