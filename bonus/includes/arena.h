@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:12:21 2016 Gaëtan Léandre
-** Last update Wed Mar 16 17:41:42 2016 Victor Sousa
+** Last update Thu Mar 17 02:12:04 2016 Victor Sousa
 */
 
 #ifndef			ARENA_H_
@@ -13,11 +13,19 @@
 
 # include "corewar.h"
 
+typedef struct		s_graph
+{
+  SDL_Surface		*sdl_surface;
+}			t_graph;
+
 typedef struct		s_arena
 {
+  char			mode;
+  t_graph		graph;
   t_champ		*champ;
   unsigned char		*arena;
   char			*proprio;
+  int			cycle;
   float			cycle_to_die;
   int			total_cycle;
   int			total_live;

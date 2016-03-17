@@ -1,0 +1,129 @@
+src/end.c:  while (++i < arena->champ->nbr_champ)
+src/end.c:      free(arena->champ->instru[i]);
+src/end.c:      free_process(arena->champ->process[i]);
+src/end.c:  free(arena->champ->live);
+src/end.c:  free(arena->champ->id_champ);
+src/end.c:  free(arena->champ->header);
+src/end.c:  free(arena->champ->instru);
+src/end.c:  free(arena->champ->process);
+src/end.c:  free(arena->arena);
+src/end.c:  free(arena->proprio);
+src/funct/add.c:  arg = arena->arena[process->pos];
+src/funct/add.c:  if (check_mult_args(arena->arena, 3, process->pos, 3) == -1)
+src/funct/add.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 1),
+src/funct/add.c:  nbr += take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 2),
+src/funct/add.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/add.c:  arg = arena->arena[process->pos];
+src/funct/add.c:  if (check_mult_args(arena->arena, 4, process->pos, 3) == -1)
+src/funct/add.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 1),
+src/funct/add.c:  nbr += take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 2),
+src/funct/add.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/add.c:  arg = arena->arena[process->pos];
+src/funct/add.c:  if (check_mult_args(arena->arena, 5, process->pos, 3) == -1)
+src/funct/add.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 1),
+src/funct/add.c:  nbr &= take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 2),
+src/funct/add.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/add.c:  arg = arena->arena[process->pos];
+src/funct/add.c:  if (check_mult_args(arena->arena, 6, process->pos, 3) == -1)
+src/funct/add.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 1),
+src/funct/add.c:  nbr |= take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 2),
+src/funct/add.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/add.c:  arg = arena->arena[process->pos];
+src/funct/add.c:  if (check_mult_args(arena->arena, 7, process->pos, 3) == -1)
+src/funct/add.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 1),
+src/funct/add.c:  nbr ^= take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 2),
+src/funct/add.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/disp_func.c:  arg = arena->arena[process->pos];
+src/funct/disp_func.c:  if (check_mult_args(arena->arena, 15, process->pos, 1) == -1)
+src/funct/disp_func.c:  reg = process->reg[arena->arena[circle(process->pos, 1)] - 1];
+src/funct/disp_func.c:    process->pos = circle(pc_pos, mod(take_param(arena->arena, process->pos,
+src/funct/disp_func.c:  champ = arena->champ;
+src/funct/disp_func.c:  tmp = take_param(arena->arena, process->pos, DIR_SIZE);
+src/funct/disp_func.c:  who_said = check_proprio(arena->proprio, tmp,
+src/funct/disp_func.c:      arena->total_live++;
+src/funct/disp_func.c:      arena->nbr_live++;
+src/funct/fork.c:  tmp->pos = circle(pc_pos, mod(take_param(arena->arena, process->pos,
+src/funct/fork.c:  tmp->pos = circle(pc_pos, take_param(arena->arena, process->pos,
+src/funct/ld.c:  arg = arena->arena[process->pos];
+src/funct/ld.c:  if (check_mult_args(arena->arena, 1, process->pos, 2) == -1)
+src/funct/ld.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 1, 1),
+src/funct/ld.c:  reg = arena->arena[circle(process->pos, octet_to_read(arg, 1) + 1)];
+src/funct/ld.c:  arg = arena->arena[process->pos];
+src/funct/ld.c:  if (check_mult_args(arena->arena, 12, process->pos, 2) == -1)
+src/funct/ld.c:  nbr = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 1),
+src/funct/ld.c:  reg = arena->arena[circle(process->pos, octet_to_read(arg, 1) + 1)];
+src/funct/ldi.c:  arg = arena->arena[process->pos];
+src/funct/ldi.c:  if (check_mult_args(arena->arena, 9, process->pos, 3) == -1)
+src/funct/ldi.c:  s = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 1),
+src/funct/ldi.c:  s += take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 2),
+src/funct/ldi.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/ldi.c:  s = take_param(arena->arena, circle(pc_pos, mod(s, IDX_MOD)), DIR_SIZE);
+src/funct/ldi.c:  arg = arena->arena[process->pos];
+src/funct/ldi.c:  if (check_mult_args(arena->arena, 13, process->pos, 3) == -1)
+src/funct/ldi.c:  s = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 1),
+src/funct/ldi.c:  s += take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 2),
+src/funct/ldi.c:  ind = arena->arena[circle(process->pos, place_to_jump(arg, 2) + 1)];
+src/funct/ldi.c:  s = take_param(arena->arena, circle(pc_pos, s), DIR_SIZE);
+src/funct/st.c:  arg = arena->arena[process->pos];
+src/funct/st.c:  if (check_mult_args(arena->arena, 2, process->pos, 2) == -1)
+src/funct/st.c:  nbr = process->reg[arena->arena[circle(process->pos, 1)] - 1];
+src/funct/st.c:    process->reg[arena->arena[circle(process->pos, 2)] - 1] = nbr;
+src/funct/st.c:      ind = take_param(arena->arena, process->pos + 2, IND_SIZE);
+src/funct/st.c:      put_param(arena, circle(pc_pos, mod(ind, IDX_MOD)), arena->champ->id_champ[id], nbr);
+src/funct/st.c:  arg = arena->arena[process->pos];
+src/funct/st.c:  if (check_mult_args(arena->arena, 10, process->pos, 3) == -1)
+src/funct/st.c:  a = process->reg[arena->arena[circle(process->pos, 1)] - 1];
+src/funct/st.c:  b = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 2),
+src/funct/st.c:  c = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 3),
+src/funct/st.c:	    arena->champ->id_champ[id], a);
+src/loading/init_arena.c:  arena->func[0] = my_live;
+src/loading/init_arena.c:  arena->func[1] = my_ld;
+src/loading/init_arena.c:  arena->func[2] = my_st;
+src/loading/init_arena.c:  arena->func[3] = my_add;
+src/loading/init_arena.c:  arena->func[4] = my_sub;
+src/loading/init_arena.c:  arena->func[5] = my_and;
+src/loading/init_arena.c:  arena->func[6] = my_or;
+src/loading/init_arena.c:  arena->func[7] = my_xor;
+src/loading/init_arena.c:  arena->func[8] = my_zjump;
+src/loading/init_arena.c:  arena->func[9] = my_ldi;
+src/loading/init_arena.c:  arena->func[10] = my_sti;
+src/loading/init_arena.c:  arena->func[11] = my_fork;
+src/loading/init_arena.c:  arena->func[12] = my_lld;
+src/loading/init_arena.c:  arena->func[13] = my_lldi;
+src/loading/init_arena.c:  arena->func[14] = my_lfork;
+src/loading/init_arena.c:  arena->func[15] = my_aff;
+src/loading/init_arena.c:	  arena->arena[i + champ->process[nb_champ]->pc_pos] = champ->instru[nb_champ][i];
+src/loading/init_arena.c:	  arena->proprio[i + champ->process[nb_champ]->pc_pos] = champ->id_champ[nb_champ];
+src/loop/graph.c:      if (arena->mode == M_SDL)
+src/loop/graph.c:	  my_printf("%d\n", arena->mode);
+src/loop/loop.c:      if (arena && arena->arena[proc->pos] >= 1 && arena->arena[proc->pos] <= 16)
+src/loop/loop.c:	arena->func[arena->arena[proc->pos] - 1](arena, proc, id, proc->pc_pos);
+src/loop/loop.c:  while (++i < arena->champ->nbr_champ)
+src/loop/loop.c:      arena->champ->live[i] = 0;
+src/loop/loop.c:      refresh_process(arena->champ->process[i]);
+src/loop/loop.c:  arena->nbr_live = 0;
+src/loop/loop.c:  my_printf("le joueur %d(%s) a gagné\n", arena->champ->id_champ[arena->champ->last_live],
+src/loop/loop.c:	    arena->champ->header[arena->champ->last_live].prog_name);
+src/loop/loop.c:      if (arena->nbr_live > NBR_LIVE)
+src/loop/loop.c:	  if (how_much_alive(arena->champ) < 2)
+src/loop/loop.c:  while (++i < arena->champ->nbr_champ)
+src/loop/loop.c:      if (arena->champ->process[i]->live == 1)
+src/loop/loop.c:	  if (launch_process(arena->champ->process[i], arena, i) == -1)
+src/loop/loop.c:      if (how_much_alive(arena->champ) < 2)
+src/loop/sdl.c:  arena->mode = M_SDL;
+src/loop/sdl.c:  if ((arena->graph.sdl_surface =
+src/loop/sdl.c:  sdl_square(arena->graph.sdl_surface, &pos, 100, 0xFFFF0000);
+src/loop/sdl.c:  SDL_Flip(arena->graph.sdl_surface);
+src/main.c:  arena->mode = M_NONE;
+src/output/print_arena.c:      if (arena->proprio[i - 1] == -1)
+src/output/print_arena.c:      else if (arena->proprio[i - 1] == 0)
+src/output/print_arena.c:	my_printf("#1%d", arena->proprio[i - 1]);
+src/output/print_arena.c:      else if (arena->proprio[i - 1] == 1)
+src/output/print_arena.c:	my_printf("#2%d", arena->proprio[i - 1]);
+src/output/print_arena.c:      else if (arena->proprio[i - 1] == 2)
+src/output/print_arena.c:	my_printf("#3%d", arena->proprio[i - 1]);
+src/output/print_arena.c:      else if (arena->proprio[i - 1] == 3)
+src/output/print_arena.c:	my_printf("#4%d", arena->proprio[i - 1]);
+src/utils/params.c:      arena->arena[pos] = 0;
+src/utils/params.c:      arena->arena[pos] = arena->arena[pos] | (nbr << ((i + 1) * 8));
+src/utils/params.c:      arena->proprio[pos] = 3;

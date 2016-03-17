@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 18:30:41 2016 Victor Sousa
-** Last update Wed Mar 16 19:00:54 2016 Victor Sousa
+** Last update Thu Mar 17 01:26:48 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -14,7 +14,6 @@ void			end_prog(t_arena *arena)
 {
   int			i;
 
-  print_arena_proprio(arena);
   i = -1;
   while (++i < arena->champ->nbr_champ)
     {

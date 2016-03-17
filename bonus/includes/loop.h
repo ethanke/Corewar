@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:03:45 2016 Victor Sousa
-** Last update Wed Mar 16 04:15:23 2016 Victor Sousa
+** Last update Thu Mar 17 02:43:49 2016 Victor Sousa
 */
 
 #ifndef			LOOP_H_
@@ -13,12 +13,28 @@
 
 # include		"corewar.h"
 
-typedef struct		s_loop
-{
-  int			cycle_to_die;
+# define		WIDTH		1080
+# define		HEIGHT		720
 
-}			t_loop;
+# define		SDL_UPDATE_RATE	100
+
+# define		M_NONE		0
+# define		M_SDL		1
+# define		M_CURSE		2
+
+typedef struct		s_pos
+{
+  int			x;
+  int			y;
+}			t_pos;
 
 void			main_loop(t_arena *arena);
+
+/*sdl*/
+void			init_sdl(t_arena *arena);
+void			print_sdl(t_arena *arena);
+
+/*ncurses*/
+void			init_curses(t_arena *arena);
 
 #endif		      /*LOOP_H_*/
