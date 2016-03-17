@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Thu Mar 17 04:54:51 2016 victor sousa
+## Last update Thu Mar 17 06:04:52 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -20,7 +20,6 @@ LOOPDIR		=	$(SRCDIR)/loop
 
 CFLAGS		=	-I../includes -I./includes
 CFLAGS		+=	-lSDL -lSDL_image -lSDL_ttf
-CFLAGS		+=	-lpthread -lncurses
 CFLAGS		+= 	-Wall -Wextra -Werror -pedantic -g -g3
 
 CC		=	gcc
@@ -47,37 +46,37 @@ SRC		+=	$(PRINTFDIR)/my_printf.c 		\
 			$(PRINTFDIR)/my_put_unbr.c 		\
 			$(PRINTFDIR)/my_putnbr_base_add.c
 
-SRC		+=	$(LOADINGDIR)/init_champion.c	\
-			$(LOADINGDIR)/init_arena.c	\
-			$(LOADINGDIR)/load_champion.c	\
-			$(LOADINGDIR)/fill_process.c	\
-			$(LOADINGDIR)/id_stuff.c	\
-			$(LOADINGDIR)/get_header.c	\
+SRC		+=	$(LOADINGDIR)/init_champion.c		\
+			$(LOADINGDIR)/init_arena.c		\
+			$(LOADINGDIR)/load_champion.c		\
+			$(LOADINGDIR)/fill_process.c		\
+			$(LOADINGDIR)/id_stuff.c		\
+			$(LOADINGDIR)/get_header.c		\
 			$(LOADINGDIR)/get_instruct.c
 
-SRC		+=	$(UTILSDIR)/params.c		\
-			$(UTILSDIR)/verif_arg.c		\
-			$(UTILSDIR)/my_getnbr.c		\
-			$(UTILSDIR)/list.c		\
-			$(UTILSDIR)/xmalloc.c		\
-			$(UTILSDIR)/xopen.c		\
-			$(UTILSDIR)/calculs.c		\
-			$(UTILSDIR)/my_memset.c		\
-			$(UTILSDIR)/registre.c		\
-			$(UTILSDIR)/oct_verif.c		\
+SRC		+=	$(UTILSDIR)/params.c			\
+			$(UTILSDIR)/verif_arg.c			\
+			$(UTILSDIR)/my_getnbr.c			\
+			$(UTILSDIR)/list.c			\
+			$(UTILSDIR)/xmalloc.c			\
+			$(UTILSDIR)/xopen.c			\
+			$(UTILSDIR)/calculs.c			\
+			$(UTILSDIR)/my_memset.c			\
+			$(UTILSDIR)/registre.c			\
+			$(UTILSDIR)/oct_verif.c			\
 			$(UTILSDIR)/color.c
 
-SRC		+=	$(FUNCTDIR)/check.c		\
-			$(FUNCTDIR)/fork.c		\
-			$(FUNCTDIR)/ld.c		\
-			$(FUNCTDIR)/st.c		\
-			$(FUNCTDIR)/add.c		\
-			$(FUNCTDIR)/ldi.c		\
+SRC		+=	$(FUNCTDIR)/check.c			\
+			$(FUNCTDIR)/fork.c			\
+			$(FUNCTDIR)/ld.c			\
+			$(FUNCTDIR)/st.c			\
+			$(FUNCTDIR)/add.c			\
+			$(FUNCTDIR)/ldi.c			\
 			$(FUNCTDIR)/disp_func.c
 
-SRC		+=	$(LOOPDIR)/loop.c		\
-			$(LOOPDIR)/loop2.c		\
-			$(LOOPDIR)/sdl_init.c		\
+SRC		+=	$(LOOPDIR)/loop.c			\
+			$(LOOPDIR)/loop2.c			\
+			$(LOOPDIR)/sdl_init.c			\
 			$(LOOPDIR)/sdl_print.c
 
 OBJ		=	$(SRC:.c=.o)
@@ -87,13 +86,11 @@ all:			$(NAME)
 $(NAME):		$(OBJ)
 			$(CC) -o $(NAME) $(OBJ) $(CFLAGS)
 
-			@rm -f $(OBJ)
-
 clean:
-			$(RM) $(OBJ)
+			@$(RM) $(OBJ)
 
 fclean:			clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re:			fclean all
 
