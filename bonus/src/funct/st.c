@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sun Mar 13 11:45:09 2016 Gaëtan Léandre
-** Last update Wed Mar 16 19:20:51 2016 Victor Sousa
+** Last update Thu Mar 17 04:50:32 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -28,7 +28,8 @@ int		my_st(t_arena *arena, t_process *process, int id, int pc_pos)
   else
     {
       ind = take_param(arena->arena, process->pos + 2, IND_SIZE);
-      put_param(arena, circle(pc_pos, mod(ind, IDX_MOD)), arena->champ->id_champ[id], nbr);
+      put_param(arena, circle(pc_pos, mod(ind, IDX_MOD)),
+		arena->champ->id_champ[id], nbr);
     }
   process->pos = circle(process->pos, place_to_jump(arg, 2) + 1);
   return (0);
@@ -52,8 +53,7 @@ int		my_sti(t_arena *arena, t_process *process, int id, int pc_pos)
 		process->reg);
   c = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 3),
 		process->reg);
-  put_param(arena, circle(pc_pos, b + c),
-	    arena->champ->id_champ[id], a);
+  put_param(arena, circle(pc_pos, b + c), arena->champ->id_champ[id], a);
   process->pos = circle(process->pos, place_to_jump(arg, 3) + 1);
   return (0);
 }

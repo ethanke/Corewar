@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Wed Mar 16 21:55:34 2016 victor sousa
+## Last update Thu Mar 17 04:54:51 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -18,8 +18,9 @@ UTILSDIR	=	$(SRCDIR)/utils
 FUNCTDIR	=	$(SRCDIR)/funct
 LOOPDIR		=	$(SRCDIR)/loop
 
-CFLAGS		=	-I../includes
-CFLAGS		+=	-Iincludes -lSDL
+CFLAGS		=	-I../includes -I./includes
+CFLAGS		+=	-lSDL -lSDL_image -lSDL_ttf
+CFLAGS		+=	-lpthread -lncurses
 CFLAGS		+= 	-Wall -Wextra -Werror -pedantic -g -g3
 
 CC		=	gcc
@@ -63,7 +64,8 @@ SRC		+=	$(UTILSDIR)/params.c		\
 			$(UTILSDIR)/calculs.c		\
 			$(UTILSDIR)/my_memset.c		\
 			$(UTILSDIR)/registre.c		\
-			$(UTILSDIR)/oct_verif.c
+			$(UTILSDIR)/oct_verif.c		\
+			$(UTILSDIR)/color.c
 
 SRC		+=	$(FUNCTDIR)/check.c		\
 			$(FUNCTDIR)/fork.c		\
@@ -73,7 +75,10 @@ SRC		+=	$(FUNCTDIR)/check.c		\
 			$(FUNCTDIR)/ldi.c		\
 			$(FUNCTDIR)/disp_func.c
 
-SRC		+=	$(LOOPDIR)/loop.c
+SRC		+=	$(LOOPDIR)/loop.c		\
+			$(LOOPDIR)/loop2.c		\
+			$(LOOPDIR)/sdl_init.c		\
+			$(LOOPDIR)/sdl_print.c
 
 OBJ		=	$(SRC:.c=.o)
 

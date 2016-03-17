@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Wed Mar 16 02:46:26 2016 Gaëtan Léandre
+** Last update Thu Mar 17 04:50:19 2016 Victor Sousa
 */
 
 #ifndef			UTILS_H_
@@ -36,9 +36,9 @@ int			place_to_jump(unsigned char arg, char place);
 void			free_process(t_process *process);
 void			create_registre(t_process *process, int id);
 void			cpy_registre(t_process *child, t_process *parent);
+unsigned int		pick_color(int id);
 t_process		*add_child(t_process *father);
 void			init_child(t_process *father, t_process *child);
 t_process		*add_child(t_process *father);
-
 
 #endif		      /*UTILS_H*/

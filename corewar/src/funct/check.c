@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Fri Mar 11 00:11:32 2016 Gaëtan Léandre
-** Last update Mon Mar 14 19:15:01 2016 Gaëtan Léandre
+** Last update Wed Mar 16 21:48:02 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -17,11 +17,14 @@ int		check_arg(int funct, int pos, char arg)
   def = op_tab[funct].type[pos];
   if (T_LAB == arg && def / T_LAB == 1)
     return (1);
-  else if (T_IND - 1 == arg && def / (T_IND) == 1)
+  def %= T_LAB;
+  if (T_IND - 1 == arg && def / (T_IND) == 1)
     return (1);
-  else if (T_DIR == arg && def / T_DIR == 1)
+  def %= T_IND;
+  if (T_DIR == arg && def / T_DIR == 1)
     return (1);
-  else if (T_REG == arg && def / T_REG == 1)
+  def %= T_DIR;
+  if (T_REG == arg && def / T_REG == 1)
     return (1);
   return (-1);
 }

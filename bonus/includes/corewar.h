@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:25:56 2016 victor sousa
-** Last update Wed Mar 16 21:46:21 2016 Victor Sousa
+** Last update Thu Mar 17 04:01:10 2016 victor sousa
 */
 
 #ifndef			COREWAR_H_
@@ -17,6 +17,8 @@
 # include               <sys/stat.h>
 # include		<fcntl.h>
 # include		<SDL/SDL.h>
+# include		<SDL/SDL_image.h>
+# include		<SDL/SDL_ttf.h>
 
 # include		"op.h"
 # include		"champ.h"
@@ -27,5 +29,7 @@
 # include		"output.h"
 # include		"my_printf.h"
 # include		"loading.h"
+
+# define		FONT_PATH	"font/ultraviolentbbitalic.ttf"
 
 #endif		      /*COREWAR_H*/

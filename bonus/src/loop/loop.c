@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Wed Mar 16 19:15:47 2016 Victor Sousa
+** Last update Thu Mar 17 04:55:20 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -14,65 +14,15 @@ void		pick_function(t_arena *arena, t_process *proc, int id)
 {
   if (proc->cycle == 0)
     {
-      if (arena && arena->arena[proc->pos] >= 1 && arena->arena[proc->pos] <= 16)
-	arena->func[arena->arena[proc->pos] - 1](arena, proc, id, proc->pc_pos);
+      if (arena && arena->arena[proc->pos] >= 1 &&
+	  arena->arena[proc->pos] <= 16)
+	arena->func[arena->arena[proc->pos] - 1](arena, proc,
+						 id, proc->pc_pos);
       else
 	proc->pos = circle(proc->pos, 1);
     }
   else
     proc->cycle--;
-}
-
-void		refresh_process(t_process *proc)
-{
-  t_process	*tmp;
-
-  tmp = proc;
-  while (tmp != NULL)
-    {
-      proc->live = proc->living;
-      proc->living = 0;
-      if (tmp->child != NULL)
-	refresh_process(tmp->child);
-      tmp = tmp->next;
-    }
-}
-
-void		refresh_process_loop(t_arena *arena)
-{
-  int		i;
-
-  i = -1;
-  while (++i < arena->champ->nbr_champ)
-    {
-      arena->champ->live[i] = 0;
-      refresh_process(arena->champ->process[i]);
-    }
-  arena->nbr_live = 0;
-}
-
-int		how_much_alive(t_champ *champ)
-{
-  int		i;
-  int		count;
-
-  count = 0;
-  i = -1;
-  while (++i < champ->nbr_champ)
-    {
-      if (champ->live[i] == 1)
-	count++;
-      champ->live[i] = 0;
-    }
-  return (count);
-}
-
-void		leave_loop(t_arena *arena)
-{
-  my_printf("le joueur %d(%s) a gagné\n", arena->champ->id_champ[arena->champ->last_live],
-	    arena->champ->header[arena->champ->last_live].prog_name);
-  end_prog(arena);
-  exit(0);
 }
 
 void		launch_process(t_process *process, t_arena *arena, int id)
@@ -82,11 +32,13 @@ void		launch_process(t_process *process, t_arena *arena, int id)
   tmp = process;
   while (tmp != NULL)
     {
-      if (arena->nbr_live > NBR_LIVE)
+      if (arena->nbr_live >= NBR_LIVE)
 	{
 	  refresh_process_loop(arena);
 	  if (how_much_alive(arena->champ) < 2)
 	    leave_loop(arena);
+	  arena->cycle = 0;
+	  arena->cycle_to_die -= CYCLE_DELTA;
 	}
       pick_function(arena, process, id);
       if (tmp->child != NULL && tmp->child->live == 1)
@@ -109,24 +61,24 @@ void			loop_champ(t_arena *arena)
 
 void			main_loop(t_arena *arena)
 {
-  int			i;
-  int			cycle_to_die;
-
-  i = -1;
-  cycle_to_die = CYCLE_TO_DIE;
-  while (cycle_to_die > 0)
+  arena->cycle_to_die = CYCLE_TO_DIE;
+  while (arena->cycle_to_die > 0)
     {
-      i = -1;
-      while (++i < cycle_to_die)
+      arena->cycle = 0;
+      while (arena->cycle < arena->cycle_to_die)
 	{
 	  loop_champ(arena);
-          /*system("clear");
-          print_arena_proprio(arena);
-          sleep(1);*/
+	  if (arena->mode == M_SDL && arena->cycle % SDL_UPDATE_RATE == 0)
+	    print_sdl(arena);
+	  arena->total_cycle++;
+	  arena->cycle++;
 	}
       refresh_process_loop(arena);
       if (how_much_alive(arena->champ) < 2)
 	leave_loop(arena);
-      cycle_to_die -= CYCLE_DELTA;
+      arena->cycle_to_die -= CYCLE_DELTA;
+      if (arena->mode == M_SDL)
+        print_sdl(arena);
     }
+  leave_loop(arena);
 }

@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:39:28 2016 Gaëtan Léandre
-** Last update Wed Mar 16 19:16:39 2016 Victor Sousa
+** Last update Thu Mar 17 04:56:23 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -30,16 +30,15 @@ void		put_param(t_arena *arena, int pos, int id, int nbr)
   int		i;
   int		bit;
 
-  bit = DIR_SIZE;
+  bit = (DIR_SIZE - 1) * 8;
   i = 0;
-  while (i < bit)
+  while (i < DIR_SIZE)
     {
-      arena->arena[pos] = 0;
-      arena->arena[pos] = arena->arena[pos] | (nbr << ((i + 1) * 8));
-      arena->proprio[pos] = 3;
+      arena->arena[pos] = nbr >> (bit);
+      arena->proprio[pos] = id;
       i++;
-      (void)id;
       pos = circle(pos, 1);
+      bit -= 8;
     }
 }
 
@@ -48,9 +47,11 @@ int		take_ind(unsigned char *arena, int pos, int modu, int pc)
   int		nbr;
 
   if (modu == 1)
-    nbr = take_param(arena, circle(pc, mod(take_param(arena, pos, IND_SIZE), IDX_MOD)), DIR_SIZE);
+    nbr = take_param(arena, circle(pc, mod(take_param(arena, pos, IND_SIZE),
+					   IDX_MOD)), DIR_SIZE);
   else
-    nbr = take_param(arena, circle(pc, take_param(arena, pos, IND_SIZE)), DIR_SIZE);
+    nbr = take_param(arena, circle(pc, take_param(arena, pos, IND_SIZE)),
+		     DIR_SIZE);
   return (nbr);
 }
 

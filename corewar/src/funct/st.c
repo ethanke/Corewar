@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Sun Mar 13 11:45:09 2016 Gaëtan Léandre
-** Last update Wed Mar 16 19:20:51 2016 Victor Sousa
+** Last update Wed Mar 16 22:53:10 2016 Gaëtan Léandre
 */
 
 #include	"corewar.h"
@@ -52,8 +52,7 @@ int		my_sti(t_arena *arena, t_process *process, int id, int pc_pos)
 		process->reg);
   c = take_what(arena->arena, process->pos, make_choix(pc_pos, 0, 3),
 		process->reg);
-  put_param(arena, circle(pc_pos, b + c),
-	    arena->champ->id_champ[id], a);
+  put_param(arena, circle(pc_pos, b + c), arena->champ->id_champ[id], a);
   process->pos = circle(process->pos, place_to_jump(arg, 3) + 1);
   return (0);
 }
