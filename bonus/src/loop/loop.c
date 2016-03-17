@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Thu Mar 17 02:41:07 2016 Victor Sousa
+** Last update Thu Mar 17 03:21:25 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -124,6 +124,8 @@ void			main_loop(t_arena *arena)
       if (how_much_alive(arena->champ) < 2)
 	leave_loop(arena);
       arena->cycle_to_die -= CYCLE_DELTA;
+      if (arena->mode == M_SDL)
+        print_sdl(arena);
     }
   leave_loop(arena);
 }

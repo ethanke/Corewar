@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:21:44 2016 victor sousa
-** Last update Thu Mar 17 02:39:08 2016 Victor Sousa
+** Last update Thu Mar 17 03:22:37 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -30,8 +30,6 @@ void		choose_graphique(t_arena *arena, int ac, char **av)
     {
       if (my_strcmp(av[i], "--sdl") == 0)
 	init_sdl(arena);
-      if (my_strcmp(av[i], "--ncurses") == 0)
-	init_curses(arena);
     }
 }
 

@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.net>
 **
 ** Started on  Mon Feb 29 22:25:56 2016 victor sousa
-** Last update Thu Mar 17 02:41:54 2016 Victor Sousa
+** Last update Thu Mar 17 03:21:21 2016 Victor Sousa
 */
 
 #ifndef			COREWAR_H_
@@ -17,7 +17,6 @@
 # include               <sys/stat.h>
 # include		<fcntl.h>
 # include		<SDL/SDL.h>
-# include		<ncurses.h>
 
 # include		"op.h"
 # include		"champ.h"

@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:03:45 2016 Victor Sousa
-** Last update Thu Mar 17 02:43:49 2016 Victor Sousa
+** Last update Thu Mar 17 03:21:59 2016 Victor Sousa
 */
 
 #ifndef			LOOP_H_
@@ -16,11 +16,10 @@
 # define		WIDTH		1080
 # define		HEIGHT		720
 
-# define		SDL_UPDATE_RATE	100
+# define		SDL_UPDATE_RATE	250
 
 # define		M_NONE		0
 # define		M_SDL		1
-# define		M_CURSE		2
 
 typedef struct		s_pos
 {
