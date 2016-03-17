@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 22:32:45 2016 Victor Sousa
-** Last update Thu Mar 17 04:47:09 2016 Victor Sousa
+** Last update Thu Mar 17 04:52:27 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -39,7 +39,7 @@ void			init_sdl(t_arena *arena)
   if ((arena->graph.sdl_surface =
        SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_HWSURFACE )) == NULL)
     my_putstr_error("Can't set video mode\n", 1);
-  if(TTF_Init() == -1)
+  if (TTF_Init() == -1)
     my_putstr_error("Can't init TTF\n", 1);
   arena->graph.font_title = NULL;
   if ((arena->graph.font_title = TTF_OpenFont(FONT_PATH, 65)) == NULL)

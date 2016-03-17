@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:03:45 2016 Victor Sousa
-** Last update Thu Mar 17 04:48:15 2016 Victor Sousa
+** Last update Thu Mar 17 04:55:45 2016 Victor Sousa
 */
 
 #ifndef			LOOP_H_
@@ -28,6 +28,10 @@ typedef struct		s_pos
 }			t_pos;
 
 void			main_loop(t_arena *arena);
+int			how_much_alive(t_champ *champ);
+void			leave_loop(t_arena *arena);
+void			refresh_process(t_process *proc);
+void			refresh_process_loop(t_arena *arena);
 
 /*sdl*/
 void			init_sdl(t_arena *arena);

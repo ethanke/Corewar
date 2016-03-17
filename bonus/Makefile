@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Thu Mar 17 04:47:36 2016 victor sousa
+## Last update Thu Mar 17 04:54:51 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -76,6 +76,7 @@ SRC		+=	$(FUNCTDIR)/check.c		\
 			$(FUNCTDIR)/disp_func.c
 
 SRC		+=	$(LOOPDIR)/loop.c		\
+			$(LOOPDIR)/loop2.c		\
 			$(LOOPDIR)/sdl_init.c		\
 			$(LOOPDIR)/sdl_print.c
 

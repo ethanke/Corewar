@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:12:21 2016 Gaëtan Léandre
-** Last update Thu Mar 17 04:26:41 2016 Victor Sousa
+** Last update Thu Mar 17 04:49:24 2016 Victor Sousa
 */
 
 #ifndef			ARENA_H_
@@ -39,7 +39,5 @@ typedef struct		s_arena
 			 t_process *process,
 			 int id, int pc_pos);
 }			t_arena;
-
-
 
 #endif		      /*ARENA_H_*/

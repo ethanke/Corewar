@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Sun Mar  6 23:40:08 2016 Victor Sousa
-** Last update Thu Mar 17 02:33:54 2016 Victor Sousa
+** Last update Thu Mar 17 04:50:19 2016 Victor Sousa
 */
 
 #ifndef			UTILS_H_
@@ -40,6 +40,5 @@ unsigned int		pick_color(int id);
 t_process		*add_child(t_process *father);
 void			init_child(t_process *father, t_process *child);
 t_process		*add_child(t_process *father);
-
 
 #endif		      /*UTILS_H*/

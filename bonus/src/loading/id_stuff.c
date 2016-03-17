@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 04:11:03 2016 Victor Sousa
-** Last update Wed Mar 16 19:14:19 2016 Victor Sousa
+** Last update Thu Mar 17 04:50:51 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -61,5 +61,6 @@ void			check_id(t_champ *champ)
     }
   i = -1;
   while (++i < champ->nbr_champ)
-    champ->process[i] = fill_process(MEM_SIZE / champ->nbr_champ * i, champ->id_champ[i]);
+    champ->process[i] = fill_process(MEM_SIZE / champ->nbr_champ * i,
+				     champ->id_champ[i]);
 }

@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Tue Mar 15 17:23:54 2016 Victor Sousa
-** Last update Wed Mar 16 19:11:55 2016 Victor Sousa
+** Last update Thu Mar 17 04:52:40 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -23,12 +23,10 @@ void			print_champ(t_champ *champ)
 		champ->id_champ[i],
 		champ->header[i].magic,
 		champ->header[i].prog_name);
-      my_printf("\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d",
+      my_printf("\n\tcomment:%s\n\tprog_size:%d\n\tpc_pos:%d\n\n",
 		champ->header[i].comment,
 		champ->header[i].prog_size,
 		champ->process[i]->pc_pos);
-      /*print_instruct(champ->instru[i], champ->header[i].prog_size);*/
-      my_printf("\n\n");
     }
 }
 
