@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:42:55 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 04:35:45 2016 Ethan Kerdelhue
+** Last update Thu Mar 17 04:34:07 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -83,7 +83,7 @@ char	*getComment(char *str, t_header *header)
   i = 0;
   j = 0;
   store = 2;
-  my_memset(header->comment, COMMENT_LENGTH + 1, '\0');
+  my_memset(header->comment, COMMENT_LENGTH, '\0');
   while (str[i] != '\0')
     {
       if (store == 1 && str[i] != 34)

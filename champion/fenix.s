@@ -35,14 +35,14 @@ field13: live %0
 field14: live %0
 	ld %0, r10
 	zjmp %:start
-worm:	ld %31, r3		# lod start addr of tail
-	ld %1, r4		# load commands codes of LIVE to r4
+worm:	ld %31, r3
+	ld %1, r4
 	ld %5, r5
 	fork %:pretail
-grow:	sti r4, r3, %1		# save command
-	sti r1, r3, %-6         # save argument
-	add r3, r5, r3		#
-	ld %0, r10		# change CARRY
-	zjmp %:grow		# GROW!
-pretail: fork %0			# waiting when tail growing and grow live forks
+grow:	sti r4, r3, %1
+	sti r1, r3, %-6
+	add r3, r5, r3
+	ld %0, r10
+	zjmp %:grow
+pretail: fork %0		
 tail:	live %0

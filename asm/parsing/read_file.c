@@ -5,32 +5,20 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:56:39 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 19:48:31 2016 Ethan Kerdelhue
+** Last update Thu Mar 17 04:23:42 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
 
-void	print_tab(char **tab)
-{
-  int	i;
-
-  i = 0;
-  while (tab[i])
-    {
-      printf("%s\n", tab[i]);
-      i++;
-    }
-}
-
-int	parse_header(char **tab, t_cor *corfile)
+int	parse_header(t_cor *corfile)
 {
   t_header	*header;
 
   header = malloc(sizeof(t_header));
   my_memset(header, sizeof(t_header), 0);
   header->magic = COREWAR_EXEC_MAGIC;
-  checkName(tab[0], header);
-  checkComment(tab[1], header);
+  checkName(corfile->tab[0], header);
+  checkComment(corfile->tab[1], header);
   header->prog_size = 0;
   open_corfile(corfile);
   write_header(header, corfile);
@@ -68,7 +56,6 @@ int	read_file(char	*file)
   t_cor	*corfile;
   int	fd;
   char	**tab;
-  int	i;
 
   tab = convert_file_in_double_etoile_fdp_de_merde(file);
   if ((fd = open(file, O_RDONLY)) == -1)
@@ -77,12 +64,9 @@ int	read_file(char	*file)
   corfile->name = getCorName(file);
   corfile->tab = tab;
   parse_instr(corfile);
+  parse_header(corfile);
+  write_cor(corfile);
   close(corfile->fd);
-  free(corfile);
-  i = -1;
-  while (tab[++i])
-    free(tab[i]);
-  free(tab);
   return (0);
 }
 

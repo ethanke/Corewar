@@ -5,14 +5,14 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 05:19:55 2016 Ethan Kerdelhue
-** Last update Mon Mar 14 05:20:41 2016 Ethan Kerdelhue
+** Last update Thu Mar 17 00:14:48 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
 
 void	write_header(t_header *header, t_cor *corfile)
 {
-  header->magic = int_tobyte(header->magic);
-  header->prog_size= int_tobyte(header->prog_size);
+  header->magic = int_to4byte(header->magic);
+  header->prog_size= int_to4byte(header->prog_size);
   write(corfile->fd, header, sizeof(t_header));
 }

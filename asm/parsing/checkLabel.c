@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 06:18:17 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 00:12:03 2016 Ethan Kerdelhue
+** Last update Wed Mar 16 23:03:13 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -49,7 +49,7 @@ char	*line_is_label(char *args)
   char	flag;
 
   flag = 0;
-  if (args[my_strlen(args) - 1] == LABEL_CHAR)
+  if (args != NULL && args[my_strlen(args) - 1] == LABEL_CHAR)
     flag = 1;
   else
     return (NULL);
