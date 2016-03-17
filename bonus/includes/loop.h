@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:03:45 2016 Victor Sousa
-** Last update Thu Mar 17 03:21:59 2016 Victor Sousa
+** Last update Thu Mar 17 04:48:15 2016 Victor Sousa
 */
 
 #ifndef			LOOP_H_
@@ -32,8 +32,8 @@ void			main_loop(t_arena *arena);
 /*sdl*/
 void			init_sdl(t_arena *arena);
 void			print_sdl(t_arena *arena);
-
-/*ncurses*/
-void			init_curses(t_arena *arena);
+void			sdl_square(SDL_Surface *scr,
+				   t_pos *beg, int size,
+				   unsigned int color);
 
 #endif		      /*LOOP_H_*/

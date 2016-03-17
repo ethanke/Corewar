@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 22:32:45 2016 Victor Sousa
-** Last update Thu Mar 17 02:33:06 2016 Victor Sousa
+** Last update Thu Mar 17 04:47:09 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -39,30 +39,21 @@ void			init_sdl(t_arena *arena)
   if ((arena->graph.sdl_surface =
        SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_HWSURFACE )) == NULL)
     my_putstr_error("Can't set video mode\n", 1);
-}
-
-void			print_sdl(t_arena *arena)
-{
-  t_pos			pos;
-  int			i;
-  int			size;
-
-  SDL_LockSurface(arena->graph.sdl_surface);
-  size = (WIDTH - 80) / (MEM_SIZE / (MEM_SIZE / 128)) + 1;
-  pos.x = 30;
-  pos.y = HEIGHT / 2 - ((MEM_SIZE / 128) * size) / 2;
-  i = 0;
-  while (++i <= MEM_SIZE)
+  if(TTF_Init() == -1)
+    my_putstr_error("Can't init TTF\n", 1);
+  arena->graph.font_title = NULL;
+  if ((arena->graph.font_title = TTF_OpenFont(FONT_PATH, 65)) == NULL)
+    my_putstr_error("Can't open font\n", 1);
+  arena->graph.font = NULL;
+  if ((arena->graph.font = TTF_OpenFont(FONT_PATH, 20)) == NULL)
+    my_putstr_error("Can't open font\n", 1);
+  arena->graph.title_col.r = 200;
+  arena->graph.title_col.g = 200;
+  arena->graph.title_col.b = 200;
+  arena->graph.miam = NULL;
+  if ((arena->graph.miam = IMG_Load("sprites/coquillette_jambon.png")) == NULL)
     {
-      sdl_square(arena->graph.sdl_surface, &pos, size - 1,
-		 pick_color(arena->proprio[i - 1]));
-      pos.x += size;
-      if (i % 128 == 0)
-	{
-	  pos.y += size;
-	  pos.x = 30;
-	}
+      my_printf("Can't open the coquillette jambon image.. i'm hungry");
+      my_putstr_error(" i will not fight until you feed me.....\n", 1);
     }
-  SDL_UnlockSurface(arena->graph.sdl_surface);
-  SDL_UpdateRect(arena->graph.sdl_surface, 0, 0, 0, 0);
 }

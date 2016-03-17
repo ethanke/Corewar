@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 18:30:41 2016 Victor Sousa
-** Last update Thu Mar 17 01:26:48 2016 Victor Sousa
+** Last update Thu Mar 17 03:43:38 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -27,4 +27,8 @@ void			end_prog(t_arena *arena)
   free(arena->champ->process);
   free(arena->arena);
   free(arena->proprio);
+  TTF_CloseFont(arena->graph.font);
+  TTF_Quit();
+  SDL_FreeSurface(arena->graph.sdl_surface);
+  SDL_Quit();
 }
