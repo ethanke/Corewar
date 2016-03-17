@@ -5,7 +5,7 @@
 ## Login   <kerdel_e@epitech.net>
 ##
 ## Started on  Mon Nov  9 10:51:49 2015 ethan kerdelhue
-## Last update Wed Mar 16 13:05:18 2016 Kerdelhue Ethan
+## Last update Wed Mar 16 22:07:22 2016 Kerdelhue Ethan
 ##
 
  CC = gcc -g
@@ -33,8 +33,9 @@
 
  SRCS  +=       writing/write_header.c  \
 		writing/open_cor_file.c  \
+		writing/write_cor_file.c	\
 
- SRCS  += 	utils/get_next_line.c  \
+SRCS  += 	utils/get_next_line.c  \
 		utils/string.c   \
 	   	utils/my_getnbr.c  \
 		utils/my_strncpy.c  \

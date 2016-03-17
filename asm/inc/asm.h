@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.net>
 **
 ** Started on  Sun Mar  6 20:19:55 2016 Kerdelhue Ethan
-** Last update Wed Mar 16 20:03:35 2016 Ethan Kerdelhue
+** Last update Thu Mar 17 03:06:49 2016 Ethan Kerdelhue
 */
 
 #ifndef ASM_H_
@@ -119,12 +119,15 @@ typedef union           	u_intchar
 extern  	op_t    	op_tab[];
 
 	/* PARSING */
+void	write_cor(t_cor *corfile);
+void				convert_label_value(t_corlabel *label, t_corline *corline);
+int				get_label_value(t_corlabel *label, char *str);
 int 				parse_instr(t_cor *corfile);
 int				start_parse_instr(t_corline *corline, t_corlabel *corlabel, char *str);
 char				*checkComment(char *str, t_header *header);
 char				*checkName(char *str, t_header *header);
 char				*checkLabel(char *name);
-int	 			parse_header(char **tab, t_cor *corfile);
+int	 			parse_header(t_cor *corfile);
 char				*line_is_label(char *args);
 op_t				checkOp(char *mnemonic);
 t_corarg			*get_args(char **tab, int i);
@@ -153,7 +156,7 @@ int				my_getnbr(char *str);
 int				my_strcmp(char *s1, char *s2);
 char				*my_strcpy(char *dest, char *src);
 char				**my_str_to_wordtab(char *str, char *delim);
-int				int_tobyte(int data);
+int				int_to4byte(int data);
 char				*my_strncpy(char *dest, char *src, int n);
 void				my_putchar(char c);
 void  				*my_memset(void *s, size_t n, int c);

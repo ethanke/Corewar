@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:36:36 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 16:54:01 2016 Ethan Kerdelhue
+** Last update Thu Mar 17 04:33:57 2016 Ethan Kerdelhue
 */
 
  #include "asm.h"
@@ -18,7 +18,8 @@ char	checkInstru(char *str)
 
   while (str[i] != '\0')
     {
-      if (my_strncmp(&str[i], NAME_CMD_STRING, my_strlen(NAME_CMD_STRING) == 0))
+      if (my_strncmp(&str[i], NAME_CMD_STRING,
+		     my_strlen(NAME_CMD_STRING) == 0))
 	return (0);
       i++;
     }
@@ -81,7 +82,7 @@ char	*getName(char *str, t_header *header)
   i = 0;
   j = 0;
   store = 2;
-  my_memset(header->prog_name, PROG_NAME_LENGTH + 1, '\0');
+  my_memset(header->prog_name, PROG_NAME_LENGTH, '\0');
   while (str[i] != '\0')
     {
       if (store == 1 && str[i] != 34)
