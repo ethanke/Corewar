@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 06:18:17 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 23:03:13 2016 Ethan Kerdelhue
+** Last update Tue Mar 22 22:55:20 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -42,6 +42,22 @@ char	*checkLabel(char *name)
       i++;
     }
   return (name);
+}
+
+int			checkLabExist(t_corlabel *label, char *str)
+{
+  t_corlabel	*tmp;
+
+  tmp = label;
+  if (my_str_isalpha(str) == 0 || my_char_is_num(str[0]) == 1)
+      return (-1);
+  while (tmp != NULL)
+    {
+      if (my_strcmp(tmp->name, str) == 0)
+	  return (1);
+      tmp = tmp->next;
+    }
+  return (0);
 }
 
 char	*line_is_label(char *args)

@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.net>
 **
 ** Started on  Sun Mar  6 20:19:55 2016 Kerdelhue Ethan
-** Last update Thu Mar 17 03:06:49 2016 Ethan Kerdelhue
+** Last update Tue Mar 22 23:44:58 2016 Ethan Kerdelhue
 */
 
 #ifndef ASM_H_
@@ -119,14 +119,20 @@ typedef union           	u_intchar
 extern  	op_t    	op_tab[];
 
 	/* PARSING */
-void	write_cor(t_cor *corfile);
-void				convert_label_value(t_corlabel *label, t_corline *corline);
-int				get_label_value(t_corlabel *label, char *str);
+int				calc_mem_pos(t_corline *tmp,
+					     t_corline *corline);
+void				create_corline_l(t_corline tmp,
+						 t_corline *corline,
+						 t_corlabel *corlabel,
+						 op_t op);
+void				create_corline_wl(t_corline tmp,
+						  t_corline *corline,
+						  op_t op);
+int				get_mem_size(t_corarg *tab_args);
 int 				parse_instr(t_cor *corfile);
-int				start_parse_instr(t_corline *corline, t_corlabel *corlabel, char *str);
-char				*checkComment(char *str, t_header *header);
-char				*checkName(char *str, t_header *header);
-char				*checkLabel(char *name);
+int				start_parse_instr(t_corline *corline,
+						  t_corlabel *corlabel,
+						  char *str);
 int	 			parse_header(t_cor *corfile);
 char				*line_is_label(char *args);
 op_t				checkOp(char *mnemonic);
@@ -134,23 +140,49 @@ t_corarg			*get_args(char **tab, int i);
 int				count_args(char **tab);
 char    			*get_next_line(const int fd);
 
+	/* CHECK FUNC	*/
+void				checkCommentLine(char **tab);
+int				containCommentChar(char *str);
+void				convert_label_value(t_corlabel *label,
+						    t_corline *corline);
+int				get_label_value(t_corlabel *label, char *str);
+int				checkLabExist(t_corlabel *label, char *str);
+int				is_alph_char(char c, char *delim);
+int				my_str_isalpha(char *str);
+char				*checkComment(char *str, t_header *header);
+char				*checkName(char *str, t_header *header);
+char				*checkLabel(char *name);
+
 	/* LINK LIST FUNC */
 t_corline			*corline_init();
-void				create_line(t_corline *corline, t_corline line);
+void				create_line(t_corline *corline,
+					    t_corline line);
 t_corlabel			*corlabel_init();
-void				create_label(t_corlabel *corlabel, t_corlabel label);
+void				create_label(t_corlabel *corlabel,
+					     t_corlabel label);
 
 	/* OPEN FUNC */
 void				open_corfile(t_cor *corfile);
 char				*getCorName(char *str);
 
 	/* Writing Func */
+void				write_instr(int nbr, int fd, t_corarg *args);
+void				write_byte_param(int fd, t_corarg *args);
 void				write_header(t_header *header, t_cor *corfile);
+void				write_cor(t_cor *corfile);
+void				write_args_wpb(int fd, t_corarg *args);
+void				write_args(int fd, t_corarg *args);
+void				put_param(int nbr, int bit, int fd);
 
 	/* READ */
 int				read_file(char	*file);
 
 	/* UTILS */
+char 				*my_strcat(char *dest, char *src);
+int				my_char_is_num(char c);
+char				*epur_cw(char *str);
+char				*my_itoa(int nb);
+char				*epur_cw(char *str);
 void            		*xmalloc(int size);
 int				my_getnbr(char *str);
 int				my_strcmp(char *s1, char *s2);

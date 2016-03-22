@@ -5,10 +5,20 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:56:39 2016 Ethan Kerdelhue
-** Last update Thu Mar 17 04:23:42 2016 Ethan Kerdelhue
+** Last update Tue Mar 22 20:33:17 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
+
+int	get_prog_size(t_cor *corfile)
+{
+  t_corline	*tmp;
+
+  tmp = corfile->first_line;
+  while (tmp->next != NULL)
+    tmp = tmp->next;
+  return (tmp->mempos);
+}
 
 int	parse_header(t_cor *corfile)
 {
@@ -19,7 +29,7 @@ int	parse_header(t_cor *corfile)
   header->magic = COREWAR_EXEC_MAGIC;
   checkName(corfile->tab[0], header);
   checkComment(corfile->tab[1], header);
-  header->prog_size = 0;
+  header->prog_size = get_prog_size(corfile);
   open_corfile(corfile);
   write_header(header, corfile);
   return (0);

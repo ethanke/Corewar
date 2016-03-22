@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:03:45 2016 Victor Sousa
-** Last update Thu Mar 17 04:55:45 2016 Victor Sousa
+** Last update Tue Mar 22 15:36:08 2016 Kerdelhue Ethan
 */
 
 #ifndef			LOOP_H_
@@ -16,7 +16,7 @@
 # define		WIDTH		1080
 # define		HEIGHT		720
 
-# define		SDL_UPDATE_RATE	250
+# define		SDL_UPDATE_RATE	600
 
 # define		M_NONE		0
 # define		M_SDL		1

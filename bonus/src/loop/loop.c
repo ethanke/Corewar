@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Thu Mar 17 04:55:20 2016 Victor Sousa
+** Last update Tue Mar 22 15:25:24 2016 Kerdelhue Ethan
 */
 
 #include		"corewar.h"
@@ -64,6 +64,7 @@ void			main_loop(t_arena *arena)
   arena->cycle_to_die = CYCLE_TO_DIE;
   while (arena->cycle_to_die > 0)
     {
+      usleep(100);
       arena->cycle = 0;
       while (arena->cycle < arena->cycle_to_die)
 	{

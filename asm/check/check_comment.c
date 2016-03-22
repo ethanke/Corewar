@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Fri Mar 11 18:42:55 2016 Ethan Kerdelhue
-** Last update Thu Mar 17 04:34:07 2016 Ethan Kerdelhue
+** Last update Tue Mar 22 22:43:32 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -67,9 +67,9 @@ void	CheckQuoteC(char *str)
        }
    }
  if (pos_1 == 0)
-   putError("[HEADER] Error line 1 : '32' not found, syntax error");
+   putError("[HEADER] Error line 1 : \" not found, syntax error");
  else if (pos_2 == 0)
-   putError("[HEADER] Error line 1 : missing '32' for .Comment, syntax error");
+   putError("[HEADER] Error line 1 : missing \" for .comment, syntax error");
  else
    checkAdvC(pos_1, pos_2, str);
 }

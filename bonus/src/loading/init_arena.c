@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 16:47:03 2016 Victor Sousa
-** Last update Thu Mar 17 04:51:19 2016 Victor Sousa
+** Last update Tue Mar 22 15:16:58 2016 Kerdelhue Ethan
 */
 
 #include		"corewar.h"

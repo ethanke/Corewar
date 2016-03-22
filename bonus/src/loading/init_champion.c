@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar  7 01:11:01 2016 Victor Sousa
-** Last update Wed Mar 16 19:00:06 2016 Victor Sousa
+** Last update Tue Mar 22 15:18:43 2016 Kerdelhue Ethan
 */
 
 #include		"corewar.h"
@@ -51,6 +51,7 @@ t_champ			init_champion(int ac, char **av)
   champ.header = xmalloc(sizeof(header_t) * (champ.nbr_champ));
   champ.instru = xmalloc(sizeof(char *) * (champ.nbr_champ));
   champ.process = xmalloc(sizeof(t_process *) * (champ.nbr_champ));
+  champ.last_live = 0;
   load_process(&champ, ac, av);
   return (champ);
 }

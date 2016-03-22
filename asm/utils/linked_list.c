@@ -5,7 +5,7 @@
 ** Login   <kerdel_e@epitech.eu>
 **
 ** Started on  Mon Mar 14 05:47:59 2016 Ethan Kerdelhue
-** Last update Wed Mar 16 20:04:23 2016 Ethan Kerdelhue
+** Last update Thu Mar 17 05:57:38 2016 Ethan Kerdelhue
 */
 
 #include "asm.h"
@@ -30,7 +30,7 @@ void		create_label(t_corlabel *corlabel, t_corlabel label)
   while (tmp->next != NULL)
     tmp = tmp->next;
   new = xmalloc(sizeof(t_corlabel));
-  new->name = label.name;
+  new->name = epur_cw(label.name);
   new->mempos = label.mempos;
   tmp->next = new;
   new->next = NULL;
