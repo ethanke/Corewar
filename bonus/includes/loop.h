@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:03:45 2016 Victor Sousa
-** Last update Tue Mar 22 15:36:08 2016 Kerdelhue Ethan
+** Last update Fri Mar 25 11:45:27 2016 Victor Sousa
 */
 
 #ifndef			LOOP_H_
@@ -20,6 +20,7 @@
 
 # define		M_NONE		0
 # define		M_SDL		1
+# define		M_SERVER	2
 
 typedef struct		s_pos
 {

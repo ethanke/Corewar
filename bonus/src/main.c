@@ -1,49 +1,33 @@
 /*
-** main.c for corewar in /home/vicostudio/rendu/cpe/CorewarGIT/corewar
+** main.c for corewar in /Users/sousa_v/Shared/rendu/cpe/Coreware_temp/bonus/src/
 **
-** Made by victor sousa
-** Login   <sousa_v@epitech.net>
+** Made by Victor Sousa
+** Login   <sousa_v@epitech.eu>
 **
-** Started on  Mon Feb 29 22:21:44 2016 victor sousa
-** Last update Thu Mar 17 03:22:37 2016 Victor Sousa
+** Started on  Fri Mar 25 11:22:59 2016 Victor Sousa
+** Last update Fri Mar 25 11:27:36 2016 victor sousa
 */
 
 #include	"corewar.h"
 
-int			my_strcmp(char *s1, char *s2)
-{
-  int			i;
-
-  i = 0;
-  while ((s1[i] == s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'))
-    i++;
-  return (s1[i] - s2[i]);
-}
-
-void		choose_graphique(t_arena *arena, int ac, char **av)
+int		need_shell(int ac, char **av)
 {
   int		i;
 
-  arena->mode = M_NONE;
   i = -1;
   while (++i < ac)
     {
-      if (my_strcmp(av[i], "--sdl") == 0)
-	init_sdl(arena);
+      if (my_strcmp(av[i], "--shell") == 1)
+	return (1);
     }
+  return (0);
 }
 
 int		main(int ac, char **av, char **env)
 {
-  t_arena	arena;
-  t_champ	champion;
-
-  if (env == NULL)
-    my_putstr_error("can't read env\n", 1);
-  verif_arg(ac, av);
-  champion = init_champion(ac, av);
-  arena = init_arena(&champion);
-  choose_graphique(&arena, ac, av);
-  main_loop(&arena);
+  if (need_shell(ac, av))
+    start_shell(ac, av, env);
+  else
+    start_corewar(ac, av, env);
   return (0);
 }

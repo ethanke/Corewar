@@ -5,7 +5,7 @@
 ## Login   <sousa_v@epitech.net>
 ##
 ## Started on  Mon Feb 29 22:36:30 2016 victor sousa
-## Last update Thu Mar 17 06:04:52 2016 victor sousa
+## Last update Fri Mar 25 11:21:59 2016 victor sousa
 ##
 
 NAME		=	corewar
@@ -17,6 +17,7 @@ LOADINGDIR	=	$(SRCDIR)/loading
 UTILSDIR	=	$(SRCDIR)/utils
 FUNCTDIR	=	$(SRCDIR)/funct
 LOOPDIR		=	$(SRCDIR)/loop
+SHELLDIR	=	$(SRCDIR)/minishell
 
 CFLAGS		=	-I../includes -I./includes
 CFLAGS		+=	-lSDL -lSDL_image -lSDL_ttf
@@ -26,6 +27,8 @@ CC		=	gcc
 RM		=	rm -f
 
 SRC		=	$(SRCDIR)/main.c			\
+			$(SRCDIR)/start_shell.c			\
+			$(SRCDIR)/start_corewar.c		\
 			$(SRCDIR)/end.c				\
 			$(SRCDIR)/op.c
 
@@ -78,6 +81,31 @@ SRC		+=	$(LOOPDIR)/loop.c			\
 			$(LOOPDIR)/loop2.c			\
 			$(LOOPDIR)/sdl_init.c			\
 			$(LOOPDIR)/sdl_print.c
+
+SRC		+=	$(SHELLDIR)/print/command_not_found.c	\
+			$(SHELLDIR)/print/my_putprompt.c	\
+			$(SHELLDIR)/modular/prog_status.c	\
+			$(SHELLDIR)/misc/clear_scr.c		\
+			$(SHELLDIR)/misc/free_list.c		\
+			$(SHELLDIR)/misc/free_wordtab.c		\
+			$(SHELLDIR)/misc/get_cmd.c		\
+			$(SHELLDIR)/misc/get_env.c		\
+			$(SHELLDIR)/misc/get_execname.c		\
+			$(SHELLDIR)/misc/get_next_line.c	\
+			$(SHELLDIR)/misc/is_the_one.c		\
+			$(SHELLDIR)/misc/load_exec_list.c	\
+			$(SHELLDIR)/misc/my_str_to_wordtab.c	\
+			$(SHELLDIR)/misc/my_strcat.c		\
+			$(SHELLDIR)/misc/my_strcmp.c		\
+			$(SHELLDIR)/misc/my_strcpy.c		\
+			$(SHELLDIR)/misc/my_tablen.c		\
+			$(SHELLDIR)/misc/session.c		\
+			$(SHELLDIR)/misc/sig_handler.c		\
+			$(SHELLDIR)/env_parsing/pwd.c		\
+			$(SHELLDIR)/env_parsing/short_pwd.c	\
+			$(SHELLDIR)/env_parsing/user.c		\
+			$(SHELLDIR)/cmd/setenv.c		\
+			$(SHELLDIR)/cmd/unsetenv.c
 
 OBJ		=	$(SRC:.c=.o)
 

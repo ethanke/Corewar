@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.net>
 **
 ** Started on  Mon Oct  5 13:31:52 2015 Gaëtan Léandre
-** Last update Mon Mar  7 03:26:05 2016 Victor Sousa
+** Last update Fri Mar 25 14:30:47 2016 Victor Sousa
 */
 
 #include "corewar.h"
@@ -14,6 +14,8 @@ int	my_strlen(char *base)
 {
   int	i;
 
+  if (base == NULL)
+    return (0);
   i = 0;
   while (base[i] != '\0')
     i++;

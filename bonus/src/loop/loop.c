@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Wed Mar 16 04:02:36 2016 Victor Sousa
-** Last update Tue Mar 22 15:25:24 2016 Kerdelhue Ethan
+** Last update Fri Mar 25 18:35:54 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -18,12 +18,12 @@ void		pick_function(t_arena *arena, t_process *proc, int id)
 	  arena->arena[proc->pos] <= 16)
 	arena->func[arena->arena[proc->pos] - 1](arena, proc,
 						 id, proc->pc_pos);
+	else
+	    proc->pos = circle(proc->pos, 1);
+	}
       else
-	proc->pos = circle(proc->pos, 1);
+	proc->cycle--;
     }
-  else
-    proc->cycle--;
-}
 
 void		launch_process(t_process *process, t_arena *arena, int id)
 {
@@ -59,19 +59,41 @@ void			loop_champ(t_arena *arena)
     }
 }
 
-void			main_loop(t_arena *arena)
-{
-  arena->cycle_to_die = CYCLE_TO_DIE;
-  while (arena->cycle_to_die > 0)
+  void			print_server(t_arena *arena)
     {
-      usleep(100);
-      arena->cycle = 0;
-      while (arena->cycle < arena->cycle_to_die)
+      int		i;
+      char		c;
+
+      lseek(arena->srv_out.fd, SEEK_SET, 0);
+      write(arena->srv_out.fd, "{\"arena\":\"", my_strlen("{\"arena\":\""));
+      i = -1;
+      while (++i < MEM_SIZE)
 	{
-	  loop_champ(arena);
-	  if (arena->mode == M_SDL && arena->cycle % SDL_UPDATE_RATE == 0)
-	    print_sdl(arena);
-	  arena->total_cycle++;
+	  c = (arena->srv_out.arena[i]) + 49;
+	  write(arena->srv_out.fd, &c, 1);
+	}
+      write(arena->srv_out.fd, "\",\n\"output\":\"",
+	    my_strlen("\",\n\"output\":\""));
+      write(arena->srv_out.fd, arena->srv_out.cur_msg,
+	    my_strlen(arena->srv_out.cur_msg));
+	  write(arena->srv_out.fd, "\"}", 2);
+    }
+
+  void			main_loop(t_arena *arena)
+    {
+      arena->cycle_to_die = CYCLE_TO_DIE;
+      while (arena->cycle_to_die > 0)
+	{
+	  usleep(500);
+	  arena->cycle = 0;
+	  while (arena->cycle < arena->cycle_to_die)
+	    {
+	      loop_champ(arena);
+	      if (arena->mode == M_SDL && arena->cycle % SDL_UPDATE_RATE == 0)
+		print_sdl(arena);
+	      else if (arena->mode == M_SERVER)
+		print_server(arena);
+	      arena->total_cycle++;
 	  arena->cycle++;
 	}
       refresh_process_loop(arena);

@@ -5,13 +5,20 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Mon Mar  7 00:12:21 2016 Gaëtan Léandre
-** Last update Thu Mar 17 04:49:24 2016 Victor Sousa
+** Last update Fri Mar 25 13:37:44 2016 Victor Sousa
 */
 
 #ifndef			ARENA_H_
 # define		ARENA_H_
 
 # include "corewar.h"
+
+typedef struct		s_srv_out
+{
+  int			fd;
+  char			*arena;
+  char			*cur_msg;
+}			t_srv_out;
 
 typedef struct		s_graph
 {
@@ -26,6 +33,7 @@ typedef struct		s_graph
 typedef struct		s_arena
 {
   char			mode;
+  t_srv_out		srv_out;
   t_graph		graph;
   t_champ		*champ;
   unsigned char		*arena;

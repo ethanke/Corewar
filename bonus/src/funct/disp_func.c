@@ -5,7 +5,7 @@
 ** Login   <leandr_g@epitech.eu>
 **
 ** Started on  Wed Mar 16 01:46:52 2016 Gaëtan Léandre
-** Last update Wed Mar 16 22:50:13 2016 Gaëtan Léandre
+** Last update Fri Mar 25 16:17:07 2016 Victor Sousa
 */
 
 #include	"corewar.h"
@@ -65,6 +65,7 @@ int		my_live(t_arena *arena, t_process *process, int id, int pc_pos)
   t_champ	*champ;
   int		who_said;
   int		tmp;
+  char		*str;
 
   (void)id;
   champ = arena->champ;
@@ -76,8 +77,21 @@ int		my_live(t_arena *arena, t_process *process, int id, int pc_pos)
 			   champ->nbr_champ, champ->id_champ);
   if (who_said != -1)
     {
-      my_printf("le joueur %d(%s) est en vie\n", champ->id_champ[who_said],
-		champ->header[who_said].prog_name);
+	 if (arena->mode == M_SERVER)
+	    {
+	      str = xmalloc(my_strlen(arena->srv_out.cur_msg) + 1);
+	      str = my_strcpy(str, arena->srv_out.cur_msg);
+	      free(arena->srv_out.cur_msg);
+	      arena->srv_out.cur_msg = xmalloc(my_strlen(champ->header[who_said].prog_name) + my_strlen(str) + 35);
+	      sprintf(arena->srv_out.cur_msg, "%sle joueur %d(%s) est en vie\n",
+		      str,
+		      champ->id_champ[who_said],
+		      champ->header[who_said].prog_name);
+	      free(str);
+	    }
+	 else
+	    my_printf("le joueur %d(%s) est en vie\n", champ->id_champ[who_said],
+		      champ->header[who_said].prog_name);
       champ->last_live = who_said;
       champ->live[who_said] = 1;
       process->living = 1;

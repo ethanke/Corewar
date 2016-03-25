@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Thu Mar 17 04:53:29 2016 Victor Sousa
-** Last update Tue Mar 22 15:11:50 2016 Kerdelhue Ethan
+** Last update Fri Mar 25 17:45:12 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -28,7 +28,9 @@ int		how_much_alive(t_champ *champ)
 
 void		leave_loop(t_arena *arena)
 {
-  my_printf("le joueur %d(%s) a gagné\n",	    arena->champ->id_champ[arena->champ->last_live],	    arena->champ->header[arena->champ->last_live].prog_name);
+  my_printf("le joueur %d(%s) a gagné\n",
+	    arena->champ->id_champ[arena->champ->last_live],
+	    arena->champ->header[arena->champ->last_live].prog_name);
   end_prog(arena);
   exit(0);
 }

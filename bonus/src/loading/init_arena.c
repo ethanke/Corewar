@@ -5,7 +5,7 @@
 ** Login   <sousa_v@epitech.eu>
 **
 ** Started on  Mon Mar 14 16:47:03 2016 Victor Sousa
-** Last update Tue Mar 22 15:16:58 2016 Kerdelhue Ethan
+** Last update Fri Mar 25 16:34:53 2016 Victor Sousa
 */
 
 #include		"corewar.h"
@@ -58,6 +58,12 @@ t_arena			init_arena(t_champ *champ)
   my_memset(arena.arena, MEM_SIZE, 0);
   arena.proprio = xmalloc(sizeof(char) * MEM_SIZE);
   my_memset(arena.proprio, MEM_SIZE, -1);
+  arena.srv_out.arena = arena.proprio;
+  arena.srv_out.cur_msg = malloc(1);
+  arena.srv_out.cur_msg[0] = '\0';
+  if ((arena.srv_out.fd = open(SERVER_FILE, O_WRONLY | O_CREAT | O_TRUNC,
+			       S_IRUSR | S_IWUSR)) == -1)
+    my_putstr_error("Couldn't create server output file\n", 1);
   fill_battle_field(&arena, champ);
   arena.cycle_to_die = CYCLE_TO_DIE;
   arena.total_cycle = 0;
