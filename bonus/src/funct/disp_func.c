@@ -83,7 +83,7 @@ int		my_live(t_arena *arena, t_process *process, int id, int pc_pos)
 	      str = my_strcpy(str, arena->srv_out.cur_msg);
 	      free(arena->srv_out.cur_msg);
 	      arena->srv_out.cur_msg = xmalloc(my_strlen(champ->header[who_said].prog_name) + my_strlen(str) + 35);
-	      sprintf(arena->srv_out.cur_msg, "%sle joueur %d(%s) est en vie\n",
+	      sprintf(arena->srv_out.cur_msg, "%sle joueur %d(%s) est en vie@",
 		      str,
 		      champ->id_champ[who_said],
 		      champ->header[who_said].prog_name);

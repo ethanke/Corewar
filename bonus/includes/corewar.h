@@ -35,7 +35,7 @@
 # include		"loading.h"
 
 # define		FONT_PATH	"font/ultraviolentbbitalic.ttf"
-# define		SERVER_FILE	"vm_stat.json"
+# define		SERVER_FILE	"JSON/vm_stat.json"
 
 int			start_shell(int ac, char **av, char **env);
 int			start_corewar(int ac, char **av, char **env);

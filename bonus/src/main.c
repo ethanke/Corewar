@@ -10,24 +10,9 @@
 
 #include	"corewar.h"
 
-int		need_shell(int ac, char **av)
-{
-  int		i;
-
-  i = -1;
-  while (++i < ac)
-    {
-      if (my_strcmp(av[i], "--shell") == 1)
-	return (1);
-    }
-  return (0);
-}
 
 int		main(int ac, char **av, char **env)
 {
-  if (need_shell(ac, av))
-    start_shell(ac, av, env);
-  else
-    start_corewar(ac, av, env);
+  start_corewar(ac, av, env);
   return (0);
 }

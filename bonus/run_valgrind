@@ -1,2 +1,0 @@
-#!/bin/bash
-valgrind ./corewar -n 3 ../champion/42.cor ../champion/TISG.cor -n 1 ../champion/fenix.cor ../champion/Octobre_Rouge_V4.2.cor

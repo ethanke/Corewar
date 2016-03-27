@@ -1,2 +1,0 @@
-#!/bin/bash
-./corewar  -n 3 ../champion/fenix.cor ../champion/Octobre_Rouge_V4.2.cor ../champion/42.cor --sdl ../champion/TISG.cor
